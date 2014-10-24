@@ -3592,6 +3592,10 @@ body {
   margin-left: auto;
   padding-left: 0px;
   padding-right: 0px;
+  margin: 0;
+  background: #556270;
+  color: #353d46;
+  font: 18px/27px "Oxygen", sans-serif;
 }
 /* line 15, ../bootstrap-sass-3.2.0/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
 body:before, body:after {
@@ -3602,38 +3606,8 @@ body:before, body:after {
 body:after {
   clear: both;
 }
-/* line 17, ../scss/main.scss */
-body header {
-  margin-left: 0px;
-  margin-right: 0px;
-  text-align: center;
-  background-color: white;
-}
-/* line 15, ../bootstrap-sass-3.2.0/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-body header:before, body header:after {
-  content: " ";
-  display: table;
-}
-/* line 19, ../bootstrap-sass-3.2.0/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-body header:after {
-  clear: both;
-}
-/* line 21, ../scss/main.scss */
-body header img {
-  width: 150px;
-  height: 150px;
-  margin: 15px;
-}
 
-/* line 29, ../scss/main.scss */
-body {
-  margin: 0;
-  background: #556270;
-  color: #353d46;
-  font: 18px/27px "Oxygen", sans-serif;
-}
-
-/* line 36, ../scss/main.scss */
+/* line 26, ../scss/main.scss */
 h1, h2, h3 {
   color: #FF6B6B;
   margin: 0 0 27px;
@@ -3642,7 +3616,7 @@ h1, h2, h3 {
 /*
   Menu
 */
-/* line 41, ../scss/main.scss */
+/* line 31, ../scss/main.scss */
 nav#slide-menu {
   position: fixed;
   top: 0;
@@ -3657,7 +3631,7 @@ nav#slide-menu {
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
-/* line 56, ../scss/main.scss */
+/* line 46, ../scss/main.scss */
 nav#slide-menu > ul {
   display: block;
   margin: 40px;
@@ -3668,17 +3642,17 @@ nav#slide-menu > ul {
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
-/* line 67, ../scss/main.scss */
+/* line 57, ../scss/main.scss */
 nav#slide-menu > ul li {
   color: #dfe5eb;
   padding: 6px 0;
   cursor: pointer;
 }
-/* line 72, ../scss/main.scss */
+/* line 62, ../scss/main.scss */
 nav#slide-menu > ul li:hover {
   color: #59e9df;
 }
-/* line 75, ../scss/main.scss */
+/* line 65, ../scss/main.scss */
 nav#slide-menu > ul li:before {
   font-family: "ico";
   font-style: normal;
@@ -3695,39 +3669,39 @@ nav#slide-menu > ul li:before {
   text-transform: none;
   line-height: 1em;
 }
-/* line 92, ../scss/main.scss */
+/* line 82, ../scss/main.scss */
 nav#slide-menu > ul li.sep {
   margin-top: 7px;
   padding-top: 14px;
   border-top: 1px solid #6b7b8d;
 }
-/* line 98, ../scss/main.scss */
+/* line 88, ../scss/main.scss */
 nav#slide-menu > ul li.timeline:before {
   content: '\e805';
 }
-/* line 99, ../scss/main.scss */
+/* line 89, ../scss/main.scss */
 nav#slide-menu > ul li.events:before {
   content: '\e802';
 }
-/* line 100, ../scss/main.scss */
+/* line 90, ../scss/main.scss */
 nav#slide-menu > ul li.calendar:before {
   content: '\e800';
 }
-/* line 101, ../scss/main.scss */
+/* line 91, ../scss/main.scss */
 nav#slide-menu > ul li.settings:before {
   content: '\e803';
 }
-/* line 102, ../scss/main.scss */
+/* line 92, ../scss/main.scss */
 nav#slide-menu > ul li.logout:before {
   content: '\e804';
 }
 
-/* line 106, ../scss/main.scss */
+/* line 96, ../scss/main.scss */
 body.menu-active nav#slide-menu {
   left: 0px;
 }
 
-/* line 107, ../scss/main.scss */
+/* line 97, ../scss/main.scss */
 body.menu-active nav#slide-menu ul {
   left: 0px;
   opacity: 1;
@@ -3736,7 +3710,7 @@ body.menu-active nav#slide-menu ul {
 /*
   Content
 */
-/* line 113, ../scss/main.scss */
+/* line 103, ../scss/main.scss */
 div#content {
   position: fixed;
   top: 0;
@@ -3756,8 +3730,47 @@ div#content {
   -moz-transition: all 300ms;
   -webkit-transition: all 300ms;
   transition: all 300ms;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+}
+/* line 15, ../bootstrap-sass-3.2.0/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
+div#content:before, div#content:after {
+  content: " ";
+  display: table;
+}
+/* line 19, ../bootstrap-sass-3.2.0/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
+div#content:after {
+  clear: both;
+}
+/* line 130, ../scss/main.scss */
+div#content a img {
+  width: 120px;
+  height: 120px;
 }
 /* line 136, ../scss/main.scss */
+div#content #pagecontent .postcontent {
+  border-radius: 20px;
+  float: left;
+  position: relative;
+  background-color: #ededed;
+  padding: 5px;
+  margin: 5px;
+  max-width: 310px;
+  max-height: 500px;
+  overflow: hidden;
+}
+/* line 146, ../scss/main.scss */
+div#content #pagecontent .postcontent img {
+  border-radius: 20px;
+  max-width: 300px;
+  max-height: 300px;
+}
+/* line 151, ../scss/main.scss */
+div#content #pagecontent .postcontent h1, div#content #pagecontent .postcontent p {
+  padding: 10px;
+}
+/* line 158, ../scss/main.scss */
 div#content div.menu-trigger {
   position: fixed;
   top: 10px;
@@ -3771,7 +3784,7 @@ div#content div.menu-trigger {
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
-/* line 150, ../scss/main.scss */
+/* line 172, ../scss/main.scss */
 div#content div.menu-trigger:before {
   content: '\e801';
   display: inline-block;
@@ -3787,22 +3800,22 @@ div#content div.menu-trigger:before {
   text-transform: none;
   line-height: 36px;
 }
-/* line 166, ../scss/main.scss */
+/* line 188, ../scss/main.scss */
 div#content div.menu-trigger:hover {
   background: #556270;
 }
-/* line 166, ../scss/main.scss */
+/* line 188, ../scss/main.scss */
 div#content div.menu-trigger:hover:before {
   color: #fcfeff;
 }
 
-/* line 170, ../scss/main.scss */
+/* line 192, ../scss/main.scss */
 body.menu-active div#content {
   left: 284px;
   border-radius: 7px 0 0 7px;
 }
 
-/* line 171, ../scss/main.scss */
+/* line 193, ../scss/main.scss */
 body.menu-active div#content .menu-trigger {
   left: 294px;
 }

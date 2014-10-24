@@ -14,23 +14,13 @@
 
 body{
 	@include container-fixed;
-	header{
-		@include make-row();
-		text-align: center;
-		background-color: white;
-		img{
-			width: 150px;
-			height: 150px;
-			margin: 15px;
-		}
-	}
-}
-
-body {
 	margin: 0;
 	background: #556270;
 	color: #353d46;
 	font: 18px/27px 'Oxygen', sans-serif;
+}
+
+body {
 }
 
 h1, h2, h3 { color: #FF6B6B; margin: 0 0 27px; }
@@ -132,6 +122,38 @@ div#content {
 	-moz-transition: all 300ms;
 	-webkit-transition: all 300ms;
 	transition: all 300ms;
+	
+	@include make-row();
+	text-align: center;
+		a{
+
+			img{
+				width: 120px;
+				height: 120px;
+			}
+		}
+	#pagecontent{
+		.postcontent{
+			border-radius: 20px;
+			float: left;
+			position: relative;
+			background-color: $gray-lighter;
+			padding: 5px;
+			margin: 5px;
+			max-width: 310px;
+			max-height: 500px;
+			overflow: hidden;
+			img{
+				border-radius: 20px;
+				max-width: 300px;
+				max-height: 300px;
+			}
+			h1, p{
+				padding: 10px;
+			}
+		}
+	}
+
 
 	div.menu-trigger {
 		position: fixed;
