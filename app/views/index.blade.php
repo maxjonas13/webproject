@@ -22,7 +22,7 @@
 		</div>
 		<div class="column col-md-8 col-sm-6">
 			<video autoplay loop muted>
-				<source src="{{URL::asset('assets/beehive.mp4')}}" type="video/mp4">
+				<source src="{{asset('assets/beehive.mp4')}}" type="video/mp4">
 			</video>
 		</div>
 	</header>
