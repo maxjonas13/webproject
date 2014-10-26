@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('index');
-});
+Route::get('/', 'HomeController@index');
+Route::get('/register', 'RegisterController@index');
+Route::post('/register/save', 'RegisterController@save');
