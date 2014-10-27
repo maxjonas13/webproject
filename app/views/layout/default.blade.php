@@ -7,6 +7,7 @@
 	<body>
 		@include('include.headerbody')
 		@yield('content')
+		@include('include.login')
 			
 	</body>
 </html>

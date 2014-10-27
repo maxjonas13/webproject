@@ -1,9 +1,9 @@
 @extends("layout.default")
 
-@section('content')</div><!-- end .header-unit -->
-@if (Session::has('error_message'))
+@section('content')
+<div id="login">
         	{{ Session::get('error_message') }}
-@endif
+
 <!-- open form tag -->
 {{ Form::open( array('url' => '/login/check') ) }}
 
@@ -21,4 +21,5 @@
 @if(Auth::check()) 
 	{{"hellow you are logged in now."}}
 @endif
+</div>
 @stop

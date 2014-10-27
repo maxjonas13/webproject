@@ -1,6 +1,6 @@
 @extends("layout.default")
 
-@section('content')</div><!-- end .header-unit -->
+@section('content')
 @if($errors->count() > 0) 
 	@foreach ($errors->all() as $error) 
 		<ul>

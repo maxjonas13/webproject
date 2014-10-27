@@ -1,6 +1,6 @@
 @extends("layout.default")
 
-@section('content')</div><!-- end .header-unit -->
+@section('content')
 
 	<div class="container"> 
 	
