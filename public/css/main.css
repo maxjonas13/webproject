@@ -3597,3 +3597,37 @@ h1 {
   color: #bd6100;
   text-decoration: none;
 }
+
+/* line 23, ../scss/main.scss */
+#videobackground, #videooverlay {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-top: 65px;
+  position: absolute;
+  z-index: -20;
+}
+
+/* line 32, ../scss/main.scss */
+#videooverlay {
+  z-index: 20;
+  background: black;
+  /*partially transparent image*/
+}
+
+/* line 38, ../scss/main.scss */
+#videocontent {
+  z-index: 40;
+  text-align: center;
+}
+
+/* line 43, ../scss/main.scss */
+#videotitle {
+  margin-top: 300px;
+  color: white;
+}
+
+/* line 48, ../scss/main.scss */
+#searchbar {
+  text-align: center;
+}

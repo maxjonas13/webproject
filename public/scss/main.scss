@@ -19,3 +19,32 @@ h1{
 		text-decoration: none;
 	}
 }
+
+#videobackground, #videooverlay{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 65px;
+	position: absolute;
+	z-index: -20;
+}
+
+#videooverlay {
+	z-index: 20;
+	background: rgba(0,0,0,1); /*partially transparent image*/ 
+}
+
+
+#videocontent{
+	z-index: 40;
+	text-align: center;
+}
+
+#videotitle{
+	margin-top: 300px;
+	color: white;
+}
+
+#searchbar{
+	text-align: center;
+}
