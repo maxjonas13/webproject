@@ -46,6 +46,17 @@ class RegisterController extends BaseController {
 			//call to model function to store the register data
 			$user->storeRegistrationData();
 
+			//set the data to use in the email ready
+			$data = array(
+				'name' 	=> Input::get('firstname') . ' ' . Input::get('name'),
+				'email' => Input::get('email')
+			);
+			
+			//send the user an email with some more information
+			Mail::send('emails.registration', $data , function($message) {
+			    $message->to(Input::get('email'), Input::get('firstname') . ' ' . Input::get('name'))->subject('Welcome to BeeHive'); 
+			});
+
 			return Redirect::to('/register/confirmation')->with('stored', TRUE);
 		}
 	}
