@@ -1,6 +1,3 @@
-@extends("layout.default")
-
-@section('content')
 <div id="login">
         	{{ Session::get('error_message') }}
 
@@ -22,4 +19,4 @@
 	{{"hellow you are logged in now."}}
 @endif
 </div>
-@stop
+  
