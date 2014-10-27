@@ -50,52 +50,54 @@ class ProfileController extends BaseController {
 			//retrieve the existing email adres from the db and store it in a variable
 			$useremail = User::find(Auth::user()->PK_userId)->email;
 			
+			//array with the fields and their content
+			$fields = array(
+				'name'				=>	Input::get('name'),
+				'password'			=>	Input::get('password'),
+				'newpassword'		=>	Input::get('newpassword'),
+				'twitter'			=>	Input::get('twitter'),
+				'github'			=>	Input::get('github'),
+				'linkedin'			=>	Input::get('linkedin'),
+				'pintrest'			=>	Input::get('pintrest'),
+				'googleplus'		=>	Input::get('googleplus'),
+				'instagram'			=>	Input::get('instagram'),
+				'myspace'			=>	Input::get('myspace'),
+				'website'			=>	Input::get('website'),
+				'bio'				=>	Input::get('bio'),
+				'profilepicture'	=>	Input::get('profilepicture')
+			);
+
+			//array with the validation rules for the determined fields
+			$rules = array(
+				'name'				=>	'required|min:3|max:60',
+				'password'			=>	'passwordCheck|min:3',
+				'newpassword'		=>	'required_with:password|min:3',
+				'twitter'			=>	'min:3',
+				'github'			=>	'min:3',
+				'linkedin'			=>	'min:3',
+				'pintrest'			=>	'min:3',
+				'googleplus'		=>	'min:3',
+				'instagram'			=>	'min:3',
+				'myspace'			=>	'min:3',
+				'website'			=>	'min:3',
+				'bio'				=>	'min:3|max:2000',
+				'profilepicture'	=>	'image|max:5000'
+			);
+
+			//check if the email adres in the db is diffrent from the email adres in the input field
+			if($useremail != Input::get('email')) {
+				//email adres in the form is diffrent from the email adress in the db so include the field in the validator and give it validation rules
+				$fields['email'] = Input::get('email');
+				$rules['email'] = 'required|email|unique:users';
+			}
+
 			//create validator
 			$validator = Validator::make(
-				//array with the fields and their content
-				array(
-					'name'				=>	Input::get('name'),
-					//check if the email adres in the db is diffrent from the email adres in the input field
-					if($useremail != Input::get('email')) {
-						//email adres in the form is diffrent from the email adress in the db so include the field in the validator
-						'email'				=>	Input::get('email'),
-					}
-					'password'			=>	Input::get('password'),
-					'newpassword'		=>	Input::get('newpassword'),
-					'twitter'			=>	Input::get('twitter'),
-					'github'			=>	Input::get('github'),
-					'linkedin'			=>	Input::get('linkedin'),
-					'pintrest'			=>	Input::get('pintrest'),
-					'googleplus'		=>	Input::get('googleplus'),
-					'instagram'			=>	Input::get('instagram'),
-					'myspace'			=>	Input::get('myspace'),
-					'website'			=>	Input::get('website'),
-					'bio'				=>	Input::get('bio'),
-					'profilepicture'	=>	Input::get('profilepicture')
-				),
-				//array with the validation rules for the determined fields
-				array(
-					'name'				=>	'required|min:3|max:60',
-					//check if the email adres in the db is diffrent from the email adres in the input field
-					if($useremail != Input::get('email')) {
-						//email adres in the form is diffrent from the email adres in the db so add a validation rule for it
-						'email'				=>	'required|email|unique:users',
-					}
-					'password'			=>	'exists:users,password, PK_userId,' . Auth::user()->PK_userId,
-					'newpassword'		=>	'required_with:password|min:3',
-					'twitter'			=>	'min:3',
-					'github'			=>	'min:3',
-					'linkedin'			=>	'min:3',
-					'pintrest'			=>	'min:3',
-					'googleplus'		=>	'min:3',
-					'instagram'			=>	'min:3',
-					'myspace'			=>	'min:3',
-					'website'			=>	'min:3',
-					'bio'				=>	'min:3|max:2000',
-					'profilepicture'	=>	'image|max:5000'
-				)
+				$fields,
+				$rules
 			);
 			
+
 			$messages = $validator->messages();
 
 			if($validator->fails()) {
