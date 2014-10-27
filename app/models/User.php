@@ -73,5 +73,15 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	}
 
+	public function updateProfile() {
+		$user = User::find(Auth::user()->PK_userId)->load('Profile', 'Credit');
+
+		$user->name = Input::get('name');
+		$user->profile->instagram = Input::get('instagram');
+		
+		$user->save();
+		$user->profile->save();
+	}
+
 
 }

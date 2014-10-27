@@ -84,6 +84,12 @@ class ProfileController extends BaseController {
 				'profilepicture'	=>	'image|max:5000'
 			);
 
+			//messages array to override the default message for the passwordCheck rule
+			//this needs to get in another file but does not work yet
+			$messages = array(
+				'password_check' => 'The given password does not match the excisting password.',
+			);
+
 			//check if the email adres in the db is diffrent from the email adres in the input field
 			if($useremail != Input::get('email')) {
 				//email adres in the form is diffrent from the email adress in the db so include the field in the validator and give it validation rules
@@ -94,17 +100,23 @@ class ProfileController extends BaseController {
 			//create validator
 			$validator = Validator::make(
 				$fields,
-				$rules
+				$rules,
+				$messages //messages override for the passwordCheck field
 			);
 			
-
+			//store the validator messages in the messages variable
 			$messages = $validator->messages();
-
+			
+			//check if the validator fails
 			if($validator->fails()) {
+				//validator failed, send the user back with errors and his input
 				return Redirect::back()->withErrors($messages)->withInput();
 			}
 			else {
-				return "good job!";
+				$user = User::find(Auth::user()->PK_userId);
+				$user->updateProfile();
+				//validator passed, continue with updating profile data
+				return Redirect::to('/profile/' . Auth::user()->PK_userId);
 			}
 
 		}
