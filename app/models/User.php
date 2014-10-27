@@ -57,6 +57,16 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		//store data into the profiles table
 		$profile->save();
 
+		//create new credit
+		$credit = new Credit;
+
+		//give the user his start credits and link it to the record to the registered user
+		$credit->credits = 3;
+		$credit->FK_userId = $user->PK_userId;
+
+		//store data into the table credits
+		$credit->save();
+
 	}
 
 
