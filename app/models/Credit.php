@@ -22,6 +22,6 @@ class Credit extends Eloquent implements UserInterface, RemindableInterface {
 	public $timestamps = FALSE;
 
 	public function user() {
-		$this->hasOne('User');
+		return $this->belongsTo('User');
 	}
 }

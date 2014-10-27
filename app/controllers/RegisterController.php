@@ -4,7 +4,7 @@ class RegisterController extends BaseController {
 
 	//function to load the view with the register form
 	public function index() {
-		return View::make('register');
+		return View::make('content/register');
 	}
 
 	//function to validate form data and speak to the Register model

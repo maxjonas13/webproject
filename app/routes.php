@@ -22,3 +22,7 @@ Route::get('/login', 'LoginController@index');
 Route::post('/login/check', 'LoginController@check');
 Route::get('/login/confirmation', 'LoginController@confirmation');
 Route::get('/logout', 'LoginController@logout');
+
+Route::get('/profile/{id}', 'ProfileController@index');
+Route::get('/profile/edit/{id}', 'ProfileController@edit');
+Route::post('/profile/update', 'ProfileController@update');

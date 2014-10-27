@@ -19,6 +19,6 @@ class Profile extends Eloquent implements UserInterface, RemindableInterface {
 	protected $primaryKey = 'PK_profileId';
 
 	public function user() {
-		$this->hasOne('User');
+		return $this->belongsTo('User');
 	}
 }
