@@ -26,3 +26,5 @@ Route::get('/logout', 'LoginController@logout');
 Route::get('/profile/{id}', 'ProfileController@index');
 Route::get('/profile/edit/{id}', 'ProfileController@edit');
 Route::post('/profile/update', 'ProfileController@update');
+
+Validator::extend('passwordCheck', 'CustomValidation@passwordCheck');

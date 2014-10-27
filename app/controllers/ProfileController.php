@@ -70,7 +70,7 @@ class ProfileController extends BaseController {
 			//array with the validation rules for the determined fields
 			$rules = array(
 				'name'				=>	'required|min:3|max:60',
-				'password'			=>	'exists:users,password, PK_userId,' . Auth::user()->PK_userId,
+				'password'			=>	'passwordCheck|min:3',
 				'newpassword'		=>	'required_with:password|min:3',
 				'twitter'			=>	'min:3',
 				'github'			=>	'min:3',
@@ -83,7 +83,7 @@ class ProfileController extends BaseController {
 				'bio'				=>	'min:3|max:2000',
 				'profilepicture'	=>	'image|max:5000'
 			);
-			
+
 			//check if the email adres in the db is diffrent from the email adres in the input field
 			if($useremail != Input::get('email')) {
 				//email adres in the form is diffrent from the email adress in the db so include the field in the validator and give it validation rules
@@ -97,6 +97,7 @@ class ProfileController extends BaseController {
 				$rules
 			);
 			
+
 			$messages = $validator->messages();
 
 			if($validator->fails()) {

@@ -1,11 +1,11 @@
-<!--
+
 @if($errors->count() > 0) 
 	@foreach ($errors->all() as $error) 
 		<ul>
 			<li>{{$error}}</li>
 		</ul>
 	@endforeach
-@endif-->
+@endif
 <!-- open form tag -->
 {{ Form::open( array('url' => '/profile/update', 'files' => TRUE) ) }}
 
