@@ -4,7 +4,7 @@ class LoginController extends BaseController {
 
 	//function to load the view with the login form
 	public function index() {
-		return View::make('content/login');
+		return View::make('login');
 	}
 
 	//function to check if the login data is correct.
