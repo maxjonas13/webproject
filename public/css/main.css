@@ -3581,7 +3581,7 @@ tbody.collapse.in {
 }
 /* line 6, ../scss/main.scss */
 body {
-  background-image: url('/img/background.jpg?1414436516');
+  background-image: url('/img/background.jpg?1414437371');
   background-size: cover;
 }
 
@@ -3724,7 +3724,7 @@ video {
 /* line 126, ../scss/main.scss */
 #login, #register {
   z-index: 80;
-  background-image: url('/img/background.jpg?1414436516');
+  background-image: url('/img/background.jpg?1414437371');
   background-size: cover;
   text-align: center;
   background-color: white;
