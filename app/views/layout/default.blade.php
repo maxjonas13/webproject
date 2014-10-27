@@ -5,10 +5,9 @@
 	</head>
 
 	<body>
-		@include('include.login')
-		@include('include.register')
 		@include('include.headerbody')
 		@yield('content')
-			
+		@include('include.login')
+		@include('include.register')	
 	</body>
 </html>

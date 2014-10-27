@@ -1,6 +1,4 @@
-	<div class="container"> 
-	
-		<header>
+		<header id='header'>
 			<div class="row"> 
 				<div class="column col-md-8 col-sm-6">  
 					<a id="homelink" href="/"><h1>BeeHive</h1></a>
@@ -20,3 +18,4 @@
 				</div>
 			</div>
 		</header>
+			<div class="container"> 

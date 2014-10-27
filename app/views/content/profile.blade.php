@@ -6,7 +6,10 @@
 			<div class="column col-md-8 col-sm-6">  
 				<h1>Profile</h1>
 				
-				<img id="profilepicture" src="{{$data->profile->profilePicture}}">
+				<div class="hexagon" style="background-image: url({{$data->profile->profilePicture}});">
+				  <div class="hexTop"></div>
+				  <div class="hexBottom"></div>
+				</div>
 				<p>name: {{$data->name}} </p>
 				<p>email: {{$data->email}}</p>
 				<p>username: {{$data->profile->username}}</p>
@@ -18,10 +21,12 @@
 				<p>myspace: {{$data->profile->myspace}}</p>
 				<p>website: {{$data->profile->website}}</p>
 				<p>bio: {{$data->profile->bio}}</p>
-				<p>{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'button'), true)}}</p>
+				<p>{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'button'), false)}}</p>
 			<div class="column col-md-2 col-sm-3"> </div>
 
 		</div>
 		
 	</div>
+
+
 @stop

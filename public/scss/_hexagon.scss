@@ -1,0 +1,66 @@
+.hexagon {
+  position: relative;
+  width: 70px; 
+  height: 40.41px;
+  margin: 20.21px 20.21px;
+  margin-bottom: 40px;
+  background-size: auto 80.8290px;
+  background-position: center;
+}
+
+.hexTop,
+.hexBottom {
+  position: absolute;
+  z-index: 1;
+  width: 49.50px;
+  height: 49.50px;
+  overflow: hidden;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background: inherit;
+  left: 10.25px;
+}
+
+/*counter transform the bg image on the caps*/
+.hexTop:after,
+.hexBottom:after {
+  content: "";
+  position: absolute;
+  width: 70.0000px;
+  height: 40.414518843273804px;
+  -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-20.2073px);
+  -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-20.2073px);
+  transform:          rotate(45deg) scaleY(1.7321) translateY(-20.2073px);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  background: inherit;
+}
+
+.hexTop {
+  top: -24.7487px;
+}
+
+.hexTop:after {
+  background-position: center top;
+}
+
+.hexBottom {
+  bottom: -24.7487px;
+}
+
+.hexBottom:after {
+  background-position: center bottom;
+}
+
+.hexagon:after {
+  content: "";
+  position: absolute;
+  top: 0.0000px;
+  left: 0;
+  width: 70.0000px;
+  height: 40.4145px;
+  z-index: 2;
+  background: inherit;
+}

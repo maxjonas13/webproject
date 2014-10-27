@@ -3579,23 +3579,98 @@ tbody.collapse.in {
     display: none !important;
   }
 }
-/* line 6, ../scss/main.scss */
+/* line 1, ../scss/_hexagon.scss */
+.hexagon {
+  position: relative;
+  width: 70px;
+  height: 40.41px;
+  margin: 20.21px 20.21px;
+  margin-bottom: 40px;
+  background-size: auto 80.8290px;
+  background-position: center;
+}
+
+/* line 12, ../scss/_hexagon.scss */
+.hexTop,
+.hexBottom {
+  position: absolute;
+  z-index: 1;
+  width: 49.50px;
+  height: 49.50px;
+  overflow: hidden;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background: inherit;
+  left: 10.25px;
+}
+
+/*counter transform the bg image on the caps*/
+/* line 27, ../scss/_hexagon.scss */
+.hexTop:after,
+.hexBottom:after {
+  content: "";
+  position: absolute;
+  width: 70.0000px;
+  height: 40.414518843273804px;
+  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-20.2073px);
+  -ms-transform: rotate(45deg) scaleY(1.7321) translateY(-20.2073px);
+  transform: rotate(45deg) scaleY(1.7321) translateY(-20.2073px);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  background: inherit;
+}
+
+/* line 41, ../scss/_hexagon.scss */
+.hexTop {
+  top: -24.7487px;
+}
+
+/* line 45, ../scss/_hexagon.scss */
+.hexTop:after {
+  background-position: center top;
+}
+
+/* line 49, ../scss/_hexagon.scss */
+.hexBottom {
+  bottom: -24.7487px;
+}
+
+/* line 53, ../scss/_hexagon.scss */
+.hexBottom:after {
+  background-position: center bottom;
+}
+
+/* line 57, ../scss/_hexagon.scss */
+.hexagon:after {
+  content: "";
+  position: absolute;
+  top: 0.0000px;
+  left: 0;
+  width: 70.0000px;
+  height: 40.4145px;
+  z-index: 2;
+  background: inherit;
+}
+
+/* line 7, ../scss/main.scss */
 body {
   background-image: url('/img/background.jpg?1414437371');
   background-size: cover;
 }
 
-/* line 11, ../scss/main.scss */
+/* line 12, ../scss/main.scss */
 h1 {
   color: #bd6100;
 }
 
-/* line 14, ../scss/main.scss */
+/* line 15, ../scss/main.scss */
 #homelink {
   text-decoration: none;
 }
 
-/* line 18, ../scss/main.scss */
+/* line 19, ../scss/main.scss */
 .headernav a {
   float: right;
   color: #757575;
@@ -3603,13 +3678,13 @@ h1 {
   display: block;
   margin: 20px;
 }
-/* line 24, ../scss/main.scss */
+/* line 25, ../scss/main.scss */
 .headernav a:hover {
   color: #bd6100;
   text-decoration: none;
 }
 
-/* line 31, ../scss/main.scss */
+/* line 32, ../scss/main.scss */
 .header-unit {
   height: 70%;
   border-right: none;
@@ -3620,7 +3695,7 @@ h1 {
   width: 100%;
 }
 
-/* line 40, ../scss/main.scss */
+/* line 41, ../scss/main.scss */
 #video-container {
   position: absolute;
   top: 0%;
@@ -3631,14 +3706,14 @@ h1 {
   overflow: hidden;
 }
 
-/* line 50, ../scss/main.scss */
+/* line 51, ../scss/main.scss */
 video {
   position: absolute;
   z-index: 0;
   min-width: 100%;
 }
 
-/* line 57, ../scss/main.scss */
+/* line 58, ../scss/main.scss */
 #videocontent {
   z-index: 40;
   margin: auto;
@@ -3648,9 +3723,9 @@ video {
   bottom: 0;
   right: 0;
   text-align: center;
-  background-color: rgba(128, 72, 0, 0.3);
+  background-color: rgba(128, 72, 0, 0);
 }
-/* line 65, ../scss/main.scss */
+/* line 66, ../scss/main.scss */
 #videocontent h1 {
   margin: auto;
   margin-top: 20%;
@@ -3658,7 +3733,7 @@ video {
   color: white;
 }
 
-/* line 72, ../scss/main.scss */
+/* line 73, ../scss/main.scss */
 .button {
   text-align: center;
   text-decoration: none;
@@ -3676,7 +3751,7 @@ video {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 88, ../scss/main.scss */
+/* line 89, ../scss/main.scss */
 .button:hover {
   text-decoration: none;
   background-color: #437fb7;
@@ -3684,28 +3759,28 @@ video {
   width: 21%;
 }
 
-/* line 95, ../scss/main.scss */
+/* line 96, ../scss/main.scss */
 p {
   margin: 20px;
 }
 
-/* line 99, ../scss/main.scss */
+/* line 100, ../scss/main.scss */
 #profilepicture {
   width: 50px;
   height: auto;
 }
 
-/* line 104, ../scss/main.scss */
+/* line 105, ../scss/main.scss */
 #loginlink {
   cursor: pointer;
 }
 
-/* line 107, ../scss/main.scss */
+/* line 108, ../scss/main.scss */
 #searchbar {
   background-color: white;
   position: absolute;
 }
-/* line 110, ../scss/main.scss */
+/* line 111, ../scss/main.scss */
 #searchbar #search-input {
   line-height: normal;
   border: 0;
@@ -3721,22 +3796,22 @@ p {
   -webkit-user-select: text;
   cursor: auto;
 }
-/* line 125, ../scss/main.scss */
+/* line 126, ../scss/main.scss */
 #searchbar i {
   padding: 0.55em 0 0.55em 1.5em;
   position: inherit;
 }
 
-/* line 130, ../scss/main.scss */
+/* line 131, ../scss/main.scss */
 #logincontainer, #registercontainer {
   z-index: 79;
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
 }
 
-/* line 138, ../scss/main.scss */
+/* line 139, ../scss/main.scss */
 #login, #register {
   z-index: 80;
   background-image: url('/img/background.jpg?1414437371');
@@ -3753,12 +3828,22 @@ p {
   height: 300px;
 }
 
-/* line 151, ../scss/main.scss */
+/* line 152, ../scss/main.scss */
 #register {
   height: 500px;
 }
 
-/* line 155, ../scss/main.scss */
+/* line 156, ../scss/main.scss */
+#header {
+  background-color: white;
+}
+/* line 158, ../scss/main.scss */
+#header .row {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+/* line 164, ../scss/main.scss */
 input {
   width: 80%;
   margin: 20px;
@@ -3771,7 +3856,7 @@ input {
   position: relative;
 }
 
-/* line 166, ../scss/main.scss */
+/* line 175, ../scss/main.scss */
 input[type=submit] {
   background-color: #4a91d4;
   color: white;
@@ -3787,13 +3872,13 @@ input[type=submit] {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 180, ../scss/main.scss */
+/* line 189, ../scss/main.scss */
 input[type=submit]:hover {
   background-color: #437fb7;
   width: 51%;
 }
 
-/* line 185, ../scss/main.scss */
+/* line 194, ../scss/main.scss */
 .icon-remove-sign {
   cursor: pointer;
   float: right;
@@ -3805,7 +3890,7 @@ input[type=submit]:hover {
   overflow: hidden;
 }
 
-/* line 196, ../scss/main.scss */
+/* line 205, ../scss/main.scss */
 .registration {
   text-align: center;
 }

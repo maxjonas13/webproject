@@ -1,5 +1,6 @@
 @import "compass";
 @import "bootstrap";
+@import "hexagon";
 
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 
@@ -150,6 +151,14 @@ p{
 
 #register{
 	height: 500px;
+}
+
+#header{
+	background-color: white;
+	.row{
+		margin-left: 50px;
+		margin-right: 50px;
+	}
 }
 
 input{
