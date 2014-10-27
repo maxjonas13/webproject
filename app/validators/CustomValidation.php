@@ -5,6 +5,10 @@ class CustomValidation {
 		if(!Auth::validate(array('email' => Input::get('email'), 'password' => Input::get('password')))) {
 				return FALSE;
 		}
+<<<<<<< HEAD
 		return true;
+=======
+		return TRUE;
+>>>>>>> test
 	}
 }

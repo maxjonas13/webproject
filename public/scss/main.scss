@@ -11,9 +11,10 @@ body{
 h1{
 	color: $brand-primary;
 }
-
+#homelink{
+	text-decoration: none;
+}
 .headernav{
-
 	a{	
 		float: right;
 		color: $gray-light;
@@ -41,6 +42,7 @@ h1{
 	top:0%;
 	left:0%;
 	height:100%;
+	max-height:100%; 
 	width:100%;
 	overflow: hidden;
 }
@@ -57,7 +59,8 @@ video {
 	position: absolute;
   	top: 0; left: 0; bottom: 0; right: 0;
   	text-align: center;
-	button{
+	.button{
+		text-decoration: none;
 		background-color: #4a91d4;
 		color: white;
 		padding: 10px;
@@ -72,6 +75,7 @@ video {
 		-moz-transition: all 0.3s;
 		transition: all 0.3s;	
 		&:hover{
+			text-decoration: none;
 			background-color: #437fb7;
 			width: 21%;
 		}	
@@ -80,17 +84,17 @@ video {
 	h1{
 		margin: auto;
 		margin-top: 20%;
-		z-index: 80;
+		z-index: 60;
 		color: white;
 	}
 }
 
-
-
+#loginlink{
+	cursor: pointer;
+}
 #searchbar{
 	background-color: white;
 	position: absolute;
-	margin: 0px;
 	#search-input{
 		line-height: normal;
 		border: 0;
@@ -111,3 +115,72 @@ video {
 		position: inherit;
 	}
 }
+#logincontainer, #registercontainer{
+	z-index: 70;
+	position: fixed;
+	width: 100%;
+	height:100%;
+	background-color: rgba(0, 0, 0, 0.6);
+
+}
+#login, #register{
+	z-index: 80;
+	background-image: image-url('img/background.jpg');
+	 background-size: cover;
+	text-align: center;
+	background-color: white; 
+	position: fixed;
+	margin: auto;
+	top: 0; bottom: 0; left: 0; right:0;
+	width: 30%;
+	height: 300px;
+}
+
+#register{
+	height: 500px;
+}
+
+input{
+		width: 80%;
+		margin:20px;
+		padding: 10px;
+		margin: 20px;
+		width: 50%;
+		border: none;
+		display: inline-block;
+		outline: none;
+		position: relative;
+	}
+	input[type=submit]{
+		background-color: #4a91d4;
+		color: white;
+		padding: 10px;
+		margin: 20px;
+		width: 50%;
+		border: none;
+		cursor: pointer;
+		display: inline-block;
+		outline: none;
+		position: relative;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		transition: all 0.3s;	
+		&:hover{
+			background-color: #437fb7;
+			width: 51%;
+		}
+	}	
+.icon-remove-sign{
+	cursor: pointer;
+	float: right;
+	margin-right: -3px;
+	margin-top:  -3px;
+	z-index: 81;
+	background-color:white;
+	border-radius: 1000px;
+	 overflow: hidden;
+}
+
+.registration{
+		text-align: center;
+		}

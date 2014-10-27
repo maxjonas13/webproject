@@ -1,10 +1,11 @@
 $( document ).ready(function(){
-
-	$('#searchbar').css("top", $('#videocontent').height());
+	$('#videocontent').css("height", $('#video-container').height());
+	$('#searchbar').css("margin-top", $('#videocontent').height());
+	$('.firstrow').css("margin-top", $('#videocontent').height() + 100);
 
 });
 $( window ).resize(function(){
-
-	$('#searchbar').css("top", $('video').height());
-
+	$('#videocontent').css("height", $('video').height());
+	$('#searchbar').css("margin-top", $('#videocontent').height());
+	$('.firstrow').css("margin-top", $('#videocontent').height() + 100);
 });
