@@ -3,7 +3,7 @@
 			<div id='videocontent'>
 				@if (Auth::check())
 					 <h1 id="videotitle">Hi, {{Auth::user()->name;}}</h1>
-					 <a class="button" href="/register">Profile</a>
+					 <a class="button" href="/profile/{{ Auth::user()->PK_userId;}}">Profile</a>
 					 <a class="button" href="/logout">Logout</a>
 				@else
 					<h1 id="videotitle">Friends who help</h1>

@@ -3631,14 +3631,14 @@ h1 {
   overflow: hidden;
 }
 
-/* line 49, ../scss/main.scss */
+/* line 50, ../scss/main.scss */
 video {
   position: absolute;
   z-index: 0;
   min-width: 100%;
 }
 
-/* line 56, ../scss/main.scss */
+/* line 57, ../scss/main.scss */
 #videocontent {
   z-index: 40;
   margin: auto;
@@ -3648,9 +3648,19 @@ video {
   bottom: 0;
   right: 0;
   text-align: center;
+  background-color: rgba(128, 72, 0, 0.3);
 }
-/* line 62, ../scss/main.scss */
-#videocontent .button {
+/* line 65, ../scss/main.scss */
+#videocontent h1 {
+  margin: auto;
+  margin-top: 20%;
+  z-index: 60;
+  color: white;
+}
+
+/* line 72, ../scss/main.scss */
+.button {
+  text-align: center;
   text-decoration: none;
   background-color: #4a91d4;
   color: white;
@@ -3666,31 +3676,36 @@ video {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 77, ../scss/main.scss */
-#videocontent .button:hover {
+/* line 88, ../scss/main.scss */
+.button:hover {
   text-decoration: none;
   background-color: #437fb7;
+  color: white;
   width: 21%;
 }
-/* line 84, ../scss/main.scss */
-#videocontent h1 {
-  margin: auto;
-  margin-top: 20%;
-  z-index: 60;
-  color: white;
+
+/* line 95, ../scss/main.scss */
+p {
+  margin: 20px;
 }
 
-/* line 92, ../scss/main.scss */
+/* line 99, ../scss/main.scss */
+#profilepicture {
+  width: 50px;
+  height: auto;
+}
+
+/* line 104, ../scss/main.scss */
 #loginlink {
   cursor: pointer;
 }
 
-/* line 95, ../scss/main.scss */
+/* line 107, ../scss/main.scss */
 #searchbar {
   background-color: white;
   position: absolute;
 }
-/* line 98, ../scss/main.scss */
+/* line 110, ../scss/main.scss */
 #searchbar #search-input {
   line-height: normal;
   border: 0;
@@ -3706,13 +3721,13 @@ video {
   -webkit-user-select: text;
   cursor: auto;
 }
-/* line 113, ../scss/main.scss */
+/* line 125, ../scss/main.scss */
 #searchbar i {
   padding: 0.55em 0 0.55em 1.5em;
   position: inherit;
 }
 
-/* line 118, ../scss/main.scss */
+/* line 130, ../scss/main.scss */
 #logincontainer, #registercontainer {
   z-index: 79;
   position: fixed;
@@ -3721,7 +3736,7 @@ video {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 126, ../scss/main.scss */
+/* line 138, ../scss/main.scss */
 #login, #register {
   z-index: 80;
   background-image: url('/img/background.jpg?1414437371');
@@ -3738,12 +3753,12 @@ video {
   height: 300px;
 }
 
-/* line 139, ../scss/main.scss */
+/* line 151, ../scss/main.scss */
 #register {
   height: 500px;
 }
 
-/* line 143, ../scss/main.scss */
+/* line 155, ../scss/main.scss */
 input {
   width: 80%;
   margin: 20px;
@@ -3756,7 +3771,7 @@ input {
   position: relative;
 }
 
-/* line 154, ../scss/main.scss */
+/* line 166, ../scss/main.scss */
 input[type=submit] {
   background-color: #4a91d4;
   color: white;
@@ -3772,13 +3787,13 @@ input[type=submit] {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 168, ../scss/main.scss */
+/* line 180, ../scss/main.scss */
 input[type=submit]:hover {
   background-color: #437fb7;
   width: 51%;
 }
 
-/* line 173, ../scss/main.scss */
+/* line 185, ../scss/main.scss */
 .icon-remove-sign {
   cursor: pointer;
   float: right;
@@ -3790,7 +3805,7 @@ input[type=submit]:hover {
   overflow: hidden;
 }
 
-/* line 184, ../scss/main.scss */
+/* line 196, ../scss/main.scss */
 .registration {
   text-align: center;
 }
