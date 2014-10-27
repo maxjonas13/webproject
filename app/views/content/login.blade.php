@@ -1,3 +1,6 @@
+@extends("layout.default")
+
+@section('content')</div><!-- end .header-unit -->
 @if (Session::has('error_message'))
         	{{ Session::get('error_message') }}
 @endif
@@ -18,3 +21,4 @@
 @if(Auth::check()) 
 	{{"hellow you are logged in now."}}
 @endif
+@stop

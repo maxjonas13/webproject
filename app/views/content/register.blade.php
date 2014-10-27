@@ -1,3 +1,6 @@
+@extends("layout.default")
+
+@section('content')</div><!-- end .header-unit -->
 @if($errors->count() > 0) 
 	@foreach ($errors->all() as $error) 
 		<ul>
@@ -24,3 +27,4 @@
 									
 <!-- close form tag -->
 {{ Form::close() }}
+@stop

@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic);
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css);
 /* normalize.css v3.0.1 | MIT License | git.io/normalize */
 /* line 9, ../bootstrap-sass-3.2.0/assets/stylesheets/bootstrap/_normalize.scss */
 html {
@@ -3578,18 +3579,18 @@ tbody.collapse.in {
     display: none !important;
   }
 }
-/* line 4, ../scss/main.scss */
+/* line 6, ../scss/main.scss */
 body {
   background-image: url('/img/background.jpg?1414250142');
   background-size: cover;
 }
 
-/* line 9, ../scss/main.scss */
+/* line 11, ../scss/main.scss */
 h1 {
   color: #bd6100;
 }
 
-/* line 15, ../scss/main.scss */
+/* line 17, ../scss/main.scss */
 .headernav a {
   float: right;
   color: #757575;
@@ -3597,13 +3598,13 @@ h1 {
   display: block;
   margin: 20px;
 }
-/* line 22, ../scss/main.scss */
+/* line 23, ../scss/main.scss */
 .headernav a:hover {
   color: #bd6100;
   text-decoration: none;
 }
 
-/* line 27, ../scss/main.scss */
+/* line 30, ../scss/main.scss */
 .header-unit {
   height: 70%;
   border-right: none;
@@ -3614,7 +3615,7 @@ h1 {
   width: 100%;
 }
 
-/* line 36, ../scss/main.scss */
+/* line 39, ../scss/main.scss */
 #video-container {
   position: absolute;
   top: 0%;
@@ -3624,14 +3625,14 @@ h1 {
   overflow: hidden;
 }
 
-/* line 44, ../scss/main.scss */
+/* line 47, ../scss/main.scss */
 video {
   position: absolute;
   z-index: 0;
   min-width: 100%;
 }
 
-/* line 51, ../scss/main.scss */
+/* line 54, ../scss/main.scss */
 #videocontent {
   z-index: 40;
   margin: auto;
@@ -3642,7 +3643,7 @@ video {
   right: 0;
   text-align: center;
 }
-/* line 57, ../scss/main.scss */
+/* line 60, ../scss/main.scss */
 #videocontent button {
   background-color: #4a91d4;
   color: white;
@@ -3658,12 +3659,12 @@ video {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 72, ../scss/main.scss */
+/* line 74, ../scss/main.scss */
 #videocontent button:hover {
   background-color: #437fb7;
   width: 21%;
 }
-/* line 76, ../scss/main.scss */
+/* line 80, ../scss/main.scss */
 #videocontent h1 {
   margin: auto;
   margin-top: 20%;
@@ -3671,21 +3672,20 @@ video {
   color: white;
 }
 
-/* line 86, ../scss/main.scss */
+/* line 90, ../scss/main.scss */
 #searchbar {
   background-color: white;
   position: absolute;
   margin: 0px;
 }
-/* line 90, ../scss/main.scss */
+/* line 94, ../scss/main.scss */
 #searchbar #search-input {
   line-height: normal;
   border: 0;
   width: 100%;
   margin: 0px;
-  padding: 0.85em 0 0.75em 1.5em;
+  padding: 0.55em 0 0.55em 3em;
   color: #000;
-  font-size: 2.15em;
   outline: none;
   background: inherit;
   box-sizing: border-box;
@@ -3693,4 +3693,9 @@ video {
   -webkit-rtl-ordering: logical;
   -webkit-user-select: text;
   cursor: auto;
+}
+/* line 109, ../scss/main.scss */
+#searchbar i {
+  padding: 0.55em 0 0.55em 1.5em;
+  position: inherit;
 }
