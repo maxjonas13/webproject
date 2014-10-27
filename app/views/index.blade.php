@@ -9,10 +9,25 @@
 	{{ HTML::script('script/covervideo.js'); }}
 </head>
 <body>
-	<video id="videobackground" autoplay loop muted>
-			<source src="{{asset('assets/beehive.mp4')}}" type="video/mp4">
-	</video>
-	<div id="videooverlay"></div>
+
+	<div class="header-unit">
+		<div id="video-container">
+			<div id='videocontent'>
+				<h1 id="videotitle">Friends who help</h1>
+				<button type="button">Register</button>
+			</div>
+			<video autoplay loop class="fillWidth">
+				<source src="{{asset('assets/beehive.mp4')}}" type="video/mp4">
+				Your browser does not support the video tag. I suggest you upgrade your browser.
+			</video>
+		</div><!-- end video-container -->
+
+		<div id='searchbar' class="column col-md-12 col-sm-12">  
+        <input id="search-input" type="text" role="search" placeholder="Search for anything" autofocus="" onkeyup="if (event.keyCode == 13) { this.form.submit(); return false; }">
+	    <label for="search-input" class="ui_search"></label>
+
+	</div>
+	</div><!-- end .header-unit -->
 
 	<div class="container"> 
 	
@@ -23,22 +38,18 @@
 				</div>
 				<div class="column col-md-4 col-sm-6">  
 					<nav class='headernav'>
-						  <a href="/Jobs/">Jobs</a> 
-						  <a href="/Specialist/">Specialist</a> 
-						  <a href="/Login/">Login</a> 
+						  <a href="/login">Login</a>
+						  <a href="/specialist">Specialist</a> 
+						  <a href="/jobs">Jobs</a> 
+						   
 					</nav>
 				</div>
 			</div>
 		</header>
+		<div class="row"> 
 
-		<div id='videocontent' class="column col-md-12 col-sm-12">
-			<h1 id="videotitle">Friends who help</h1>
-			<button type="button">Register</button>
 		</div>
-
-		<div id='searchbar' class="column col-md-12 col-sm-12">
-			<h1>Searchbar</h1>
-		</div>
+		
 	</div>
 </body>
 </html>

@@ -3579,55 +3579,118 @@ tbody.collapse.in {
   }
 }
 /* line 4, ../scss/main.scss */
+body {
+  background-image: url('/img/background.jpg?1414250142');
+  background-size: cover;
+}
+
+/* line 9, ../scss/main.scss */
 h1 {
   color: #bd6100;
 }
 
-/* line 9, ../scss/main.scss */
+/* line 15, ../scss/main.scss */
 .headernav a {
-  text-align: right;
-  float: left;
+  float: right;
   color: #757575;
   text-decoration: none;
   display: block;
   margin: 20px;
 }
-/* line 17, ../scss/main.scss */
+/* line 22, ../scss/main.scss */
 .headernav a:hover {
   color: #bd6100;
   text-decoration: none;
 }
 
-/* line 23, ../scss/main.scss */
-#videobackground, #videooverlay {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  margin-top: 65px;
+/* line 27, ../scss/main.scss */
+.header-unit {
+  height: 70%;
+  border-right: none;
+  border-left: none;
   position: absolute;
-  z-index: -20;
+  top: 65px;
+  left: 0%;
+  width: 100%;
 }
 
-/* line 32, ../scss/main.scss */
-#videooverlay {
-  z-index: 20;
-  background: black;
-  /*partially transparent image*/
+/* line 36, ../scss/main.scss */
+#video-container {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* line 38, ../scss/main.scss */
+/* line 44, ../scss/main.scss */
+video {
+  position: absolute;
+  z-index: 0;
+  min-width: 100%;
+}
+
+/* line 51, ../scss/main.scss */
 #videocontent {
   z-index: 40;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   text-align: center;
 }
-
-/* line 43, ../scss/main.scss */
-#videotitle {
-  margin-top: 300px;
+/* line 57, ../scss/main.scss */
+#videocontent button {
+  background-color: #4a91d4;
+  color: white;
+  padding: 10px;
+  margin: 20px;
+  width: 15%;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 72, ../scss/main.scss */
+#videocontent button:hover {
+  background-color: #437fb7;
+  width: 21%;
+}
+/* line 76, ../scss/main.scss */
+#videocontent h1 {
+  margin: auto;
+  margin-top: 20%;
+  z-index: 80;
   color: white;
 }
 
-/* line 48, ../scss/main.scss */
+/* line 86, ../scss/main.scss */
 #searchbar {
-  text-align: center;
+  background-color: white;
+  position: absolute;
+  margin: 0px;
+}
+/* line 90, ../scss/main.scss */
+#searchbar #search-input {
+  line-height: normal;
+  border: 0;
+  width: 100%;
+  margin: 0px;
+  padding: 0.85em 0 0.75em 1.5em;
+  color: #000;
+  font-size: 2.15em;
+  outline: none;
+  background: inherit;
+  box-sizing: border-box;
+  -webkit-appearance: textfield;
+  -webkit-rtl-ordering: logical;
+  -webkit-user-select: text;
+  cursor: auto;
 }
