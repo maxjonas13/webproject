@@ -10,7 +10,7 @@
 					<a class="button" onClick="registerclick()">Register</a>
 				@endif
 			</div>
-			<video autoplay loop class="fillWidth">
+			<video autoplay loop muted class="fillWidth">
 				<source src="{{asset('assets/beehive.mp4')}}" type="video/mp4">
 				Your browser does not support the video tag. I suggest you upgrade your browser.
 			</video>
