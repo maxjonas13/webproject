@@ -77,7 +77,32 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$user = User::find(Auth::user()->PK_userId)->load('Profile', 'Credit');
 
 		$user->name = Input::get('name');
+		$user->email = Input::get('email');
+
+		if(Input::get('newpassword') != NULL && Input::get('password') != NULL) {
+			$user->password = Hash::make(Input::get('newpassword'));
+		}
+
+		$user->profile->website = Input::get('website');
+		$user->profile->twitter = Input::get('twitter');
+		$user->profile->github = Input::get('github');
+		$user->profile->linkedin = Input::get('linkedin');
+		$user->profile->pintres = Input::get('pintrest');
+		$user->profile->googleplus = Input::get('googleplus');
 		$user->profile->instagram = Input::get('instagram');
+		$user->profile->myspace = Input::get('myspace');
+		$user->profile->bio = Input::get('bio');
+
+		if(Input::hasFile('profilepicture')) {
+			$file = Input::file('profilepicture');
+			$filename = Input::get('email') . '.' . $file->getClientOriginalExtension();
+			if(file_exists(public_path('img/profilepictures/' . $filename))) {
+				unlink(public_path('img/profilepictures/') . $filename);
+			}
+			Image::make($file)->widen(70)->save(public_path('img/profilepictures/' . $filename));
+
+			$user->profile->profilePicture = '/img/profilepictures/' . $filename;
+		}
 		
 		$user->save();
 		$user->profile->save();

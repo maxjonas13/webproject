@@ -70,7 +70,7 @@ class ProfileController extends BaseController {
 			//array with the validation rules for the determined fields
 			$rules = array(
 				'name'				=>	'required|min:3|max:60',
-				'password'			=>	'passwordCheck|min:3',
+				'password'			=>	'required_with:newpassword|passwordCheck|min:3',
 				'newpassword'		=>	'required_with:password|min:3',
 				'twitter'			=>	'min:3',
 				'github'			=>	'min:3',
@@ -79,7 +79,7 @@ class ProfileController extends BaseController {
 				'googleplus'		=>	'min:3',
 				'instagram'			=>	'min:3',
 				'myspace'			=>	'min:3',
-				'website'			=>	'min:3',
+				'website'			=>	'active_url|min:3',
 				'bio'				=>	'min:3|max:2000',
 				'profilepicture'	=>	'image|max:5000'
 			);
