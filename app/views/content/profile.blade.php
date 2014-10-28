@@ -3,7 +3,7 @@
 @section('content')
 		<div class="row"> 
 			<div class="column col-md-2 col-sm-3"> </div>
-			<div class="column col-md-8 col-sm-6">  
+			<div class="column col-md-8 col-sm-6" id="profile">  
 				<h1>Profile</h1>
 				
 				<div class="hexagon" style="background-image: url({{$data->profile->profilePicture}});">
@@ -21,7 +21,7 @@
 				<p>myspace: {{$data->profile->myspace}}</p>
 				<p>website: {{$data->profile->website}}</p>
 				<p>bio: {{$data->profile->bio}}</p>
-				<p>{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'button'), false)}}</p>
+				{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'button'), false)}}
 			<div class="column col-md-2 col-sm-3"> </div>
 
 		</div>

@@ -4,61 +4,73 @@
 		<div class="row"> 
 			<div class="column col-md-2 col-sm-3"> </div>
 			<div class="column col-md-8 col-sm-6">  
-	@if($errors->count() > 0) 
-		@foreach ($errors->all() as $error) 
-			<ul>
-				<li>{{$error}}</li>
-			</ul>
-		@endforeach
-	@endif
-	<!-- open form tag -->
-	{{ Form::open( array('url' => '/profile/update', 'files' => TRUE) ) }}
+			@if($errors->count() > 0) 
+				@foreach ($errors->all() as $error) 
+					<ul>
+						<li>{{$error}}</li>
+					</ul>
+				@endforeach
+			@endif
+			<h1>Edit Profile</h1>
+			<div class="hexagon" style="background-image: url({{$data->profile->profilePicture}});">
+				  <div class="hexTop"></div>
+				  <div class="hexBottom"></div>
+				</div>
+			<!-- open form tag -->
+			{{ Form::open( array('url' => '/profile/update', 'files' => TRUE) ) }}
 
-		{{ Form::label('name', 'Naam :') }}
-		{{ Form::text('name', $data->name) }}
-	<br>																
-		{{ Form::label('email', 'E-mail:') }}
-		{{ Form::text('email' ,$data->email) }}
-	<br>								
-		{{ Form::label('password', 'Wachtwoord:') }}
-		{{ Form::password('password') }}
-	<br>
-		{{ Form::label('newpassword', 'Nieuw wachtwoord:') }}
-		{{ Form::password('newpassword') }}
-	<br>
-		{{ Form::label('website', 'Personal website:') }}
-		{{ Form::text('website' , $data->website) }}
-	<br>
-		{{ Form::label('twitter', 'Twitter:') }}
-		{{ Form::text('twitter' ,$data->twitter) }}
-	<br>
-		{{ Form::label('github', 'Github:') }}
-		{{ Form::text('github' ,$data->github) }}
-	<br>
-		{{ Form::label('linkedin', 'Linkedin:') }}
-		{{ Form::text('linkedin' ,$data->linkedin) }}
-	<br>
-		{{ Form::label('pintrest', 'Pintrest:') }}
-		{{ Form::text('pintrest' ,$data->pintrest) }}
-	<br>
-		{{ Form::label('googleplus', 'Google+:') }}
-		{{ Form::text('googleplus' ,$data->googleplus) }}
-	<br>
-		{{ Form::label('instagram', 'Instagram:') }}
-		{{ Form::text('instagram' ,$data->instagram) }}
-	<br>
-		{{ Form::label('myspace', 'MySpace:') }}
-		{{ Form::text('myspace' ,$data->myspace) }}
-	<br>
-		{{ Form::label('bio', 'Bio:') }}
-		{{ Form::textarea('bio' ,$data->bio) }}
-	<br>
-		{{ Form::label('profilepicture', 'Profielfoto:') }}
-		{{ Form::file('profilepicture' ,'') }}
-	<br>
-		{{ Form::submit('Wijzig profiel', array('class' => 'button'))}}
+				<p>{{ Form::label('name', 'Naam :') }}</p>
+				{{ Form::text('name', $data->name) }}
 
-										
-	<!-- close form tag -->
-	{{ Form::close() }}
+				<p>{{ Form::label('email', 'E-mail:') }}</p>
+				{{ Form::text('email' ,$data->email) }}	
+
+				<p>{{ Form::label('password', 'Wachtwoord:') }}</p>
+				{{ Form::password('password') }}
+		
+				<p>{{ Form::label('newpassword', 'Nieuw wachtwoord:') }}</p>
+				{{ Form::password('newpassword') }}
+			
+				<p>{{ Form::label('website', 'Personal website:') }}</p>
+				{{ Form::text('website' , $data->website) }}
+			
+				<p>{{ Form::label('twitter', 'Twitter:') }}</p>
+				{{ Form::text('twitter' ,$data->twitter) }}
+			
+				<p>{{ Form::label('github', 'Github:') }}</p>
+				{{ Form::text('github' ,$data->github) }}
+			
+				<p>{{ Form::label('linkedin', 'Linkedin:') }}</p>
+				{{ Form::text('linkedin' ,$data->linkedin) }}
+			
+				<p>{{ Form::label('pintrest', 'Pintrest:') }}</p>
+				{{ Form::text('pintrest' ,$data->pintrest) }}
+			
+				<p>{{ Form::label('googleplus', 'Google+:') }}</p>
+				{{ Form::text('googleplus' ,$data->googleplus) }}
+			
+				<p>{{ Form::label('instagram', 'Instagram:') }}</p>
+				{{ Form::text('instagram' ,$data->instagram) }}
+			
+				<p>{{ Form::label('myspace', 'MySpace:') }}</p>
+				{{ Form::text('myspace' ,$data->myspace) }}
+			
+				<p>{{ Form::label('bio', 'Bio:') }}</p>
+				{{ Form::textarea('bio' ,$data->bio) }}
+			
+				<p>{{ Form::label('profilepicture', 'Profielfoto:') }}</p>
+				{{ Form::file('profilepicture' ,'') }}
+			
+				<p>{{ Form::submit('Wijzig profiel', array('class' => 'button'))}}</p>
+
+												
+			<!-- close form tag -->
+			{{ Form::close() }}
+			<div class="column col-md-2 col-sm-3"> </div>
+
+		</div>
+		
+	</div>
+
+
 @stop

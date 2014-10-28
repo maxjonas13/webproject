@@ -97,10 +97,6 @@ p{
 	margin: 20px;
 }
 
-#profilepicture{
-	width: 50px;
-	height: auto;
-}
 
 #loginlink{
 	cursor: pointer;
@@ -172,7 +168,7 @@ input{
 		outline: none;
 		position: relative;
 	}
-	input[type=submit]{
+	input[type=submit], input[type=textarea]{
 		background-color: #4a91d4;
 		color: white;
 		padding: 10px;
@@ -190,6 +186,9 @@ input{
 			background-color: #437fb7;
 			width: 51%;
 		}
+		input[type=file]{
+			width: 100%;
+		}
 	}	
 .icon-remove-sign{
 	cursor: pointer;
@@ -205,3 +204,4 @@ input{
 .registration{
 		text-align: center;
 		}
+
