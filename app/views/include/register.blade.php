@@ -9,6 +9,16 @@
 					<li>{{$error}}</li>
 				</ul>
 			@endforeach
+				@if(Session::get('register'))
+					<script>
+					$( document ).ready(function(){
+
+						$('#registercontainer').show();
+						$('#register').show();
+
+					});
+					</script>
+				@endif
 		@endif
 		<!-- open form tag -->
 		{{ Form::open( array('url' => '/register/save') ) }}

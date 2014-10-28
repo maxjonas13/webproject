@@ -3,7 +3,17 @@
 <div id="login">
 	<i class="icon-remove-sign" onClick='containerclick()'></i>
 	<h1 id="videotitle">Login</h1>
-    {{ Session::get('error_message') }}
+	@if(Session::get('error_message') != null)
+	{{ Session::get('error_message') }}
+	<script>
+	$( document ).ready(function(){
+
+		$('#logincontainer').show();
+		$('#login').show();
+
+	});
+	</script>
+	@endif
 	<!-- open form tag -->
 		{{ Form::open( array('url' => '/login/check') ) }}
 

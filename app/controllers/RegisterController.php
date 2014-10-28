@@ -36,7 +36,7 @@ class RegisterController extends BaseController {
 			//validation faild
 
 			//return back with errors and input
-			return Redirect::back()->withErrors($messages)->withInput();
+			return Redirect::back()->with('register', TRUE)->withErrors($messages)->withInput();
 		}
 		else {
 			//validation passed

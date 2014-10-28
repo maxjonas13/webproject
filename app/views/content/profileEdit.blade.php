@@ -4,6 +4,7 @@
 		<div class="row"> 
 			<div class="column col-md-2 col-sm-3"> </div>
 			<div class="column col-md-8 col-sm-6">  
+			<h1>Edit Profile</h1>
 			@if($errors->count() > 0) 
 				@foreach ($errors->all() as $error) 
 					<ul>
@@ -11,7 +12,6 @@
 					</ul>
 				@endforeach
 			@endif
-			<h1>Edit Profile</h1>
 			<div class="hexagon" style="background-image: url({{$data->profile->profilePicture}});">
 				  <div class="hexTop"></div>
 				  <div class="hexBottom"></div>
@@ -24,6 +24,9 @@
 
 				<p>{{ Form::label('email', 'E-mail:') }}</p>
 				{{ Form::text('email' ,$data->email) }}	
+
+				<p>{{ Form::label('username', 'username:') }}</p>
+				{{ Form::text('username' ,$data->username) }}	
 
 				<p>{{ Form::label('password', 'Wachtwoord:') }}</p>
 				{{ Form::password('password') }}
