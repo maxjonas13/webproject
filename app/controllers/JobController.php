@@ -4,7 +4,7 @@ class JobController extends BaseController {
 
 	//function to show the view with all the jobs
 	public function index() {
-		$job = Job::where('fixed', '=', FALSE)->with('User')->get();
+		$job = Job::where('fixed', '=', FALSE)->with('User', 'JobCategorie', 'Category')->get();
 		
 		return View::make('content/jobs')->with('data', $job);
 	}
@@ -47,7 +47,7 @@ class JobController extends BaseController {
 	//function to show the details view off a job by job id
 	public function details($id) {
 		//when comments are integrated add Comments to this one to
-		$job = Job::with('User', 'JobCategorie')->find($id);
+		$job = Job::with('User', 'JobCategorie', 'Category')->find($id);
 
 		return View::make('content/jobsDetails')->with('data', $job);
 	}

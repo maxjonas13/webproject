@@ -15,28 +15,28 @@
 			{{ Form::textarea('description' ,'', array('placeholder'=> "Description")) }}
 			<br>
 			{{ Form::label('grouped["it"]', 'IT')}}
-			{{ Form::checkbox('grouped["it"]')}}
+			{{ Form::checkbox('grouped[it]')}}
 
 			{{ Form::label('languages', 'Languages')}}
-			{{ Form::checkbox('grouped["languages"]')}}
+			{{ Form::checkbox('grouped[languages]')}}
 			
 			{{ Form::label('finances')}}
-			{{ Form::checkbox('grouped["finances"]')}}
+			{{ Form::checkbox('grouped[finances]')}}
 			
 			{{ Form::label('repares')}}
-			{{ Form::checkbox('grouped["repares"]')}}
+			{{ Form::checkbox('grouped[repares]')}}
 			
 			{{ Form::label('math', 'Math & Fysics')}}
-			{{ Form::checkbox('grouped["math"]')}}
+			{{ Form::checkbox('grouped[math]')}}
 			
 			{{ Form::label('art', 'Art')}}
-			{{ Form::checkbox('grouped["art"]')}}
+			{{ Form::checkbox('grouped[art]')}}
 
 			{{ Form::label('cooking', 'Cooking')}}
-			{{ Form::checkbox('grouped["cooking"]')}}
+			{{ Form::checkbox('grouped[cooking]')}}
 
 			{{ Form::label('programming', 'Programming')}}
-			{{ Form::checkbox('grouped["programming"]')}}
+			{{ Form::checkbox('grouped[programming]')}}
 
 			<br>
 			{{ Form::submit('Voeg job toe') }}

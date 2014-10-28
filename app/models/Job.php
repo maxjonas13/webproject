@@ -26,7 +26,14 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('JobCategorie', 'FK_jobId');
 	}
 
+	public function category() {
+		return $this->belongsToMany('Category', 'jobs_categories', 'FK_jobId', 'FK_categoryId');
+	}
+
 	public function store() {
+		$checkboxes = Input::get('grouped');
+		$categories = Category::all();
+		
 		$job = new Job;
 
 		$job->title = Input::get('title');
@@ -35,14 +42,20 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 		$job->fixed = FALSE;
 		$job->FK_userId = Auth::user()->PK_userId;
 
-		$job->jobcategorie()->FK_jobbId = 2;
-
 		$job->save();
+		
+		foreach($checkboxes as $checkbox => $value) {
+			if($value) {
+				foreach($categories as $category) {
+					if($checkbox == strtolower($category->categoryName)) {
+						$jobcategorie = new JobCategorie;
+						$jobcategorie->FK_categoryId = $category->PK_categoryId;
+						$jobcategorie->job()->associate($job);
 
-		/*$test = Input::get('grouped');
-		var_dump($test);
-		foreach($test as $t => $v) {
-			echo $t;
-		}*/
+						$jobcategorie->save();
+					}
+				}
+			}
+		}
 	}
 }

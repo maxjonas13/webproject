@@ -5,7 +5,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class JobCategorie extends Eloquent implements UserInterface, RemindableInterface {
+class Category extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
@@ -14,18 +14,17 @@ class JobCategorie extends Eloquent implements UserInterface, RemindableInterfac
 	 *
 	 * @var string
 	 */
-	protected $table = 'jobs_categories';
+	protected $table = 'categories';
 	//de naam van de primary key aangeven aangezien deze niet de standaard "id" is in dit geval
-	protected $primaryKey = 'PK_jobcategoryId';
+	protected $primaryKey = 'PK_categoryId';
 
 	public $timestamps = false;
 
-	public function job() {
-		return $this->belongsTo('Job', 'FK_jobId');
+	public function jobcategorie() {
+		return $this->hasMany('JobCategorie', 'FK_categoryId');
 	}
-
-	public function categorie() {
-		return $this->belongsTo('Category', 'FK_categoryId');
+	public function job() {
+		return $this->hasMany('Job');
 	}
 
 	
