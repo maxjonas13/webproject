@@ -20,13 +20,13 @@
 		@if($item->categoryName == 'IT')
 			<?php $it = TRUE; ?>
 		@endif
-		@if($item->categoryName == 'Languages')
+		@if($item->categoryName == 'Language')
 			<?php $languages = TRUE; ?>
 		@endif
 		@if($item->categoryName == 'Finances')
 			<?php $finances = TRUE; ?>
 		@endif
-		@if($item->categoryName == 'Repair')
+		@if($item->categoryName == 'Repairs')
 			<?php $repairs = TRUE; ?>
 		@endif
 		@if($item->categoryName == 'Math')
