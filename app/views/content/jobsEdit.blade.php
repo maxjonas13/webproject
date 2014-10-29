@@ -58,38 +58,39 @@
 				{{ Form::text('location' , $data->location , array('placeholder'=> "Location")) }}
 				<br>						
 				{{ Form::textarea('description' , $data->description , array('placeholder'=> "Description")) }}
+				{{ Form::hidden('id', $data->PK_jobId)}}
 				<br>
 		
 					
-					{{ Form::checkbox('grouped[it]', '', $it)}}
+					{{ Form::checkbox('grouped[it]', $it , $it)}}
 					{{ Form::label('grouped["it"]', 'IT')}}
 
 					
-					{{ Form::checkbox('grouped[languages]', '', $languages)}}
+					{{ Form::checkbox('grouped[language]', $languages, $languages)}}
 					{{ Form::label('languages', 'Languages')}}
 					
 					
-					{{ Form::checkbox('grouped[finances]', '', $finances)}}
+					{{ Form::checkbox('grouped[finances]', $finances, $finances)}}
 					{{ Form::label('finances')}}
 					
 					
-					{{ Form::checkbox('grouped[repair]', '', $repairs)}}
+					{{ Form::checkbox('grouped[repairs]', $repairs, $repairs)}}
 					{{ Form::label('repairs')}}
 					
 					
-					{{ Form::checkbox('grouped[math]', '', $math)}}
+					{{ Form::checkbox('grouped[math]', $math, $math)}}
 					{{ Form::label('math', 'Math & Fysics')}}
 					
 					
-					{{ Form::checkbox('grouped[art]', '', $art)}}
+					{{ Form::checkbox('grouped[art]', $art, $art)}}
 					{{ Form::label('art', 'Art')}}
 
 					
-					{{ Form::checkbox('grouped[cooking]', '', $cooking)}}
+					{{ Form::checkbox('grouped[cooking]', $cooking, $cooking)}}
 					{{ Form::label('cooking', 'Cooking')}}
 
 					
-					{{ Form::checkbox('grouped[programming]', '', $programming)}}
+					{{ Form::checkbox('grouped[programming]', $cooking, $programming)}}
 					{{ Form::label('programming', 'Programming')}}
 			
 				<br>

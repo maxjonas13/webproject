@@ -66,7 +66,7 @@ class JobController extends BaseController {
 	public function edit($id) {
 		if(Auth::check()) {
 			$job = Job::with('User', 'Category')->find($id);
-			
+
 			if(Auth::user()->PK_userId == $job->user->PK_userId) {
 				return View::make('content/jobsEdit')->with('data', $job);
 			}
@@ -81,7 +81,39 @@ class JobController extends BaseController {
 
 	//function to update the job data
 	public function update() {
+		$validator = Validator::make(
+			//array with the field and there value
+			array(
+				'title'			=> Input::get('title'),
+				'location'		=> Input::get('location'),
+				'description'	=> Input::get('description'),
+				'grouped'		=> Input::get('grouped')
+			),
+			//array with the rules for every field
+			array(
+				'title'			=>	'required|min:3|max:50',
+				'location'		=>	'required|min:3|max:50',
+				'description'	=>	'required',
+				'grouped'		=>	'required|min:1'
+			)
+		);
 
+		//put validator messages in a variable messages
+		$messages = $validator->messages();
+
+		//check if the validator passes
+		if($validator->fails()) {
+			//validator faild, return back with errors and input
+			return Redirect::back()->withErrors($messages)->withInput();
+		}
+		else {
+			//validator passed
+
+			$job = Job::with('User', 'Category')->find(Input::get('id'));
+			$job->updateJob();
+			
+			//return Redirect::to('/jobs/details/' . Input::get('id'));
+		}
 	}
 
 	

@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'AddEmailColumnToUsersTable' => $baseDir . '/app/database/migrations/2014_10_26_185738_add_email_column_to_users_table.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
+    'Category' => $baseDir . '/app/models/Category.php',
     'CreateCandidatesTable' => $baseDir . '/app/database/migrations/2014_10_26_150348_create_candidates_table.php',
     'CreateCategoriesTable' => $baseDir . '/app/database/migrations/2014_10_26_151239_create_categories_table.php',
     'CreateCommentsTable' => $baseDir . '/app/database/migrations/2014_10_26_145725_create_comments_table.php',
@@ -26,6 +27,9 @@ return array(
     'DatabaseSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'HomeController' => $baseDir . '/app/controllers/HomeController.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
+    'Job' => $baseDir . '/app/models/Job.php',
+    'JobCategorie' => $baseDir . '/app/models/JobCategorie.php',
+    'JobController' => $baseDir . '/app/controllers/JobController.php',
     'Laravel\\Installer\\Console\\NewCommand' => $vendorDir . '/laravel/installer/src/NewCommand.php',
     'LoginController' => $baseDir . '/app/controllers/LoginController.php',
     'Profile' => $baseDir . '/app/models/Profile.php',

@@ -77,4 +77,52 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 		//return the id off the job
 		return $job->PK_jobId;
 	}
+
+	public function updateJob() {
+		//get all the checkboxes and put in a variable (array)
+		$checkboxes = Input::get('grouped');
+
+		//get all the categories and put it in a variable (array)
+		$categories = Category::all();
+
+		$job = Job::with('User', 'Category', 'JobCategorie')->find(Input::get('id'));
+
+
+		$job->title = Input::get('title');
+		$job->location = Input::get('location');
+		$job->description = Input::get('description');
+		
+		$job->save();
+
+		$jobCategorie = JobCategorie::where('FK_jobId', '=', $job->PK_jobId)->get();
+		foreach($jobCategorie as $row) {
+			$id = $row->PK_jobs_categoryId;
+			JobCategorie::where('PK_jobs_categoryId', '=', $id)->delete();
+		}
+
+		// loop true the checkboxes
+		// checkbox = name of the checkbox, value = true / false
+		foreach($checkboxes as $checkbox => $value) {
+			//echo $checkbox;
+			//check if the checkbox is checked
+			echo 'value above ' . $value . ' ' . $checkbox .'<br>';
+			if(count($checkbox) != 0) {
+				echo $value;
+				//loop true the categories
+				foreach($categories as $category) {
+					//check if the checkbox name and categoryName maches
+					if($checkbox == strtolower($category->categoryName)) {
+						//if they match create a new reacord in the pivot table
+						$jobcategorie = new JobCategorie;
+						$jobcategorie->FK_categoryId = $category->PK_categoryId;
+						$jobcategorie->job()->associate($job);
+
+						//save the data in the pivot table
+						$jobcategorie->save();
+					}
+				}
+			}
+		}
+
+	}
 }
