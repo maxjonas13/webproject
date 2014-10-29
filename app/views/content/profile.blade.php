@@ -42,11 +42,11 @@
 				<h4>Bio</h4>
 				<p>{{nl2br($data->profile->bio)}}</p>
 				{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'button'), false)}}
-			<div class="column col-md-2 col-sm-3"> </div>
+			
 
 		</div>
-		
+		<div class="column col-md-2 col-sm-3"> </div>
 	</div>
-
+</div>
 
 @stop

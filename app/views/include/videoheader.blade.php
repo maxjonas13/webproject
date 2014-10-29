@@ -1,4 +1,4 @@
-<div class="header-unit">
+	<div class="header-unit">
 		<div id="video-container">
 			<div id='videocontent'>
 				@if (Auth::check())
@@ -19,6 +19,5 @@
 			<i class="icon-search"></i>
 	        <input id="search-input" type="text" role="search" placeholder="Search for anything" autofocus="">
 		    <label for="search-input" class="ui_search"></label>
-
 		</div>
 	</div><!-- end .header-unit -->

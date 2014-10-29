@@ -3,7 +3,7 @@
 @section('content')
 		<div class="row"> 
 			<div class="column col-md-2 col-sm-3"> </div>
-			<div class="column col-md-8 col-sm-6">  
+			<div class="column col-md-8 col-sm-6" id="profileedit">  
 			<h1>Edit Profile</h1>
 			@if($errors->count() > 0) 
 				@foreach ($errors->all() as $error) 
@@ -69,11 +69,11 @@
 												
 			<!-- close form tag -->
 			{{ Form::close() }}
-			<div class="column col-md-2 col-sm-3"> </div>
 
 		</div>
+		<div class="column col-md-2 col-sm-3"> </div>
 		
 	</div>
-
+</div>
 
 @stop

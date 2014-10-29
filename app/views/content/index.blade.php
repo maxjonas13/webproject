@@ -1,11 +1,6 @@
-@extends("layout.default")
+@extends("layout.defaulthome")
 
 @section('content')
-
-		<div class="row"> 
-
-		</div>
-		
-	</div>
 	@include('include.videoheader')
+	@include('content.jobs')
 @stop

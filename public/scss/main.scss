@@ -9,7 +9,7 @@ body{
 	 background-size: cover;
 }
 
-h1{
+h1, h2, h3, h4{
 	color: $brand-primary;
 }
 #homelink{
@@ -70,7 +70,7 @@ video {
 		color: white;
 	}
 }
-.button{
+.button, .buttonapply{
 	text-align: center;
 	text-decoration: none;
 	background-color: #4a91d4;
@@ -93,10 +93,23 @@ video {
 		width: 21%;
 	}	
 }
+
+.buttonapply{
+	float: right;
+	background-color: #18d162;
+	&:hover{
+		background-color: #24e772;
+	}	
+
+}
+
 p{
 	margin: 20px;
 }
 
+p.jobtextinfo{
+	font-size: 11px;
+}
 
 #loginlink{
 	cursor: pointer;
@@ -205,3 +218,110 @@ input{
 	text-align: center;
 }
 
+#profile p{
+	background-color: $gray-lighter;
+	padding: 20px;
+	border: 1px solid $gray-light;
+}
+
+#profileedit input, input[type=submit], input[type=textarea]{
+	padding: 20px;
+	border: 1px solid $gray-lighter;
+}
+
+.jobstyle{
+	border-left: solid 5px red; 
+	h1, p{
+		margin-left: 25px;
+	}
+	p b{
+		margin-left: -5px;
+	}
+}
+
+.IT{
+color: $IT;
+}
+
+section.IT{
+color: black;
+border-left: solid 5px $IT; 
+}
+
+.language{
+color: $Language;
+}
+
+section.language{
+color: black;
+border-left: solid 5px $Language; 
+}
+
+.finances{
+color: $Finances;
+}
+
+section.finances{
+color: black;
+border-left: solid 5px $Finances; 
+}
+
+.repairs{
+color:$Repairs;
+}
+
+section.repairs{
+color: black;
+border-left: solid 5px $Repairs; 
+}
+
+.math{
+color:$MathFysics;
+}
+
+section.mathfysics{
+color: black;
+border-left: solid 5px $MathFysics; 
+}
+
+.art{
+color:$Art;
+}
+
+section.art{
+color: black;
+border-left: solid 5px $Art; 
+}
+
+.cooking{
+color:$Cooking;
+}
+
+section.cooking{
+color: black;
+border-left: solid 5px $Cooking; 
+}
+
+.programming{
+color:$Programming;
+}
+
+section.programming{
+color: black;
+border-left: solid 5px $Programming; 
+}
+
+#footer{
+	margin-top: 20px;
+	background-color: $brand-primary;
+	h1, small{
+		color: white;
+		margin: 5px;
+		margin-top: 20px;
+	}
+	.copyright{
+		text-align: center;
+		padding: 25px;
+		font-size: 15px;
+	}
+}

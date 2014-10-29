@@ -3586,11 +3586,12 @@ tbody.collapse.in {
   height: 40.41px;
   margin: 20.21px 20.21px;
   margin-bottom: 40px;
+  margin-top: 40px;
   background-size: auto 80.8290px;
   background-position: center;
 }
 
-/* line 12, ../scss/_hexagon.scss */
+/* line 13, ../scss/_hexagon.scss */
 .hexTop,
 .hexBottom {
   position: absolute;
@@ -3606,7 +3607,7 @@ tbody.collapse.in {
 }
 
 /*counter transform the bg image on the caps*/
-/* line 27, ../scss/_hexagon.scss */
+/* line 28, ../scss/_hexagon.scss */
 .hexTop:after,
 .hexBottom:after {
   content: "";
@@ -3622,27 +3623,27 @@ tbody.collapse.in {
   background: inherit;
 }
 
-/* line 41, ../scss/_hexagon.scss */
+/* line 42, ../scss/_hexagon.scss */
 .hexTop {
   top: -24.7487px;
 }
 
-/* line 45, ../scss/_hexagon.scss */
+/* line 46, ../scss/_hexagon.scss */
 .hexTop:after {
   background-position: center top;
 }
 
-/* line 49, ../scss/_hexagon.scss */
+/* line 50, ../scss/_hexagon.scss */
 .hexBottom {
   bottom: -24.7487px;
 }
 
-/* line 53, ../scss/_hexagon.scss */
+/* line 54, ../scss/_hexagon.scss */
 .hexBottom:after {
   background-position: center bottom;
 }
 
-/* line 57, ../scss/_hexagon.scss */
+/* line 58, ../scss/_hexagon.scss */
 .hexagon:after {
   content: "";
   position: absolute;
@@ -3661,7 +3662,7 @@ body {
 }
 
 /* line 12, ../scss/main.scss */
-h1 {
+h1, h2, h3, h4 {
   color: #bd6100;
 }
 
@@ -3734,7 +3735,7 @@ video {
 }
 
 /* line 73, ../scss/main.scss */
-.button {
+.button, .buttonapply {
   text-align: center;
   text-decoration: none;
   background-color: #4a91d4;
@@ -3752,29 +3753,44 @@ video {
   transition: all 0.3s;
 }
 /* line 89, ../scss/main.scss */
-.button:hover {
+.button:hover, .buttonapply:hover {
   text-decoration: none;
   background-color: #437fb7;
   color: white;
   width: 21%;
 }
 
-/* line 96, ../scss/main.scss */
+/* line 97, ../scss/main.scss */
+.buttonapply {
+  float: right;
+  background-color: #18d162;
+}
+/* line 100, ../scss/main.scss */
+.buttonapply:hover {
+  background-color: #24e772;
+}
+
+/* line 106, ../scss/main.scss */
 p {
   margin: 20px;
 }
 
-/* line 101, ../scss/main.scss */
+/* line 110, ../scss/main.scss */
+p.jobtextinfo {
+  font-size: 11px;
+}
+
+/* line 114, ../scss/main.scss */
 #loginlink {
   cursor: pointer;
 }
 
-/* line 104, ../scss/main.scss */
+/* line 117, ../scss/main.scss */
 #searchbar {
   background-color: white;
   position: absolute;
 }
-/* line 107, ../scss/main.scss */
+/* line 120, ../scss/main.scss */
 #searchbar #search-input {
   line-height: normal;
   border: 0;
@@ -3790,13 +3806,13 @@ p {
   -webkit-user-select: text;
   cursor: auto;
 }
-/* line 122, ../scss/main.scss */
+/* line 135, ../scss/main.scss */
 #searchbar i {
   padding: 0.55em 0 0.55em 1.5em;
   position: inherit;
 }
 
-/* line 127, ../scss/main.scss */
+/* line 140, ../scss/main.scss */
 #logincontainer, #registercontainer {
   z-index: 78;
   position: fixed;
@@ -3805,7 +3821,7 @@ p {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 135, ../scss/main.scss */
+/* line 148, ../scss/main.scss */
 #login, #register {
   z-index: 80;
   background-image: url('/img/background.jpg?1414437371');
@@ -3822,22 +3838,22 @@ p {
   height: 400px;
 }
 
-/* line 148, ../scss/main.scss */
+/* line 161, ../scss/main.scss */
 #register {
   height: 700px;
 }
 
-/* line 152, ../scss/main.scss */
+/* line 165, ../scss/main.scss */
 #header {
   background-color: white;
 }
-/* line 154, ../scss/main.scss */
+/* line 167, ../scss/main.scss */
 #header .row {
   margin-left: 50px;
   margin-right: 50px;
 }
 
-/* line 160, ../scss/main.scss */
+/* line 173, ../scss/main.scss */
 input {
   width: 80%;
   margin: 20px;
@@ -3850,7 +3866,7 @@ input {
   position: relative;
 }
 
-/* line 171, ../scss/main.scss */
+/* line 184, ../scss/main.scss */
 input[type=submit], input[type=textarea] {
   background-color: #4a91d4;
   color: white;
@@ -3866,17 +3882,17 @@ input[type=submit], input[type=textarea] {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 185, ../scss/main.scss */
+/* line 198, ../scss/main.scss */
 input[type=submit]:hover, input[type=textarea]:hover {
   background-color: #437fb7;
   width: 51%;
 }
-/* line 189, ../scss/main.scss */
+/* line 202, ../scss/main.scss */
 input[type=submit] input[type=file], input[type=textarea] input[type=file] {
   width: 100%;
 }
 
-/* line 193, ../scss/main.scss */
+/* line 206, ../scss/main.scss */
 .icon-remove-sign {
   cursor: pointer;
   float: right;
@@ -3888,7 +3904,139 @@ input[type=submit] input[type=file], input[type=textarea] input[type=file] {
   overflow: hidden;
 }
 
-/* line 204, ../scss/main.scss */
+/* line 217, ../scss/main.scss */
 .registration {
   text-align: center;
+}
+
+/* line 221, ../scss/main.scss */
+#profile p {
+  background-color: #ededed;
+  padding: 20px;
+  border: 1px solid #757575;
+}
+
+/* line 227, ../scss/main.scss */
+#profileedit input, input[type=submit], input[type=textarea] {
+  padding: 20px;
+  border: 1px solid #ededed;
+}
+
+/* line 232, ../scss/main.scss */
+.jobstyle {
+  border-left: solid 5px red;
+}
+/* line 234, ../scss/main.scss */
+.jobstyle h1, .jobstyle p {
+  margin-left: 25px;
+}
+/* line 237, ../scss/main.scss */
+.jobstyle p b {
+  margin-left: -5px;
+}
+
+/* line 242, ../scss/main.scss */
+.IT {
+  color: #d44a4a;
+}
+
+/* line 246, ../scss/main.scss */
+section.IT {
+  color: black;
+  border-left: solid 5px #d44a4a;
+}
+
+/* line 251, ../scss/main.scss */
+.language {
+  color: #d44a9e;
+}
+
+/* line 255, ../scss/main.scss */
+section.language {
+  color: black;
+  border-left: solid 5px #d44a9e;
+}
+
+/* line 260, ../scss/main.scss */
+.finances {
+  color: #614ad4;
+}
+
+/* line 264, ../scss/main.scss */
+section.finances {
+  color: black;
+  border-left: solid 5px #614ad4;
+}
+
+/* line 269, ../scss/main.scss */
+.repairs {
+  color: #4a91d4;
+}
+
+/* line 273, ../scss/main.scss */
+section.repairs {
+  color: black;
+  border-left: solid 5px #4a91d4;
+}
+
+/* line 278, ../scss/main.scss */
+.math {
+  color: #66d8a4;
+}
+
+/* line 282, ../scss/main.scss */
+section.mathfysics {
+  color: black;
+  border-left: solid 5px #66d8a4;
+}
+
+/* line 287, ../scss/main.scss */
+.art {
+  color: #a4d658;
+}
+
+/* line 291, ../scss/main.scss */
+section.art {
+  color: black;
+  border-left: solid 5px #a4d658;
+}
+
+/* line 296, ../scss/main.scss */
+.cooking {
+  color: #d4a84a;
+}
+
+/* line 300, ../scss/main.scss */
+section.cooking {
+  color: black;
+  border-left: solid 5px #d4a84a;
+}
+
+/* line 305, ../scss/main.scss */
+.programming {
+  color: #d4844a;
+}
+
+/* line 309, ../scss/main.scss */
+section.programming {
+  color: black;
+  border-left: solid 5px #d4844a;
+}
+
+/* line 314, ../scss/main.scss */
+#footer {
+  margin-top: 20px;
+  background-color: #bd6100;
+}
+/* line 317, ../scss/main.scss */
+#footer h1, #footer small {
+  color: white;
+  margin: 5px;
+  margin-top: 20px;
+}
+/* line 322, ../scss/main.scss */
+#footer .copyright {
+  text-align: center;
+  padding: 25px;
+  font-size: 15px;
 }

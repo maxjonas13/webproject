@@ -4,7 +4,9 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		return View::make('content/index');
+		$job = Job::where('fixed', '=', FALSE)->with('User', 'JobCategorie', 'Category')->get();
+		
+		return View::make('content/index')->with('data', $job);
 	}
 
 }
