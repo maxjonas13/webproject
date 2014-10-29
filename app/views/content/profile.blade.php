@@ -1,4 +1,4 @@
-@extends("layout.default")
+@extends("layout.defaultdetails")
 
 @section('content')
 		<div class="row"> 
@@ -15,6 +15,9 @@
 
 				<h4>email:</h4>
 				 <p>{{$data->email}}</p>
+
+				 <h4>website:</h4>
+				 <p>{{$data->profile->website}}</p>
 
 				<h4>username:</h4>
 				 <p>{{$data->profile->username}}</p>
@@ -37,8 +40,6 @@
 				<h4>myspace:</h4>
 				 <p>myspace.com/{{$data->profile->myspace}}</p>
 
-				<h4>website:</h4>
-				 <p>{{$data->profile->website}}</p>
 				<h4>Bio</h4>
 				<p>{{nl2br($data->profile->bio)}}</p>
 				{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'button'), false)}}

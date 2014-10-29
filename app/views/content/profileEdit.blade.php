@@ -1,4 +1,4 @@
-@extends("layout.default")
+@extends("layout.defaultdetails")
 
 @section('content')
 		<div class="row"> 
@@ -23,10 +23,7 @@
 				{{ Form::text('name', $data->name) }}
 
 				<p>{{ Form::label('email', 'E-mail:') }}</p>
-				{{ Form::text('email' ,$data->email) }}	
-
-				<p>{{ Form::label('username', 'username:') }}</p>
-				{{ Form::text('username' ,$data->username) }}	
+				{{ Form::text('email' ,$data->email) }}		
 
 				<p>{{ Form::label('password', 'Wachtwoord:') }}</p>
 				{{ Form::password('password') }}
@@ -35,36 +32,36 @@
 				{{ Form::password('newpassword') }}
 			
 				<p>{{ Form::label('website', 'Personal website:') }}</p>
-				{{ Form::text('website' , $data->website) }}
+				{{ Form::text('website' , $data->profile->website) }}
 			
 				<p>{{ Form::label('twitter', 'Twitter:') }}</p>
-				{{ Form::text('twitter' ,$data->twitter) }}
+				{{ Form::text('twitter' ,$data->profile->twitter) }}
 			
 				<p>{{ Form::label('github', 'Github:') }}</p>
-				{{ Form::text('github' ,$data->github) }}
+				{{ Form::text('github' ,$data->profile->github) }}
 			
 				<p>{{ Form::label('linkedin', 'Linkedin:') }}</p>
-				{{ Form::text('linkedin' ,$data->linkedin) }}
+				{{ Form::text('linkedin' ,$data->profile->linkedin) }}
 			
 				<p>{{ Form::label('pintrest', 'Pintrest:') }}</p>
-				{{ Form::text('pintrest' ,$data->pintrest) }}
+				{{ Form::text('pintrest' ,$data->profile->pintrest) }}
 			
 				<p>{{ Form::label('googleplus', 'Google+:') }}</p>
-				{{ Form::text('googleplus' ,$data->googleplus) }}
+				{{ Form::text('googleplus' ,$data->profile->googleplus) }}
 			
 				<p>{{ Form::label('instagram', 'Instagram:') }}</p>
-				{{ Form::text('instagram' ,$data->instagram) }}
+				{{ Form::text('instagram' ,$data->profile->instagram) }}
 			
 				<p>{{ Form::label('myspace', 'MySpace:') }}</p>
-				{{ Form::text('myspace' ,$data->myspace) }}
+				{{ Form::text('myspace' ,$data->profile->myspace) }}
 			
 				<p>{{ Form::label('bio', 'Bio:') }}</p>
-				{{ Form::textarea('bio' ,$data->bio) }}
+				{{ Form::textarea('bio' ,$data->profile->bio) }}
 			
 				<p>{{ Form::label('profilepicture', 'Profielfoto:') }}</p>
 				{{ Form::file('profilepicture' ,'') }}
 			
-				<p>{{ Form::submit('Wijzig profiel', array('class' => 'button'))}}</p>
+				<p>{{ Form::submit('Edit Job', array('class' => 'button'))}}</p>
 
 												
 			<!-- close form tag -->

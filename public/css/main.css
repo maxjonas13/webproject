@@ -3846,28 +3846,33 @@ p.jobtextinfo {
   width: 30%;
   height: 400px;
 }
+/* line 159, ../scss/main.scss */
+#login ul, #register ul {
+  list-style: none;
+  color: #d9534f;
+}
 
-/* line 171, ../scss/main.scss */
+/* line 175, ../scss/main.scss */
 #register {
   height: 700px;
 }
 
-/* line 175, ../scss/main.scss */
+/* line 179, ../scss/main.scss */
 #header {
   background-color: white;
 }
-/* line 177, ../scss/main.scss */
+/* line 181, ../scss/main.scss */
 #header .row {
   margin-left: 50px;
   margin-right: 50px;
 }
 
-/* line 182, ../scss/main.scss */
+/* line 186, ../scss/main.scss */
 label {
   display: inline;
 }
 
-/* line 188, ../scss/main.scss */
+/* line 192, ../scss/main.scss */
 input[type=checkbox] + label {
   background-color: #fafafa;
   border: 1px solid #cacece;
@@ -3878,12 +3883,12 @@ input[type=checkbox] + label {
   position: relative;
 }
 
-/* line 198, ../scss/main.scss */
+/* line 202, ../scss/main.scss */
 input[type=checkbox] + label:active, input[type=checkbox]:checked + label:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* line 202, ../scss/main.scss */
+/* line 206, ../scss/main.scss */
 input[type=checkbox]:checked + label {
   background-color: #e9ecee;
   border: 1px solid #adb8c0;
@@ -3891,7 +3896,7 @@ input[type=checkbox]:checked + label {
   color: #99a1a7;
 }
 
-/* line 209, ../scss/main.scss */
+/* line 213, ../scss/main.scss */
 input[type=checkbox]:checked + label:after {
   content: '\2714';
   font-size: 14px;
@@ -3901,7 +3906,7 @@ input[type=checkbox]:checked + label:after {
   color: #99a1a7;
 }
 
-/* line 220, ../scss/main.scss */
+/* line 224, ../scss/main.scss */
 input {
   width: 80%;
   margin: 20px;
@@ -3914,7 +3919,7 @@ input {
   position: relative;
 }
 
-/* line 231, ../scss/main.scss */
+/* line 235, ../scss/main.scss */
 input[type=submit], input[type=textarea] {
   background-color: #4a91d4;
   color: white;
@@ -3930,17 +3935,17 @@ input[type=submit], input[type=textarea] {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 245, ../scss/main.scss */
+/* line 249, ../scss/main.scss */
 input[type=submit]:hover, input[type=textarea]:hover {
   background-color: #437fb7;
   width: 51%;
 }
-/* line 249, ../scss/main.scss */
+/* line 253, ../scss/main.scss */
 input[type=submit] input[type=file], input[type=textarea] input[type=file] {
   width: 100%;
 }
 
-/* line 253, ../scss/main.scss */
+/* line 257, ../scss/main.scss */
 .icon-remove-sign {
   cursor: pointer;
   float: right;
@@ -3952,137 +3957,137 @@ input[type=submit] input[type=file], input[type=textarea] input[type=file] {
   overflow: hidden;
 }
 
-/* line 264, ../scss/main.scss */
+/* line 268, ../scss/main.scss */
 .registration {
   text-align: center;
 }
 
-/* line 268, ../scss/main.scss */
+/* line 272, ../scss/main.scss */
 #profile p {
   background-color: #ededed;
   padding: 20px;
   border: 1px solid #757575;
 }
 
-/* line 274, ../scss/main.scss */
+/* line 278, ../scss/main.scss */
 #profileedit input, input[type=submit], input[type=textarea] {
   padding: 20px;
   border: 1px solid #ededed;
 }
 
-/* line 279, ../scss/main.scss */
+/* line 283, ../scss/main.scss */
 .jobstyle {
   border-left: solid 5px red;
 }
-/* line 281, ../scss/main.scss */
+/* line 285, ../scss/main.scss */
 .jobstyle h1, .jobstyle p {
   margin-left: 25px;
 }
-/* line 284, ../scss/main.scss */
+/* line 288, ../scss/main.scss */
 .jobstyle p b {
   margin-left: -5px;
 }
 
-/* line 289, ../scss/main.scss */
+/* line 293, ../scss/main.scss */
 .it {
   color: #d44a4a;
 }
 
-/* line 293, ../scss/main.scss */
+/* line 297, ../scss/main.scss */
 section.it {
   color: black;
   border-left: solid 5px #d44a4a;
 }
 
-/* line 298, ../scss/main.scss */
+/* line 302, ../scss/main.scss */
 .language {
   color: #d44a9e;
 }
 
-/* line 302, ../scss/main.scss */
+/* line 306, ../scss/main.scss */
 section.language {
   color: black;
   border-left: solid 5px #d44a9e;
 }
 
-/* line 307, ../scss/main.scss */
+/* line 311, ../scss/main.scss */
 .finances {
   color: #614ad4;
 }
 
-/* line 311, ../scss/main.scss */
+/* line 315, ../scss/main.scss */
 section.finances {
   color: black;
   border-left: solid 5px #614ad4;
 }
 
-/* line 316, ../scss/main.scss */
+/* line 320, ../scss/main.scss */
 .repairs {
   color: #4a91d4;
 }
 
-/* line 320, ../scss/main.scss */
+/* line 324, ../scss/main.scss */
 section.repairs {
   color: black;
   border-left: solid 5px #4a91d4;
 }
 
-/* line 325, ../scss/main.scss */
+/* line 329, ../scss/main.scss */
 .math {
   color: #66d8a4;
 }
 
-/* line 329, ../scss/main.scss */
+/* line 333, ../scss/main.scss */
 section.mathfysics {
   color: black;
   border-left: solid 5px #66d8a4;
 }
 
-/* line 334, ../scss/main.scss */
+/* line 338, ../scss/main.scss */
 .art {
   color: #a4d658;
 }
 
-/* line 338, ../scss/main.scss */
+/* line 342, ../scss/main.scss */
 section.art {
   color: black;
   border-left: solid 5px #a4d658;
 }
 
-/* line 343, ../scss/main.scss */
+/* line 347, ../scss/main.scss */
 .cooking {
   color: #d4a84a;
 }
 
-/* line 347, ../scss/main.scss */
+/* line 351, ../scss/main.scss */
 section.cooking {
   color: black;
   border-left: solid 5px #d4a84a;
 }
 
-/* line 352, ../scss/main.scss */
+/* line 356, ../scss/main.scss */
 .programming {
   color: #d4844a;
 }
 
-/* line 356, ../scss/main.scss */
+/* line 360, ../scss/main.scss */
 section.programming {
   color: black;
   border-left: solid 5px #d4844a;
 }
 
-/* line 361, ../scss/main.scss */
+/* line 365, ../scss/main.scss */
 #footer {
   margin-top: 20px;
   background-color: #bd6100;
 }
-/* line 364, ../scss/main.scss */
+/* line 368, ../scss/main.scss */
 #footer h1, #footer small {
   color: white;
   margin: 5px;
   margin-top: 20px;
 }
-/* line 369, ../scss/main.scss */
+/* line 373, ../scss/main.scss */
 #footer .copyright {
   text-align: center;
   padding: 25px;
