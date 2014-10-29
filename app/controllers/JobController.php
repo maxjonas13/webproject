@@ -16,13 +16,16 @@ class JobController extends BaseController {
 
 	//function to store the data of the new job
 	public function store() {
+		//create a validator to validate the data
 		$validator = Validator::make(
+			//array with the field and there value
 			array(
 				'title'			=> Input::get('title'),
 				'location'		=> Input::get('location'),
 				'description'	=> Input::get('description'),
 				'grouped'		=> Input::get('grouped')
 			),
+			//array with the rules for every field
 			array(
 				'title'			=>	'required|min:3|max:50',
 				'location'		=>	'required|min:3|max:50',
@@ -31,16 +34,23 @@ class JobController extends BaseController {
 			)
 		);
 
+		//put validator messages in a variable messages
 		$messages = $validator->messages();
 
+		//check if the validator passes
 		if($validator->fails()) {
+			//validator faild, return back with errors and input
 			return Redirect::back()->withErrors($messages)->withInput();
 		}
 		else {
-			$job = new Job;
-			$job->store();
+			//validator passed
 
-			//return Redirect::to('/jobs/details/' . $jobid);
+			//create a new job
+			$job = new Job;
+			//call the store function in the model
+			$jobid = $job->store();
+			//redirect the user to the job that he created
+			return Redirect::to('/jobs/details/' . $jobid);
 		}
 	}
 

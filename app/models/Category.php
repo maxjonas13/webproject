@@ -18,11 +18,15 @@ class Category extends Eloquent implements UserInterface, RemindableInterface {
 	//de naam van de primary key aangeven aangezien deze niet de standaard "id" is in dit geval
 	protected $primaryKey = 'PK_categoryId';
 
-	public $timestamps = false;
+	//There are no timestamps in the category table, so put it on false
+	public $timestamps = FALSE;
 
+	//function for the relation with the JobCategorie model
 	public function jobcategorie() {
 		return $this->hasMany('JobCategorie', 'FK_categoryId');
 	}
+
+	//function for the relation with the Job model
 	public function job() {
 		return $this->hasMany('Job');
 	}
