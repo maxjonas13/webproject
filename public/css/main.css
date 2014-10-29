@@ -3786,17 +3786,18 @@ p.jobtextinfo {
 }
 
 /* line 117, ../scss/main.scss */
-#searchbar {
+#searchbar, #searchbarin {
   background-color: white;
   position: absolute;
+  padding: 0.55em 25px 0.55em 3em;
 }
-/* line 120, ../scss/main.scss */
-#searchbar #search-input {
+/* line 121, ../scss/main.scss */
+#searchbar #search-input, #searchbarin #search-input {
   line-height: normal;
+  padding: 0.55em 0 0.55em 3em;
   border: 0;
   width: 100%;
   margin: 0px;
-  padding: 0.55em 0 0.55em 3em;
   color: #000;
   outline: none;
   background: inherit;
@@ -3806,13 +3807,21 @@ p.jobtextinfo {
   -webkit-user-select: text;
   cursor: auto;
 }
-/* line 135, ../scss/main.scss */
-#searchbar i {
-  padding: 0.55em 0 0.55em 1.5em;
+/* line 136, ../scss/main.scss */
+#searchbar i, #searchbarin i {
   position: inherit;
+  padding: 0.55em 0 0.55em 1.5em;
+  z-index: 5;
 }
 
-/* line 140, ../scss/main.scss */
+/* line 143, ../scss/main.scss */
+#searchbarin {
+  margin-top: 65px;
+  width: 100%;
+  border-top: 1px solid #ededed;
+}
+
+/* line 150, ../scss/main.scss */
 #logincontainer, #registercontainer {
   z-index: 78;
   position: fixed;
@@ -3821,7 +3830,7 @@ p.jobtextinfo {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 148, ../scss/main.scss */
+/* line 158, ../scss/main.scss */
 #login, #register {
   z-index: 80;
   background-image: url('/img/background.jpg?1414437371');
@@ -3838,22 +3847,61 @@ p.jobtextinfo {
   height: 400px;
 }
 
-/* line 161, ../scss/main.scss */
+/* line 171, ../scss/main.scss */
 #register {
   height: 700px;
 }
 
-/* line 165, ../scss/main.scss */
+/* line 175, ../scss/main.scss */
 #header {
   background-color: white;
 }
-/* line 167, ../scss/main.scss */
+/* line 177, ../scss/main.scss */
 #header .row {
   margin-left: 50px;
   margin-right: 50px;
 }
 
-/* line 173, ../scss/main.scss */
+/* line 182, ../scss/main.scss */
+label {
+  display: inline;
+}
+
+/* line 188, ../scss/main.scss */
+input[type=checkbox] + label {
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 9px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+}
+
+/* line 198, ../scss/main.scss */
+input[type=checkbox] + label:active, input[type=checkbox]:checked + label:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* line 202, ../scss/main.scss */
+input[type=checkbox]:checked + label {
+  background-color: #e9ecee;
+  border: 1px solid #adb8c0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+  color: #99a1a7;
+}
+
+/* line 209, ../scss/main.scss */
+input[type=checkbox]:checked + label:after {
+  content: '\2714';
+  font-size: 14px;
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  color: #99a1a7;
+}
+
+/* line 220, ../scss/main.scss */
 input {
   width: 80%;
   margin: 20px;
@@ -3866,7 +3914,7 @@ input {
   position: relative;
 }
 
-/* line 184, ../scss/main.scss */
+/* line 231, ../scss/main.scss */
 input[type=submit], input[type=textarea] {
   background-color: #4a91d4;
   color: white;
@@ -3882,17 +3930,17 @@ input[type=submit], input[type=textarea] {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 198, ../scss/main.scss */
+/* line 245, ../scss/main.scss */
 input[type=submit]:hover, input[type=textarea]:hover {
   background-color: #437fb7;
   width: 51%;
 }
-/* line 202, ../scss/main.scss */
+/* line 249, ../scss/main.scss */
 input[type=submit] input[type=file], input[type=textarea] input[type=file] {
   width: 100%;
 }
 
-/* line 206, ../scss/main.scss */
+/* line 253, ../scss/main.scss */
 .icon-remove-sign {
   cursor: pointer;
   float: right;
@@ -3904,137 +3952,137 @@ input[type=submit] input[type=file], input[type=textarea] input[type=file] {
   overflow: hidden;
 }
 
-/* line 217, ../scss/main.scss */
+/* line 264, ../scss/main.scss */
 .registration {
   text-align: center;
 }
 
-/* line 221, ../scss/main.scss */
+/* line 268, ../scss/main.scss */
 #profile p {
   background-color: #ededed;
   padding: 20px;
   border: 1px solid #757575;
 }
 
-/* line 227, ../scss/main.scss */
+/* line 274, ../scss/main.scss */
 #profileedit input, input[type=submit], input[type=textarea] {
   padding: 20px;
   border: 1px solid #ededed;
 }
 
-/* line 232, ../scss/main.scss */
+/* line 279, ../scss/main.scss */
 .jobstyle {
   border-left: solid 5px red;
 }
-/* line 234, ../scss/main.scss */
+/* line 281, ../scss/main.scss */
 .jobstyle h1, .jobstyle p {
   margin-left: 25px;
 }
-/* line 237, ../scss/main.scss */
+/* line 284, ../scss/main.scss */
 .jobstyle p b {
   margin-left: -5px;
 }
 
-/* line 242, ../scss/main.scss */
-.IT {
+/* line 289, ../scss/main.scss */
+.it {
   color: #d44a4a;
 }
 
-/* line 246, ../scss/main.scss */
-section.IT {
+/* line 293, ../scss/main.scss */
+section.it {
   color: black;
   border-left: solid 5px #d44a4a;
 }
 
-/* line 251, ../scss/main.scss */
+/* line 298, ../scss/main.scss */
 .language {
   color: #d44a9e;
 }
 
-/* line 255, ../scss/main.scss */
+/* line 302, ../scss/main.scss */
 section.language {
   color: black;
   border-left: solid 5px #d44a9e;
 }
 
-/* line 260, ../scss/main.scss */
+/* line 307, ../scss/main.scss */
 .finances {
   color: #614ad4;
 }
 
-/* line 264, ../scss/main.scss */
+/* line 311, ../scss/main.scss */
 section.finances {
   color: black;
   border-left: solid 5px #614ad4;
 }
 
-/* line 269, ../scss/main.scss */
+/* line 316, ../scss/main.scss */
 .repairs {
   color: #4a91d4;
 }
 
-/* line 273, ../scss/main.scss */
+/* line 320, ../scss/main.scss */
 section.repairs {
   color: black;
   border-left: solid 5px #4a91d4;
 }
 
-/* line 278, ../scss/main.scss */
+/* line 325, ../scss/main.scss */
 .math {
   color: #66d8a4;
 }
 
-/* line 282, ../scss/main.scss */
+/* line 329, ../scss/main.scss */
 section.mathfysics {
   color: black;
   border-left: solid 5px #66d8a4;
 }
 
-/* line 287, ../scss/main.scss */
+/* line 334, ../scss/main.scss */
 .art {
   color: #a4d658;
 }
 
-/* line 291, ../scss/main.scss */
+/* line 338, ../scss/main.scss */
 section.art {
   color: black;
   border-left: solid 5px #a4d658;
 }
 
-/* line 296, ../scss/main.scss */
+/* line 343, ../scss/main.scss */
 .cooking {
   color: #d4a84a;
 }
 
-/* line 300, ../scss/main.scss */
+/* line 347, ../scss/main.scss */
 section.cooking {
   color: black;
   border-left: solid 5px #d4a84a;
 }
 
-/* line 305, ../scss/main.scss */
+/* line 352, ../scss/main.scss */
 .programming {
   color: #d4844a;
 }
 
-/* line 309, ../scss/main.scss */
+/* line 356, ../scss/main.scss */
 section.programming {
   color: black;
   border-left: solid 5px #d4844a;
 }
 
-/* line 314, ../scss/main.scss */
+/* line 361, ../scss/main.scss */
 #footer {
   margin-top: 20px;
   background-color: #bd6100;
 }
-/* line 317, ../scss/main.scss */
+/* line 364, ../scss/main.scss */
 #footer h1, #footer small {
   color: white;
   margin: 5px;
   margin-top: 20px;
 }
-/* line 322, ../scss/main.scss */
+/* line 369, ../scss/main.scss */
 #footer .copyright {
   text-align: center;
   padding: 25px;

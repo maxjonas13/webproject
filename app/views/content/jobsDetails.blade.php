@@ -1,4 +1,4 @@
-@extends("layout.default")
+@extends("layout.defaultdetails")
 
 @section('content')
 		<div class="row"> 
@@ -19,7 +19,9 @@
 						@foreach ($data->category as $categorieitem) 
 							<p class="{{strtolower($categorieitem->categoryName)}}">{{$categorieitem->categoryName}}</p>
 						@endforeach
-						<a class="button" href="/jobs/details/{{$data->PK_jobId}}">Details</a>
+						@if( Auth::user()->PK_userId == $data->FK_userId)
+						<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>
+						@endif
 						<a class="buttonapply" onClick="registerclick()">Apply</a>
 
 
