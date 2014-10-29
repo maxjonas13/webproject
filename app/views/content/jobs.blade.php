@@ -3,7 +3,7 @@
 @section('content')
 		<div class="firstrow"> 
 			<div class="column col-md-2 col-sm-3"> 
-				<p class="IT">IT</p>
+				<p class="it">IT</p>
 				<p class="language">Language</p>
 				<p class="finances">Finances</p>
 				<p class="repairs">Repairs</p>

@@ -19,8 +19,10 @@
 						@foreach ($data->category as $categorieitem) 
 							<p class="{{strtolower($categorieitem->categoryName)}}">{{$categorieitem->categoryName}}</p>
 						@endforeach
-						@if( Auth::user()->PK_userId == $data->FK_userId)
-						<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>
+						@if(Auth::check())
+							@if( Auth::user()->PK_userId == $data->FK_userId)
+							<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>
+							@endif
 						@endif
 						<a class="buttonapply" onClick="registerclick()">Apply</a>
 
