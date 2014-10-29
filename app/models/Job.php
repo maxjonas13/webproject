@@ -105,13 +105,15 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 		foreach($checkboxes as $checkbox => $value) {
 			//echo $checkbox;
 			//check if the checkbox is checked
-			echo 'value above ' . $value . ' ' . $checkbox .'<br>';
-			if(count($checkbox) != 0) {
-				echo $value;
+			//echo 'value above ' . $value . ' ' . $checkbox .'<br>';
+			var_dump($checkboxes);
+			if($value || $value == '') {
 				//loop true the categories
 				foreach($categories as $category) {
 					//check if the checkbox name and categoryName maches
 					if($checkbox == strtolower($category->categoryName)) {
+						echo 'checkbox = ' . $checkbox . '<br>';
+						echo 'database = ' . strtolower($category->categoryName) . '<br>';
 						//if they match create a new reacord in the pivot table
 						$jobcategorie = new JobCategorie;
 						$jobcategorie->FK_categoryId = $category->PK_categoryId;
