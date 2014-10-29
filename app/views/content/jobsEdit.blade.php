@@ -9,8 +9,30 @@ $cooking = FALSE;
 $programming = FALSE;
 ?>
 @foreach($data->category as $item)
-	@if($item == 'IT')
-		{{{$it = TRUE}}}
+	<?php echo $item->categoryName;?>
+	@if($item->categoryName == 'IT')
+		<?php $it = TRUE; ?>
+	@endif
+	@if($item->categoryName == 'Languages')
+		<?php $languages = TRUE; ?>
+	@endif
+	@if($item->categoryName == 'Finances')
+		<?php $finances = TRUE; ?>
+	@endif
+	@if($item->categoryName == 'Repair')
+		<?php $repairs = TRUE; ?>
+	@endif
+	@if($item->categoryName == 'Math')
+		<?php $math = TRUE; ?>
+	@endif
+	@if($item->categoryName == 'Art')
+		<?php $art = TRUE; ?>
+	@endif
+	@if($item->categoryName == 'Cooking')
+		<?php $cooking = TRUE; ?>
+	@endif
+	@if($item->categoryName == 'Programming')
+		<?php $programming = TRUE; ?>
 	@endif
 @endforeach
 
@@ -35,25 +57,25 @@ $programming = FALSE;
 				{{ Form::checkbox('grouped[it]', '', $it)}}
 
 				{{ Form::label('languages', 'Languages')}}
-				{{ Form::checkbox('grouped[languages]')}}
+				{{ Form::checkbox('grouped[languages]', '', $languages)}}
 				
 				{{ Form::label('finances')}}
-				{{ Form::checkbox('grouped[finances]')}}
+				{{ Form::checkbox('grouped[finances]', '', $finances)}}
 				
 				{{ Form::label('repairs')}}
-				{{ Form::checkbox('grouped[repair]')}}
+				{{ Form::checkbox('grouped[repair]', '', $repairs)}}
 				
 				{{ Form::label('math', 'Math & Fysics')}}
-				{{ Form::checkbox('grouped[math]')}}
+				{{ Form::checkbox('grouped[math]', '', $math)}}
 				
 				{{ Form::label('art', 'Art')}}
-				{{ Form::checkbox('grouped[art]')}}
+				{{ Form::checkbox('grouped[art]', '', $art)}}
 
 				{{ Form::label('cooking', 'Cooking')}}
-				{{ Form::checkbox('grouped[cooking]')}}
+				{{ Form::checkbox('grouped[cooking]', '', $cooking)}}
 
 				{{ Form::label('programming', 'Programming')}}
-				{{ Form::checkbox('grouped[programming]')}}
+				{{ Form::checkbox('grouped[programming]', '', $programming)}}
 		
 			<br>
 			{{ Form::submit('Voeg job toe') }}
