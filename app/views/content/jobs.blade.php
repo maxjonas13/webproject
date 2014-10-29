@@ -15,11 +15,15 @@
 			<div class="column col-md-8 col-sm-6"> 
 				@foreach ($data as $dataitem) 
 
-					<section class="jobstyle {{$dataitem->category[0]->categoryName}}" >
-					<h1 class='{{$dataitem->category[0]->categoryName}}'>
+					<section class="jobstyle {{strtolower($dataitem->category[0]->categoryName)}}" >
+					<h1 class='{{strtolower($dataitem->category[0]->categoryName)}}'>
 					{{$dataitem->title}}</h1>
-					<p class="jobtextinfo"><b>Location:</b> <small>{{$dataitem->location}}</small> <b>created at:</b> <small>{{$dataitem->created_at}}</small> <b>by:</b> <small>{{$dataitem->user->name}}</small></p>
-					<p>{{$dataitem->description}}</p>
+					<p class="jobtextinfo"><small>
+						<strong>Location: </strong>  {{ $dataitem->location }} 
+						<strong>Created at: </strong>  {{ $dataitem->created_at }} 
+						<strong>By: </strong>  {{$dataitem->user->name}} </small>
+					</p>
+					<p>{{nl2br($dataitem->description)}}</p>
 					<a class="button" href="/jobs/details/{{$dataitem->PK_jobId}}">Details</a>
 					<a class="buttonapply" onClick="registerclick()">Apply</a>
 

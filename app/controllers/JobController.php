@@ -65,7 +65,8 @@ class JobController extends BaseController {
 	//function to show the view with the form to edit a selected job
 	public function edit($id) {
 		if(Auth::check()) {
-			$job = Job::with('User')->find($id);
+			$job = Job::with('User', 'Category')->find($id);
+			
 			if(Auth::user()->PK_userId == $job->user->PK_userId) {
 				return View::make('content/jobsEdit')->with('data', $job);
 			}

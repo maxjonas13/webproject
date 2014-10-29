@@ -24,7 +24,7 @@
 			{{ Form::checkbox('grouped[finances]')}}
 			
 			{{ Form::label('repairs')}}
-			{{ Form::checkbox('grouped[repairs]')}}
+			{{ Form::checkbox('grouped[repair]')}}
 			
 			{{ Form::label('math', 'Math & Fysics')}}
 			{{ Form::checkbox('grouped[math]')}}
