@@ -1,4 +1,4 @@
-@extends("layout.defaultdetails")
+@extends("layout.default")
 
 @section('content')
 		<div class="firstrow"> 

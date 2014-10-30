@@ -18,18 +18,7 @@ class JobController extends BaseController {
 		else {
 			//do the same but with an axtra where clause
 			$job = Job::where('fixed', '=', FALSE)->with('User', 'JobCategorie', 'Category')->get();
-			//$job->where('Category.categoryName', '=', $cat)->get();
-			foreach($job as $row) {
-				foreach($row->category as $category) {
-					if($category->categoryName == $cat) {
-						return $row;
-					}
-					else {
-						
-					}
-				}
-			}
-			
+			return $job;
 		}
 	}
 
