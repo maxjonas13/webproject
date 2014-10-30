@@ -44,4 +44,9 @@ Route::get('/jobs/open/{id}', 'JobController@closeOrOpen');
 Route::post('/comments/store', 'CommentController@store');
 Route::get('/comments/delete/{id}', 'CommentController@delete');
 
+//route for the about page
+Route::get('/about', function() {
+	return View::make('content/About');
+});
+
 Validator::extend('passwordCheck', 'CustomValidation@passwordCheck');
