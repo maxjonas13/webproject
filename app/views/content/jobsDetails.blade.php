@@ -35,6 +35,10 @@
 								@endif
 							@endif
 						@endif
+
+						@foreach($data->comment as $comment) 
+							{{$comment->comment}}
+						@endforeach
 					</section>
 			</div>
 			<div class="column col-md-2 col-sm-3"> </div>
