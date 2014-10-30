@@ -42,5 +42,13 @@ class Comment extends Eloquent implements UserInterface, RemindableInterface {
 		//save the comment
 		$comment->save();
 	}
+
+	//funtion to delte a comment with a given id
+	public function deleteRecord($id) {
+		//find the comment with the given id
+		$comment = Comment::find($id);
+		
+		$comment->delete();
+	}
 	
 }

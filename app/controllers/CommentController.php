@@ -35,4 +35,23 @@ class CommentController extends BaseController {
 		}
 	}
 
+	//function to delete a given comment
+	public function delete($id) {
+		//check if the user is authenticated
+		if(Auth::check()) {
+			$comment = Comment::find($id);
+			
+			if(Auth::user()->PK_userId == $comment->FK_userId) { //implement a OR state for if the user has the role admin
+				$comment->deleteRecord($id);
+				return Redirect::to('/jobs/details/' . $comment->FK_jobId);
+			}
+			else {
+				return Redirect::to('/');
+			}
+		}
+		else {
+			return Redirect::to('/');
+		}
+	}
+
 }
