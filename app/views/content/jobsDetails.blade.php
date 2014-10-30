@@ -1,7 +1,7 @@
 @extends("layout.default")
 
 @section('content')
-		<div class="row"> 
+		<div class="firstrow"> 
 			<div class="column col-md-2 col-sm-3"> </div>
 			<div class="column col-md-8 col-sm-6">  
 					<section class="jobstyle {{strtolower($data->category[0]->categoryName)}}">

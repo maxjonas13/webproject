@@ -1,7 +1,7 @@
 @extends("layout.defaultdetails")
 
 @section('content')
-		<div class="row"> 
+		<div class="firstrow"> 
 			<div class="column col-md-2 col-sm-3"> </div>
 			<div class="column col-md-8 col-sm-6" id="profile">  
 				<h1>Edit Job</h1>

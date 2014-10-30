@@ -9,6 +9,7 @@
 							 <a id="logout" href="/logout">Logout</a>
 							 <a href="/profile/{{Auth::user()->PK_userId}}">Profile</a> 
 						@else
+							<a id="loginlink" onClick='registerclick()'>Register</a>
 							<a id="loginlink" onClick='loginclick()'>Login</a>
 						@endif
 						  <a href="/about">About</a>
