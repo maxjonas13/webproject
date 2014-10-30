@@ -38,6 +38,11 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('Comment', 'FK_jobId');
 	}
 
+	//function for the relation with the comment model
+	public function candidate() {
+		return $this->hasMany('Candidate', 'FK_jobId');
+	}
+
 	//functin to store a new job in the database
 	public function store() {
 		//get all the checkboxes and put in a variable (array)

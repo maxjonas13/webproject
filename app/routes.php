@@ -39,10 +39,14 @@ Route::get('/jobs/create', 'JobController@create');
 Route::post('/jobs/store', 'JobController@store');
 Route::get('/jobs/close/{id}', 'JobController@closeOrOpen');
 Route::get('/jobs/open/{id}', 'JobController@closeOrOpen');
+Route::get('/jobs/filter/{id}', 'JobController@filter');
 
 //routes for comments
 Route::post('/comments/store', 'CommentController@store');
 Route::get('/comments/delete/{id}', 'CommentController@delete');
+
+//routes for Candidates
+Route::get('/candidates/apply/{id}', 'CandidateController@apply');
 
 //route for the about page
 Route::get('/about', function() {

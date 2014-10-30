@@ -24,8 +24,8 @@
 							<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>
 							@endif
 						@endif
-						<a class="buttonapply" onClick="registerclick()">Apply</a>
-
+						
+						{{link_to('/candidates/apply/' . Auth::user()->PK_userId , 'Apply' , $attributes = array('class' => 'buttonapply'))}}
 						@if(Auth::check())
 							@if(Auth::user()->PK_userId == $data->user->PK_userId)
 								@if($data->fixed)
@@ -59,6 +59,7 @@
 															
 						<!-- close form tag -->
 						{{ Form::close() }}
+
 					</section>
 			</div>
 			<div class="column col-md-2 col-sm-3"> </div>
@@ -66,5 +67,5 @@
 	</div>
 </div>
 
-
+{{ HTML::script('script/applyCall.js'); }}
 @stop

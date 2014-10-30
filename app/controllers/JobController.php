@@ -4,9 +4,33 @@ class JobController extends BaseController {
 
 	//function to show the view with all the jobs
 	public function index() {
-		$job = Job::where('fixed', '=', FALSE)->with('User', 'JobCategorie', 'Category')->get();
+		//$job = Job::where('fixed', '=', FALSE)->with('User', 'JobCategorie', 'Category')->get();
 		
-		return View::make('content/jobs')->with('data', $job);
+		return View::make('content/jobs');//->with('data', $job);
+	}
+
+	public function filter($cat) {
+		if($cat == "all") {
+			$job = Job::where('fixed', '=', FALSE)->with('User', 'JobCategorie', 'Category')->get();
+			return $job;
+			//return View::make('content/jobs')->with('data', $job);
+		}
+		else {
+			//do the same but with an axtra where clause
+			$job = Job::where('fixed', '=', FALSE)->with('User', 'JobCategorie', 'Category')->get();
+			//$job->where('Category.categoryName', '=', $cat)->get();
+			foreach($job as $row) {
+				foreach($row->category as $category) {
+					if($category->categoryName == $cat) {
+						return $row;
+					}
+					else {
+						
+					}
+				}
+			}
+			
+		}
 	}
 
 	//function to show the view with the form to create a new job
@@ -57,7 +81,7 @@ class JobController extends BaseController {
 	//function to show the details view off a job by job id
 	public function details($id) {
 		//when comments are integrated add Comments to this one to
-		$job = Job::with('User', 'JobCategorie', 'Category', 'Comment')->find($id);
+		$job = Job::with('User', 'JobCategorie', 'Category', 'Comment', 'Candidate')->find($id);
 
 		return View::make('content/jobsDetails')->with('data', $job);
 	}

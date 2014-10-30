@@ -40,6 +40,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('Comment', 'FK_userId');
 	}
 
+	public function candidate() {
+		return $this->hasMany('Candidate', 'FK_userId');
+	}
+
 	public function storeRegistrationData() {
 		//create new Role
 		$role = new Role;
