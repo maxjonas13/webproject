@@ -28,5 +28,14 @@ class Comment extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->belongsTo('User', 'FK_userId');
 	}
 
+	public function store() {
+		$comment = new Comment;
+
+		$comment->FK_jobId = Input::get('jobid');
+		$comment->FK_userId = Auth::user()->PK_userId;
+		$comment->comment = Input::get('comment');
+
+		$comment->save();
+	}
 	
 }

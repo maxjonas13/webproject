@@ -38,7 +38,27 @@
 
 						@foreach($data->comment as $comment) 
 							{{$comment->comment}}
+							{{$comment->user->name}}
 						@endforeach
+
+						@if($errors->count() > 0 )
+							@foreach($errors->all() as $error)
+								<ul>
+									<li>{{$error}}</li>
+								</ul>
+							@endforeach
+						@endif
+						<!-- ENKEL TONEN INDIEN EEN USER IS INGELOGD! -->
+						<!-- open form tag -->
+						{{ Form::open( array('url' => '/comments/store') ) }}
+
+							{{ Form::textarea('comment' ,'', array('placeholder'=> "Comment")) }}
+							{{ Form::hidden('jobid', $data->PK_jobId)}}
+														
+							{{ Form::submit('Add comment') }}
+															
+						<!-- close form tag -->
+						{{ Form::close() }}
 					</section>
 			</div>
 			<div class="column col-md-2 col-sm-3"> </div>

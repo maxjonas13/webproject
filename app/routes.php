@@ -40,4 +40,7 @@ Route::post('/jobs/store', 'JobController@store');
 Route::get('/jobs/close/{id}', 'JobController@closeOrOpen');
 Route::get('/jobs/open/{id}', 'JobController@closeOrOpen');
 
+//routes for comments
+Route::post('comments/store', 'CommentController@store');
+
 Validator::extend('passwordCheck', 'CustomValidation@passwordCheck');
