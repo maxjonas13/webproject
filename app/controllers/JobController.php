@@ -4,22 +4,26 @@ class JobController extends BaseController {
 
 	//function to show the view with all the jobs
 	public function index() {
-		//$job = Job::where('fixed', '=', FALSE)->with('User', 'JobCategorie', 'Category')->get();
+		//$job = Job::where('fixed', '=', FALSE)->with('User', 'JobCategorie', 'Category')->paginate(2);
 		
 		return View::make('content/jobs');//->with('data', $job);
 	}
 
-	public function filter($cat) {
-		if($cat == "all") {
-			$job = Job::where('fixed', '=', FALSE)->with('User', 'JobCategorie', 'Category')->get();
+	//function to load an overview off all the jobs with pagination
+	public function jobOverviewWithPagination() {
+			$job = Job::where('fixed', '=', FALSE)->with('User', 'Category')->paginate(5);
+	
 			return $job;
-			//return View::make('content/jobs')->with('data', $job);
-		}
-		else {
-			//do the same but with an axtra where clause
-			$job = Job::where('fixed', '=', FALSE)->with('User', 'JobCategorie', 'Category')->get();
-			return $job;
-		}
+	}
+
+	//function to filter the jobs on category with pagination
+	public function filterCategorieWithPagination($cat) {
+			
+		$job = Job::whereHas('Category' , function($query) use($cat) {
+			$query->where(strtolower('categoryName'), '=', strtolower($cat));
+		})->with('User', 'Category')->where('fixed', '=', FALSE)->paginate(5);
+		
+		return $job;
 	}
 
 	//function to show the view with the form to create a new job

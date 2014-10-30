@@ -39,7 +39,8 @@ Route::get('/jobs/create', 'JobController@create');
 Route::post('/jobs/store', 'JobController@store');
 Route::get('/jobs/close/{id}', 'JobController@closeOrOpen');
 Route::get('/jobs/open/{id}', 'JobController@closeOrOpen');
-Route::get('/jobs/filter/{id}', 'JobController@filter');
+Route::get('/jobs/all', 'JobController@jobOverviewWithPagination');
+Route::get('/jobs/filter/{id}', 'JobController@filterCategorieWithPagination');
 
 //routes for comments
 Route::post('/comments/store', 'CommentController@store');

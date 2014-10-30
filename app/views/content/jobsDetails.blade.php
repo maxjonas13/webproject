@@ -20,7 +20,7 @@
 							<p class="{{strtolower($categorieitem->categoryName)}}">{{$categorieitem->categoryName}}</p>
 						@endforeach
 						@if(Auth::check())
-							@if( Auth::user()->PK_userId == $data->FK_userId)
+							@if(Auth::user()->PK_userId == $data->FK_userId)
 							<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>
 							@endif
 						@endif
