@@ -3724,7 +3724,7 @@ video {
   bottom: 0;
   right: 0;
   text-align: center;
-  background-color: rgba(128, 72, 0, 0.3);
+  background-color: rgba(128, 72, 0, 0);
 }
 /* line 66, ../scss/main.scss */
 #videocontent h1 {
@@ -3827,7 +3827,7 @@ p.jobtextinfo {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 /* line 158, ../scss/main.scss */
@@ -3872,31 +3872,36 @@ label {
   display: inline;
 }
 
-/* line 192, ../scss/main.scss */
+/* line 189, ../scss/main.scss */
+input[type=checkbox] {
+  display: none;
+}
+
+/* line 194, ../scss/main.scss */
 input[type=checkbox] + label {
   background-color: #fafafa;
   border: 1px solid #cacece;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0), inset 0px -15px 10px -12px rgba(0, 0, 0, 0);
   padding: 9px;
   border-radius: 3px;
   display: inline-block;
   position: relative;
 }
 
-/* line 202, ../scss/main.scss */
+/* line 204, ../scss/main.scss */
 input[type=checkbox] + label:active, input[type=checkbox]:checked + label:active {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0), inset 0px 1px 3px rgba(0, 0, 0, 0);
 }
 
-/* line 206, ../scss/main.scss */
+/* line 208, ../scss/main.scss */
 input[type=checkbox]:checked + label {
   background-color: #e9ecee;
   border: 1px solid #adb8c0;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0), inset 0px -15px 10px -12px rgba(0, 0, 0, 0), inset 15px 10px -12px rgba(255, 255, 255, 0);
   color: #99a1a7;
 }
 
-/* line 213, ../scss/main.scss */
+/* line 215, ../scss/main.scss */
 input[type=checkbox]:checked + label:after {
   content: '\2714';
   font-size: 14px;
@@ -3906,7 +3911,7 @@ input[type=checkbox]:checked + label:after {
   color: #99a1a7;
 }
 
-/* line 224, ../scss/main.scss */
+/* line 226, ../scss/main.scss */
 input {
   width: 80%;
   margin: 20px;
@@ -3919,7 +3924,7 @@ input {
   position: relative;
 }
 
-/* line 235, ../scss/main.scss */
+/* line 237, ../scss/main.scss */
 input[type=submit], input[type=textarea] {
   background-color: #4a91d4;
   color: white;
@@ -3935,17 +3940,17 @@ input[type=submit], input[type=textarea] {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 249, ../scss/main.scss */
+/* line 251, ../scss/main.scss */
 input[type=submit]:hover, input[type=textarea]:hover {
   background-color: #437fb7;
   width: 51%;
 }
-/* line 253, ../scss/main.scss */
+/* line 255, ../scss/main.scss */
 input[type=submit] input[type=file], input[type=textarea] input[type=file] {
   width: 100%;
 }
 
-/* line 257, ../scss/main.scss */
+/* line 259, ../scss/main.scss */
 .icon-remove-sign {
   cursor: pointer;
   float: right;
@@ -3957,137 +3962,137 @@ input[type=submit] input[type=file], input[type=textarea] input[type=file] {
   overflow: hidden;
 }
 
-/* line 268, ../scss/main.scss */
+/* line 270, ../scss/main.scss */
 .registration {
   text-align: center;
 }
 
-/* line 272, ../scss/main.scss */
+/* line 274, ../scss/main.scss */
 #profile p {
   background-color: #ededed;
   padding: 20px;
   border: 1px solid #757575;
 }
 
-/* line 278, ../scss/main.scss */
+/* line 280, ../scss/main.scss */
 #profileedit input, input[type=submit], input[type=textarea] {
   padding: 20px;
   border: 1px solid #ededed;
 }
 
-/* line 283, ../scss/main.scss */
+/* line 285, ../scss/main.scss */
 .jobstyle {
   border-left: solid 5px red;
 }
-/* line 285, ../scss/main.scss */
+/* line 287, ../scss/main.scss */
 .jobstyle h1, .jobstyle p {
   margin-left: 25px;
 }
-/* line 288, ../scss/main.scss */
+/* line 290, ../scss/main.scss */
 .jobstyle p b {
   margin-left: -5px;
 }
 
-/* line 293, ../scss/main.scss */
+/* line 295, ../scss/main.scss */
 .it {
   color: #d44a4a;
 }
 
-/* line 297, ../scss/main.scss */
+/* line 299, ../scss/main.scss */
 section.it {
   color: black;
   border-left: solid 5px #d44a4a;
 }
 
-/* line 302, ../scss/main.scss */
+/* line 304, ../scss/main.scss */
 .language {
   color: #d44a9e;
 }
 
-/* line 306, ../scss/main.scss */
+/* line 308, ../scss/main.scss */
 section.language {
   color: black;
   border-left: solid 5px #d44a9e;
 }
 
-/* line 311, ../scss/main.scss */
+/* line 313, ../scss/main.scss */
 .finances {
   color: #614ad4;
 }
 
-/* line 315, ../scss/main.scss */
+/* line 317, ../scss/main.scss */
 section.finances {
   color: black;
   border-left: solid 5px #614ad4;
 }
 
-/* line 320, ../scss/main.scss */
+/* line 322, ../scss/main.scss */
 .repairs {
   color: #4a91d4;
 }
 
-/* line 324, ../scss/main.scss */
+/* line 326, ../scss/main.scss */
 section.repairs {
   color: black;
   border-left: solid 5px #4a91d4;
 }
 
-/* line 329, ../scss/main.scss */
+/* line 331, ../scss/main.scss */
 .math {
   color: #66d8a4;
 }
 
-/* line 333, ../scss/main.scss */
+/* line 335, ../scss/main.scss */
 section.mathfysics {
   color: black;
   border-left: solid 5px #66d8a4;
 }
 
-/* line 338, ../scss/main.scss */
+/* line 340, ../scss/main.scss */
 .art {
   color: #a4d658;
 }
 
-/* line 342, ../scss/main.scss */
+/* line 344, ../scss/main.scss */
 section.art {
   color: black;
   border-left: solid 5px #a4d658;
 }
 
-/* line 347, ../scss/main.scss */
+/* line 349, ../scss/main.scss */
 .cooking {
   color: #d4a84a;
 }
 
-/* line 351, ../scss/main.scss */
+/* line 353, ../scss/main.scss */
 section.cooking {
   color: black;
   border-left: solid 5px #d4a84a;
 }
 
-/* line 356, ../scss/main.scss */
+/* line 358, ../scss/main.scss */
 .programming {
   color: #d4844a;
 }
 
-/* line 360, ../scss/main.scss */
+/* line 362, ../scss/main.scss */
 section.programming {
   color: black;
   border-left: solid 5px #d4844a;
 }
 
-/* line 365, ../scss/main.scss */
+/* line 367, ../scss/main.scss */
 #footer {
   margin-top: 20px;
   background-color: #bd6100;
 }
-/* line 368, ../scss/main.scss */
+/* line 370, ../scss/main.scss */
 #footer h1, #footer small {
   color: white;
   margin: 5px;
   margin-top: 20px;
 }
-/* line 373, ../scss/main.scss */
+/* line 375, ../scss/main.scss */
 #footer .copyright {
   text-align: center;
   padding: 25px;
