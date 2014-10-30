@@ -26,7 +26,15 @@
 						@endif
 						<a class="buttonapply" onClick="registerclick()">Apply</a>
 
-
+						@if(Auth::check())
+							@if(Auth::user()->PK_userId == $data->user->PK_userId)
+								@if($data->fixed)
+									<a href="/jobs/open/{{$data->PK_jobId}}" title="">Open job</a>
+								@else
+									<a href="/jobs/close/{{$data->PK_jobId}}" title="">Close job</a>
+								@endif
+							@endif
+						@endif
 					</section>
 			</div>
 			<div class="column col-md-2 col-sm-3"> </div>

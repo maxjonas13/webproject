@@ -109,13 +109,31 @@ class JobController extends BaseController {
 		else {
 			//validator passed
 
+			//get the job that needs to be updated
 			$job = Job::with('User', 'Category')->find(Input::get('id'));
+			//call the updateJob function in the model to store the data in the db.
 			$job->updateJob();
 			
-			//return Redirect::to('/jobs/details/' . Input::get('id'));
+			//redirect the user back to the job details page
+			return Redirect::to('/jobs/details/' . Input::get('id'));
 		}
 	}
 
+	//function to set a job to the fixed state
+	public function closeOrOpen($id) {
+		//check if the user is loggedin
+		if(Auth::check()) {
+			//get the job
+			$job = Job::find($id);
+			//check if the user off the job matches the authenticated user
+			if(Auth::user()->PK_userId == $job->FK_userId) {
+				//call the fixed function in the model
+				$job->closeOrOpen($id);
+			}
+		}
+
+		return Redirect::to('/jobs/details/' . $id);
+	}
 	
 
 }

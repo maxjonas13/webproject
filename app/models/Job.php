@@ -85,35 +85,37 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 		//get all the categories and put it in a variable (array)
 		$categories = Category::all();
 
+		//get the job and his related tables
 		$job = Job::with('User', 'Category', 'JobCategorie')->find(Input::get('id'));
 
-
+		//update the job data
 		$job->title = Input::get('title');
 		$job->location = Input::get('location');
 		$job->description = Input::get('description');
 		
+		//save the job data in to the db
 		$job->save();
 
+		//get all the categories off the job
 		$jobCategorie = JobCategorie::where('FK_jobId', '=', $job->PK_jobId)->get();
+
+		//loop true alle the categories off the job
 		foreach($jobCategorie as $row) {
+			//get the id out off the pivot table
 			$id = $row->PK_jobs_categoryId;
+			//delete the categorie out of the pivot table
 			JobCategorie::where('PK_jobs_categoryId', '=', $id)->delete();
 		}
 
 		// loop true the checkboxes
 		// checkbox = name of the checkbox, value = true / false
 		foreach($checkboxes as $checkbox => $value) {
-			//echo $checkbox;
-			//check if the checkbox is checked
-			//echo 'value above ' . $value . ' ' . $checkbox .'<br>';
-			var_dump($checkboxes);
+			//check if the value of the checkbox is true or an empty string (true eighter).
 			if($value || $value == '') {
 				//loop true the categories
 				foreach($categories as $category) {
 					//check if the checkbox name and categoryName maches
 					if($checkbox == strtolower($category->categoryName)) {
-						echo 'checkbox = ' . $checkbox . '<br>';
-						echo 'database = ' . strtolower($category->categoryName) . '<br>';
 						//if they match create a new reacord in the pivot table
 						$jobcategorie = new JobCategorie;
 						$jobcategorie->FK_categoryId = $category->PK_categoryId;
@@ -126,5 +128,24 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 			}
 		}
 
+		//return the id of the job
+		return $job->PK_jobId;
+	}
+
+	public function closeOrOpen($id) {
+		//find the job
+		$job = Job::find($id);
+
+		//check if job is fixed
+		if($job->fixed) {
+			//job is fixed and this function is called so open job again
+			$job->fixed = FALSE;
+		}
+		else {
+			//set fixed column to TRUE
+			$job->fixed = TRUE;
+		}
+		//save the job
+		$job->save();
 	}
 }

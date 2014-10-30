@@ -37,5 +37,7 @@ Route::post('/jobs/update', 'JobController@update');
 Route::post('/jobs/delete', 'JobController@delete');
 Route::get('/jobs/create', 'JobController@create');
 Route::post('/jobs/store', 'JobController@store');
+Route::get('/jobs/close/{id}', 'JobController@closeOrOpen');
+Route::get('/jobs/open/{id}', 'JobController@closeOrOpen');
 
 Validator::extend('passwordCheck', 'CustomValidation@passwordCheck');
