@@ -20,14 +20,9 @@
 							<p class="{{strtolower($categorieitem->categoryName)}}">{{$categorieitem->categoryName}}</p>
 						@endforeach
 						@if(Auth::check())
+							{{link_to('/candidates/apply/' . Auth::user()->PK_userId , 'Apply' , $attributes = array('class' => 'buttonapply'))}}
 							@if(Auth::user()->PK_userId == $data->FK_userId)
-							<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>
-							@endif
-						@endif
-						
-						{{link_to('/candidates/apply/' . Auth::user()->PK_userId , 'Apply' , $attributes = array('class' => 'buttonapply'))}}
-						@if(Auth::check())
-							@if(Auth::user()->PK_userId == $data->user->PK_userId)
+								<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>
 								@if($data->fixed)
 									<a href="/jobs/open/{{$data->PK_jobId}}" title="">Open job</a>
 								@else
