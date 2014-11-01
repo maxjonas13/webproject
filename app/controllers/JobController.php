@@ -75,7 +75,7 @@ class JobController extends BaseController {
 	public function details($id) {
 		//when comments are integrated add Comments to this one to
 		$job = Job::with('User', 'JobCategorie', 'Category', 'Comment', 'Candidate')->find($id);
-
+		
 		return View::make('content/jobsDetails')->with('data', $job);
 	}
 
