@@ -7,6 +7,19 @@
 					<section class="jobstyle {{strtolower($data->category[0]->categoryName)}}">
 
 						<h1 class="{{strtolower($data->category[0]->categoryName)}}">{{$data->title}}</h1>
+						@if(Auth::check())
+							@if(Auth::user()->PK_userId == $data->user->pk_userId)
+							{{link_to('/candidates/apply/' . Auth::user()->PK_userId , 'Apply' , $attributes = array('class' => 'buttonapply'))}}
+							@endif
+							@if(Auth::user()->PK_userId == $data->FK_userId)
+								<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>
+								@if($data->fixed)
+									<a class="button" href="/jobs/open/{{$data->PK_jobId}}" title="">Open job</a>
+								@else
+									<a class="button" href="/jobs/close/{{$data->PK_jobId}}" title="">Close job</a>
+								@endif
+							@endif
+						@endif
 						<p><b>Description:</b></p>
 						<p>{{$data->description}}</p>
 						<p><b>Owner:</b></p>
@@ -19,21 +32,17 @@
 						@foreach ($data->category as $categorieitem) 
 							<p class="{{strtolower($categorieitem->categoryName)}}">{{$categorieitem->categoryName}}</p>
 						@endforeach
-						@if(Auth::check())
-							{{link_to('/candidates/apply/' . Auth::user()->PK_userId , 'Apply' , $attributes = array('class' => 'buttonapply'))}}
-							@if(Auth::user()->PK_userId == $data->FK_userId)
-								<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>
-								@if($data->fixed)
-									<a href="/jobs/open/{{$data->PK_jobId}}" title="">Open job</a>
-								@else
-									<a href="/jobs/close/{{$data->PK_jobId}}" title="">Close job</a>
-								@endif
-							@endif
-						@endif
 
+					</section>
+					<section>
+						<h3>Comments</h3>
 						@foreach($data->comment as $comment) 
-							{{$comment->comment}}
-							{{$comment->user->name}}
+							<section class="comment">
+								<h4>{{$comment->user->name}}</h4>
+								<p>{{$comment->comment}}</p>
+								<small>Posted at:{{$comment->created_at}}</small>
+							</section>
+							
 						@endforeach
 
 						@if($errors->count() > 0 )
@@ -54,7 +63,6 @@
 															
 						<!-- close form tag -->
 						{{ Form::close() }}
-
 					</section>
 			</div>
 			<div class="column col-md-2 col-sm-3"> </div>

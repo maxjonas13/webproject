@@ -13,7 +13,7 @@
 							<a id="loginlink" onClick='loginclick()'>Login</a>
 						@endif
 						  <a href="/about">About</a>
-						  <a href="/specialist">Specialist</a> 
+						  <a href="/specialists">Specialist</a> 
 						  <a href="/jobs">Jobs</a> 
 						   
 					</nav>

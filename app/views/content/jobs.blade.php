@@ -15,7 +15,13 @@
 			<div class="column col-md-8 col-sm-6" id="jobcontainer"> 
 				
 			</div>
-			<div class="column col-md-2 col-sm-3"> </div>
+			<div class="column col-md-2 col-sm-3"> 
+				<a onClick='jobclick()'>
+					<h1 class="ribbon">
+				   		<strong class="ribbon-content">Create Job</strong>
+					</h1>
+				</a>
+			</div>
 	
 	</div>
 </div>

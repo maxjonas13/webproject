@@ -5,6 +5,7 @@
 	</head>
 
 	<body>
+		@include('include.jobsCreate')
 		@include('include.login')
 		@include('include.register')
 		@include('include.headerbody')

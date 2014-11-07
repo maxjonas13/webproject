@@ -62,12 +62,14 @@
 				<br>
 		
 					
-					{{ Form::checkbox('grouped[it]', $it , $it)}}
+					{{ Form::checkbox('grouped[it]', $it ,'', array('id'=> "finances")) }}
 					{{ Form::label('grouped["it"]', 'IT')}}
 
 					
 					{{ Form::checkbox('grouped[language]', $languages, $languages)}}
 					{{ Form::label('languages', 'Languages')}}
+
+					<br>
 					
 					
 					{{ Form::checkbox('grouped[finances]', $finances, $finances)}}
@@ -77,15 +79,17 @@
 					{{ Form::checkbox('grouped[repairs]', $repairs, $repairs)}}
 					{{ Form::label('repairs')}}
 					
+					<br>
 					
 					{{ Form::checkbox('grouped[math]', $math, $math)}}
 					{{ Form::label('math', 'Math & Fysics')}}
-					
-					
+	
+
 					{{ Form::checkbox('grouped[art]', $art, $art)}}
 					{{ Form::label('art', 'Art')}}
 
-					
+					<br>
+
 					{{ Form::checkbox('grouped[cooking]', $cooking, $cooking)}}
 					{{ Form::label('cooking', 'Cooking')}}
 

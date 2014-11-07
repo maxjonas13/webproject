@@ -1,6 +1,7 @@
 @import "compass";
 @import "bootstrap";
 @import "hexagon";
+@import "ribbon";
 
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 
@@ -87,10 +88,12 @@ video {
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;	
 	&:hover{
+		text-align: center;
 		text-decoration: none;
 		background-color: #437fb7;
 		color:white;
 		width: 21%;
+		margin: 20px;
 	}	
 }
 
@@ -98,6 +101,7 @@ video {
 	float: right;
 	background-color: #18d162;
 	&:hover{
+		text-align: center;
 		background-color: #24e772;
 	}	
 
@@ -147,15 +151,15 @@ p.jobtextinfo{
 }
 
 
-#logincontainer, #registercontainer{
-	z-index: 78;
+#logincontainer, #registercontainer, #jobcreatecontainer{
+	z-index: 79;
 	position: fixed;
 	width: 100%;
 	height:100%;
 	background-color: rgba(0, 0, 0, 0.6);
 
 }
-#login, #register{
+#login, #register, #jobcreate{
 	ul{
 		list-style: none;
 		color: $brand-danger;
@@ -168,12 +172,16 @@ p.jobtextinfo{
 	position: fixed;
 	margin: auto;
 	top: 0; bottom: 0; left: 0; right:0;
-	width: 30%;
+	width: 50%;
 	height: 400px;
 }
 
 #register{
 	height: 700px;
+}
+
+#jobcreate{
+	height: 800px;
 }
 
 #header{
@@ -185,6 +193,9 @@ p.jobtextinfo{
 }
 label {
 	display: inline;
+	width:23%;
+	margin: 1%;
+	margin-left: 20px;
 }
 input[type=checkbox]{
 	display: none;
@@ -234,7 +245,7 @@ input{
 		outline: none;
 		position: relative;
 	}
-	input[type=submit], input[type=textarea]{
+	input[type=submit]{
 		background-color: #4a91d4;
 		color: white;
 		padding: 10px;
@@ -249,6 +260,7 @@ input{
 		-moz-transition: all 0.3s;
 		transition: all 0.3s;	
 		&:hover{
+			text-align: center;
 			background-color: #437fb7;
 			width: 51%;
 		}
@@ -270,16 +282,24 @@ input{
 .registration{
 	text-align: center;
 }
-
+.comment{
+	margin: 25px; 
+	margin-left: 20px;
+	padding: 10px;
+	border-bottom: 1px solid $gray-light;
+}
 #profile p{
 	background-color: $gray-lighter;
 	padding: 20px;
 	border: 1px solid $gray-light;
 }
 
-#profileedit input, input[type=submit], input[type=textarea]{
-	padding: 20px;
+#profileedit input, input[type=submit], textarea{
+	width: 50%;
 	border: 1px solid $gray-lighter;
+	margin: 20px;
+	padding: 10px;
+	max-width: 80%;
 }
 
 .jobstyle{

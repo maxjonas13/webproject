@@ -8,7 +8,11 @@ $baseDir = dirname($vendorDir);
 return array(
     'AddEmailColumnToUsersTable' => $baseDir . '/app/database/migrations/2014_10_26_185738_add_email_column_to_users_table.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
+    'Candidate' => $baseDir . '/app/models/Candidate.php',
+    'CandidateController' => $baseDir . '/app/controllers/CandidateController.php',
     'Category' => $baseDir . '/app/models/Category.php',
+    'Comment' => $baseDir . '/app/models/Comment.php',
+    'CommentController' => $baseDir . '/app/controllers/CommentController.php',
     'CreateCandidatesTable' => $baseDir . '/app/database/migrations/2014_10_26_150348_create_candidates_table.php',
     'CreateCategoriesTable' => $baseDir . '/app/database/migrations/2014_10_26_151239_create_categories_table.php',
     'CreateCommentsTable' => $baseDir . '/app/database/migrations/2014_10_26_145725_create_comments_table.php',

@@ -1856,12 +1856,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/Intervention/image.git",
-            "reference": "e626de028b4734da1e461c8cd2d4d5fc195f1478"
+            "reference": "f0d1a5a31682ad69582262e1a43d3309dd527725"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Intervention/image/zipball/e626de028b4734da1e461c8cd2d4d5fc195f1478",
-            "reference": "e626de028b4734da1e461c8cd2d4d5fc195f1478",
+            "url": "https://api.github.com/repos/Intervention/image/zipball/f0d1a5a31682ad69582262e1a43d3309dd527725",
+            "reference": "f0d1a5a31682ad69582262e1a43d3309dd527725",
             "shasum": ""
         },
         "require": {
@@ -1877,7 +1877,7 @@
             "ext-imagick": "to use Imagick based image processing.",
             "intervention/imagecache": "Caching extension for the Intervention Image library"
         },
-        "time": "2014-10-23 18:51:15",
+        "time": "2014-11-06 16:20:51",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

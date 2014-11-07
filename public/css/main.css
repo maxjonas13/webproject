@@ -3655,23 +3655,98 @@ tbody.collapse.in {
   background: inherit;
 }
 
-/* line 7, ../scss/main.scss */
+/* line 1, ../scss/_ribbon.scss */
+a:hover {
+  margin-left: 50px;
+  cursor: pointer;
+  text-decoration: none;
+}
+/* line 5, ../scss/_ribbon.scss */
+a:hover .ribbon {
+  font-size: 17px !important;
+  background: #d76e00;
+}
+
+/* line 10, ../scss/_ribbon.scss */
+.ribbon {
+  text-align: center;
+  font-size: 16px !important;
+  transition: all 0.2s ease;
+  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+  width: 80%;
+  position: relative;
+  background: #bd6100;
+  color: #fff;
+  text-align: center;
+  padding: 1em 2em;
+  /* Adjust to suit */
+  margin: 2em auto 3em;
+  /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+
+/* line 23, ../scss/_ribbon.scss */
+.ribbon:before, .ribbon:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -1em;
+  border: 1.5em solid #8a4700;
+  z-index: -1;
+}
+
+/* line 31, ../scss/_ribbon.scss */
+.ribbon:before {
+  left: -2em;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+}
+
+/* line 36, ../scss/_ribbon.scss */
+.ribbon:after {
+  right: -2em;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+}
+
+/* line 41, ../scss/_ribbon.scss */
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #572d00 transparent transparent transparent;
+  bottom: -1em;
+}
+
+/* line 49, ../scss/_ribbon.scss */
+.ribbon .ribbon-content:before {
+  left: 0;
+  border-width: 1em 0 0 1em;
+}
+
+/* line 53, ../scss/_ribbon.scss */
+.ribbon .ribbon-content:after {
+  right: 0;
+  border-width: 1em 1em 0 0;
+}
+
+/* line 8, ../scss/main.scss */
 body {
   background-image: url('/img/background.jpg?1414437371');
   background-size: cover;
 }
 
-/* line 12, ../scss/main.scss */
+/* line 13, ../scss/main.scss */
 h1, h2, h3, h4 {
   color: #bd6100;
 }
 
-/* line 15, ../scss/main.scss */
+/* line 16, ../scss/main.scss */
 #homelink {
   text-decoration: none;
 }
 
-/* line 19, ../scss/main.scss */
+/* line 20, ../scss/main.scss */
 .headernav a {
   float: right;
   color: #757575;
@@ -3679,13 +3754,13 @@ h1, h2, h3, h4 {
   display: block;
   margin: 20px;
 }
-/* line 25, ../scss/main.scss */
+/* line 26, ../scss/main.scss */
 .headernav a:hover {
   color: #bd6100;
   text-decoration: none;
 }
 
-/* line 32, ../scss/main.scss */
+/* line 33, ../scss/main.scss */
 .header-unit {
   height: 70%;
   border-right: none;
@@ -3696,7 +3771,7 @@ h1, h2, h3, h4 {
   width: 100%;
 }
 
-/* line 41, ../scss/main.scss */
+/* line 42, ../scss/main.scss */
 #video-container {
   position: absolute;
   top: 0%;
@@ -3707,14 +3782,14 @@ h1, h2, h3, h4 {
   overflow: hidden;
 }
 
-/* line 51, ../scss/main.scss */
+/* line 52, ../scss/main.scss */
 video {
   position: absolute;
   z-index: 0;
   min-width: 100%;
 }
 
-/* line 58, ../scss/main.scss */
+/* line 59, ../scss/main.scss */
 #videocontent {
   z-index: 40;
   margin: auto;
@@ -3726,7 +3801,7 @@ video {
   text-align: center;
   background-color: rgba(128, 72, 0, 0.3);
 }
-/* line 66, ../scss/main.scss */
+/* line 67, ../scss/main.scss */
 #videocontent h1 {
   margin: auto;
   margin-top: 20%;
@@ -3734,7 +3809,7 @@ video {
   color: white;
 }
 
-/* line 73, ../scss/main.scss */
+/* line 74, ../scss/main.scss */
 .button, .buttonapply {
   text-align: center;
   text-decoration: none;
@@ -3752,46 +3827,49 @@ video {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 89, ../scss/main.scss */
+/* line 90, ../scss/main.scss */
 .button:hover, .buttonapply:hover {
+  text-align: center;
   text-decoration: none;
   background-color: #437fb7;
   color: white;
   width: 21%;
+  margin: 20px;
 }
 
-/* line 97, ../scss/main.scss */
+/* line 100, ../scss/main.scss */
 .buttonapply {
   float: right;
   background-color: #18d162;
 }
-/* line 100, ../scss/main.scss */
+/* line 103, ../scss/main.scss */
 .buttonapply:hover {
+  text-align: center;
   background-color: #24e772;
 }
 
-/* line 106, ../scss/main.scss */
+/* line 110, ../scss/main.scss */
 p {
   margin: 20px;
 }
 
-/* line 110, ../scss/main.scss */
+/* line 114, ../scss/main.scss */
 p.jobtextinfo {
   font-size: 11px;
 }
 
-/* line 114, ../scss/main.scss */
+/* line 118, ../scss/main.scss */
 #loginlink {
   cursor: pointer;
 }
 
-/* line 117, ../scss/main.scss */
+/* line 121, ../scss/main.scss */
 #searchbar, #searchbarin {
   background-color: white;
   position: absolute;
   padding: 0.55em 25px 0.55em 3em;
 }
-/* line 121, ../scss/main.scss */
+/* line 125, ../scss/main.scss */
 #searchbar #search-input, #searchbarin #search-input {
   line-height: normal;
   padding: 0.55em 0 0.55em 3em;
@@ -3807,31 +3885,31 @@ p.jobtextinfo {
   -webkit-user-select: text;
   cursor: auto;
 }
-/* line 136, ../scss/main.scss */
+/* line 140, ../scss/main.scss */
 #searchbar i, #searchbarin i {
   position: inherit;
   padding: 0.55em 0 0.55em 1.5em;
   z-index: 5;
 }
 
-/* line 143, ../scss/main.scss */
+/* line 147, ../scss/main.scss */
 #searchbarin {
   margin-top: 65px;
   width: 100%;
   border-top: 1px solid #ededed;
 }
 
-/* line 150, ../scss/main.scss */
-#logincontainer, #registercontainer {
-  z-index: 78;
+/* line 154, ../scss/main.scss */
+#logincontainer, #registercontainer, #jobcreatecontainer {
+  z-index: 79;
   position: fixed;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 158, ../scss/main.scss */
-#login, #register {
+/* line 162, ../scss/main.scss */
+#login, #register, #jobcreate {
   z-index: 80;
   background-image: url('/img/background.jpg?1414437371');
   background-size: cover;
@@ -3843,41 +3921,49 @@ p.jobtextinfo {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 30%;
+  width: 50%;
   height: 400px;
 }
-/* line 159, ../scss/main.scss */
-#login ul, #register ul {
+/* line 163, ../scss/main.scss */
+#login ul, #register ul, #jobcreate ul {
   list-style: none;
   color: #d9534f;
 }
 
-/* line 175, ../scss/main.scss */
+/* line 179, ../scss/main.scss */
 #register {
   height: 700px;
 }
 
-/* line 179, ../scss/main.scss */
+/* line 183, ../scss/main.scss */
+#jobcreate {
+  height: 800px;
+}
+
+/* line 187, ../scss/main.scss */
 #header {
   background-color: white;
 }
-/* line 181, ../scss/main.scss */
+/* line 189, ../scss/main.scss */
 #header .row {
   margin-left: 50px;
   margin-right: 50px;
 }
 
-/* line 186, ../scss/main.scss */
+/* line 194, ../scss/main.scss */
 label {
   display: inline;
+  width: 23%;
+  margin: 1%;
+  margin-left: 20px;
 }
 
-/* line 189, ../scss/main.scss */
+/* line 200, ../scss/main.scss */
 input[type=checkbox] {
   display: none;
 }
 
-/* line 194, ../scss/main.scss */
+/* line 205, ../scss/main.scss */
 input[type=checkbox] + label {
   background-color: #fafafa;
   border: 1px solid #cacece;
@@ -3888,12 +3974,12 @@ input[type=checkbox] + label {
   position: relative;
 }
 
-/* line 204, ../scss/main.scss */
+/* line 215, ../scss/main.scss */
 input[type=checkbox] + label:active, input[type=checkbox]:checked + label:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* line 208, ../scss/main.scss */
+/* line 219, ../scss/main.scss */
 input[type=checkbox]:checked + label {
   background-color: #e9ecee;
   border: 1px solid #adb8c0;
@@ -3901,7 +3987,7 @@ input[type=checkbox]:checked + label {
   color: #99a1a7;
 }
 
-/* line 215, ../scss/main.scss */
+/* line 226, ../scss/main.scss */
 input[type=checkbox]:checked + label:after {
   content: '\2714';
   font-size: 14px;
@@ -3911,7 +3997,7 @@ input[type=checkbox]:checked + label:after {
   color: #99a1a7;
 }
 
-/* line 226, ../scss/main.scss */
+/* line 237, ../scss/main.scss */
 input {
   width: 80%;
   margin: 20px;
@@ -3924,8 +4010,8 @@ input {
   position: relative;
 }
 
-/* line 237, ../scss/main.scss */
-input[type=submit], input[type=textarea] {
+/* line 248, ../scss/main.scss */
+input[type=submit] {
   background-color: #4a91d4;
   color: white;
   padding: 10px;
@@ -3940,17 +4026,18 @@ input[type=submit], input[type=textarea] {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 251, ../scss/main.scss */
-input[type=submit]:hover, input[type=textarea]:hover {
+/* line 262, ../scss/main.scss */
+input[type=submit]:hover {
+  text-align: center;
   background-color: #437fb7;
   width: 51%;
 }
-/* line 255, ../scss/main.scss */
-input[type=submit] input[type=file], input[type=textarea] input[type=file] {
+/* line 267, ../scss/main.scss */
+input[type=submit] input[type=file] {
   width: 100%;
 }
 
-/* line 259, ../scss/main.scss */
+/* line 271, ../scss/main.scss */
 .icon-remove-sign {
   cursor: pointer;
   float: right;
@@ -3962,142 +4049,153 @@ input[type=submit] input[type=file], input[type=textarea] input[type=file] {
   overflow: hidden;
 }
 
-/* line 270, ../scss/main.scss */
+/* line 282, ../scss/main.scss */
 .registration {
   text-align: center;
 }
 
-/* line 274, ../scss/main.scss */
+/* line 285, ../scss/main.scss */
+.comment {
+  margin: 25px;
+  margin-left: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #757575;
+}
+
+/* line 291, ../scss/main.scss */
 #profile p {
   background-color: #ededed;
   padding: 20px;
   border: 1px solid #757575;
 }
 
-/* line 280, ../scss/main.scss */
-#profileedit input, input[type=submit], input[type=textarea] {
-  padding: 20px;
+/* line 297, ../scss/main.scss */
+#profileedit input, input[type=submit], textarea {
+  width: 50%;
   border: 1px solid #ededed;
+  margin: 20px;
+  padding: 10px;
+  max-width: 80%;
 }
 
-/* line 285, ../scss/main.scss */
+/* line 305, ../scss/main.scss */
 .jobstyle {
   border-left: solid 5px red;
 }
-/* line 287, ../scss/main.scss */
+/* line 307, ../scss/main.scss */
 .jobstyle h1, .jobstyle p {
   margin-left: 25px;
 }
-/* line 290, ../scss/main.scss */
+/* line 310, ../scss/main.scss */
 .jobstyle p b {
   margin-left: -5px;
 }
 
-/* line 295, ../scss/main.scss */
+/* line 315, ../scss/main.scss */
 .it {
   color: #d44a4a;
 }
 
-/* line 299, ../scss/main.scss */
+/* line 319, ../scss/main.scss */
 .cat {
   cursor: pointer;
 }
 
-/* line 303, ../scss/main.scss */
+/* line 323, ../scss/main.scss */
 section.it {
   color: black;
   border-left: solid 5px #d44a4a;
 }
 
-/* line 308, ../scss/main.scss */
+/* line 328, ../scss/main.scss */
 .language {
   color: #d44a9e;
 }
 
-/* line 312, ../scss/main.scss */
+/* line 332, ../scss/main.scss */
 section.language {
   color: black;
   border-left: solid 5px #d44a9e;
 }
 
-/* line 317, ../scss/main.scss */
+/* line 337, ../scss/main.scss */
 .finances {
   color: #614ad4;
 }
 
-/* line 321, ../scss/main.scss */
+/* line 341, ../scss/main.scss */
 section.finances {
   color: black;
   border-left: solid 5px #614ad4;
 }
 
-/* line 326, ../scss/main.scss */
+/* line 346, ../scss/main.scss */
 .repairs {
   color: #4a91d4;
 }
 
-/* line 330, ../scss/main.scss */
+/* line 350, ../scss/main.scss */
 section.repairs {
   color: black;
   border-left: solid 5px #4a91d4;
 }
 
-/* line 335, ../scss/main.scss */
+/* line 355, ../scss/main.scss */
 .math {
   color: #66d8a4;
 }
 
-/* line 339, ../scss/main.scss */
+/* line 359, ../scss/main.scss */
 section.mathfysics {
   color: black;
   border-left: solid 5px #66d8a4;
 }
 
-/* line 344, ../scss/main.scss */
+/* line 364, ../scss/main.scss */
 .art {
   color: #a4d658;
 }
 
-/* line 348, ../scss/main.scss */
+/* line 368, ../scss/main.scss */
 section.art {
   color: black;
   border-left: solid 5px #a4d658;
 }
 
-/* line 353, ../scss/main.scss */
+/* line 373, ../scss/main.scss */
 .cooking {
   color: #d4a84a;
 }
 
-/* line 357, ../scss/main.scss */
+/* line 377, ../scss/main.scss */
 section.cooking {
   color: black;
   border-left: solid 5px #d4a84a;
 }
 
-/* line 362, ../scss/main.scss */
+/* line 382, ../scss/main.scss */
 .programming {
   color: #d4844a;
 }
 
-/* line 366, ../scss/main.scss */
+/* line 386, ../scss/main.scss */
 section.programming {
   color: black;
   border-left: solid 5px #d4844a;
 }
 
-/* line 371, ../scss/main.scss */
+/* line 391, ../scss/main.scss */
 #footer {
   margin-top: 20px;
   background-color: #bd6100;
 }
-/* line 374, ../scss/main.scss */
+/* line 394, ../scss/main.scss */
 #footer h1, #footer small {
   color: white;
   margin: 5px;
   margin-top: 20px;
 }
-/* line 379, ../scss/main.scss */
+/* line 399, ../scss/main.scss */
 #footer .copyright {
   text-align: center;
   padding: 25px;
