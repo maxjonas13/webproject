@@ -1,6 +1,7 @@
 <div id="jobcreatecontainer" onClick="containerclick()">
 </div>
 <div id="jobcreate">
+	<i class="icon-remove-sign" onClick='containerclick()'></i>
 	@if($errors->count() > 0) 
 	@foreach($errors->all() as $error)
 	<ul>

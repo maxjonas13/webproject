@@ -1,4 +1,4 @@
-@extends("layout.default")
+@extends("layout.defaultedit")
 
 @section('content')
 		<div class="firstrow"> 
@@ -62,39 +62,39 @@
 				<br>
 		
 					
-					{{ Form::checkbox('grouped[it]', $it ,'', array('id'=> "finances")) }}
-					{{ Form::label('grouped["it"]', 'IT')}}
+					{{ Form::checkbox('grouped[it]', $it ,$it, array('id'=> "it")) }}
+					{{ Form::label('it', 'IT')}}
 
 					
-					{{ Form::checkbox('grouped[language]', $languages, $languages)}}
+					{{ Form::checkbox('grouped[language]', $languages, $languages, array('id'=> "languages")) }}
 					{{ Form::label('languages', 'Languages')}}
 
 					<br>
 					
 					
-					{{ Form::checkbox('grouped[finances]', $finances, $finances)}}
+					{{ Form::checkbox('grouped[finances]', $finances, $finances, array('id'=> "finances")) }}
 					{{ Form::label('finances')}}
 					
 					
-					{{ Form::checkbox('grouped[repairs]', $repairs, $repairs)}}
+					{{ Form::checkbox('grouped[repairs]', $repairs, $repairs, array('id'=> "repairs")) }}
 					{{ Form::label('repairs')}}
 					
 					<br>
 					
-					{{ Form::checkbox('grouped[math]', $math, $math)}}
+					{{ Form::checkbox('grouped[math]', $math,$math, array('id'=> "math")) }}
 					{{ Form::label('math', 'Math & Fysics')}}
 	
 
-					{{ Form::checkbox('grouped[art]', $art, $art)}}
+					{{ Form::checkbox('grouped[art]', $art,$art, array('id'=> "art")) }}
 					{{ Form::label('art', 'Art')}}
 
 					<br>
 
-					{{ Form::checkbox('grouped[cooking]', $cooking, $cooking)}}
+					{{ Form::checkbox('grouped[cooking]', $cooking, $cooking, array('id'=> "cooking")) }}
 					{{ Form::label('cooking', 'Cooking')}}
 
 					
-					{{ Form::checkbox('grouped[programming]', $cooking, $programming)}}
+					{{ Form::checkbox('grouped[programming]', $programming,$programming, array('id'=> "programming")) }}
 					{{ Form::label('programming', 'Programming')}}
 			
 				<br>
