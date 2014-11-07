@@ -6,72 +6,72 @@ classes = Array();
 $(document).ready(function() {
 	//document is ready
 
-	//get all the jobs
-	$.get('/jobs/all', null, function(data) {
+	//get all the users
+	$.get('/specialists/all', null, function(data) {
 		getOverview(data);
 	});
 
-	//get all the jobs with category it
+	//get all the users with category it
 	$('.it').click(function(e){
 		e.preventDefault();
-		$.get('/jobs/filter/IT', null, function(data){
+		$.get('/specialists/filter/IT', null, function(data){
 			getView(data, "it");
 
 		});
 	});
 
-	//get all the jobs with category language
+	//get all the users with category language
 	$('.language').click(function(e){
 		e.preventDefault();
-		$.get('/jobs/filter/language', null, function(data){
+		$.get('/specialists/filter/language', null, function(data){
 			getView(data, "language");
 		});
 	});
 
-	//get all the jobs with category finances
+	//get all the users with category finances
 	$('.finances').click(function(e){
 		e.preventDefault();
-		$.get('/jobs/filter/finances', null, function(data){
+		$.get('/specialists/filter/finances', null, function(data){
 			getView(data, 'finances');
 		});
 	});
 
-	//get all the jobs with category repairs
+	//get all the users with category repairs
 	$('.repairs').click(function(e){
 		e.preventDefault();
-		$.get('/jobs/filter/repairs', null, function(data){
+		$.get('/specialists/filter/repairs', null, function(data){
 			getView(data, "repairs");
 		});
 	});
 
-	//get all the jobs with category math
+	//get all the users with category math
 	$('.math').click(function(e){
 		e.preventDefault();
-		$.get('/jobs/filter/math', null, function(data){
+		$.get('/specialists/filter/math', null, function(data){
 			getView(data, "math");
 		});
 	});
 
-	//get all the jobs with category art
+	//get all the users with category art
 	$('.art').click(function(e){
 		e.preventDefault();
-		$.get('/jobs/filter/art', null, function(data){
+		$.get('/specialists/filter/art', null, function(data){
 			getView(data, "art");
 		});
 	});
 
-	//get all the jobs with category cooking
+	//get all the users with category cooking
 	$('.cooking').click(function(e){
 		e.preventDefault();
-		$.get('/jobs/filter/cooking', null, function(data){
+		$.get('/specialists/filter/cooking', null, function(data){
 			getView(data, "cooking");
 		});
 	});
 
-	//get all the jobs with category programming
+	//get all the users with category programming
 	$('.programming').click(function(e){
 		e.preventDefault();
-		$.get('/jobs/filter/programming', null, function(data){
+		$.get('/specialists/filter/programming', null, function(data){
 			getView(data, "programming");
 		});
 	});
@@ -80,13 +80,15 @@ $(document).ready(function() {
 
 //function to show the job overview
 function getOverview(data){
+	//console.log(data['data']);
 	//make sure the jobcontainer is empty
 	$('#jobcontainer').empty();
 	
-	//loop true the jobs, data['data'] => beceause off pagination data is in another data array
+	//loop true the users, data['data'] => beceause off pagination data is in another data array
 	for(i = 0; i < data['data'].length; i++) {
 		//put the content in the variable tag
-		tag = '<section class="jobstyle '+ data['data'][i]['category'][0]['categoryName'].toLowerCase() +'" ><h1 class=' + data['data'][i]['category'][0]["categoryName"].toLowerCase() + '>'+ data['data'][i]["title"] +'</h1><p class="jobtextinfo"><small><strong>Location: </strong>' + data['data'][i]["location"]+'<strong> Created at: </strong>' + data['data'][i]["created_at"] +'<strong> By: </strong> ' + data['data'][i]['user']['name'] + '</small></p><p>' + data['data'][i]["description"] + '</p><a class="button" href="/jobs/details/' + data['data'][i]["PK_jobId"] + '">Details</a><a class="buttonapply" onClick="registerclick()">Apply</a></section>';
+		//console.log(data['data'][i]['category']);
+		tag = '<section class="jobstyle '+ data['data'][i]['category'][0]['categoryName'].toLowerCase() +'" ><h1 class=' + data['data'][i]['category'][0]['categoryName'].toLowerCase() + '>'+ data['data'][i]["name"] + '</h1></section>';
 		
 		//add the tag variable to the content off jobcontainer
 		document.getElementById('jobcontainer').innerHTML += tag;
@@ -119,9 +121,9 @@ function getOverview(data){
 			//prevent the link to go to another page
 			e.preventDefault();
 
-			//retrieve the next page with jobs
+			//retrieve the next page with users
 			//replace has been used filter the numbers out off the classname so we know wich page we have to load
-			$.get('/jobs/all?page=' + e.target.className.replace(/[^0-9]/g, ''), null, function(data){
+			$.get('/specialists/all?page=' + e.target.className.replace(/[^0-9]/g, ''), null, function(data){
 				//load the getOverview function again with data
 				getOverview(data);
 			});
@@ -130,15 +132,24 @@ function getOverview(data){
 	
 };
 
-//function to show the jobs off the choosen category
+//function to show the users off the choosen category
 function getView(data , cat) {
 	//make sure the jobcontainer is empty
 	$('#jobcontainer').empty();
 
-	//loop true the jobs, data['data'] => beceause off pagination data is in another data array
+	//check if there are users for the selected category
+	if(data['data'].length == 0) {
+		tag = 'There are currently no specialists for this category.';
+
+		//add the tag variable to the content off jobcontainer
+		document.getElementById('jobcontainer').innerHTML += tag;
+	}
+
+	//loop true the users, data['data'] => beceause off pagination data is in another data array
 	for(i = 0; i < data['data'].length; i++) {
+		
 		//put the content in the variable tag
-		tag = '<section class="jobstyle '+ data['data'][i]['category'][0]['categoryName'].toLowerCase() +'" ><h1 class=' + data['data'][i]['category'][0]["categoryName"].toLowerCase() + '>'+ data['data'][i]["title"] +'</h1><p class="jobtextinfo"><small><strong>Location: </strong>' + data['data'][i]["location"]+'<strong> Created at: </strong>' + data['data'][i]["created_at"] +'<strong> By: </strong> ' + data['data'][i]['user']['name'] + '</small></p><p>' + data['data'][i]["description"] + '</p><a class="button" href="/jobs/details/' + data['data'][i]["PK_jobId"] + '">Details</a><a class="buttonapply" onClick="registerclick()">Apply</a></section>';
+		tag = '<section class="jobstyle '+ data['data'][i]['category'][0]['categoryName'].toLowerCase() +'" ><h1 class=' + data['data'][i]['category'][0]['categoryName'].toLowerCase() + '>'+ data['data'][i]["name"] + '</h1></section>';
 		
 		//add the tag variable to the content off jobcontainer
 		document.getElementById('jobcontainer').innerHTML += tag;
@@ -171,9 +182,9 @@ function getView(data , cat) {
 			//prevent the link to go to another page
 			e.preventDefault();
 
-			//retrieve the next page with jobs
+			//retrieve the next page with users
 			//replace has been used filter the numbers out off the classname so we know wich page we have to load
-			$.get('/jobs/filter/' + cat.toLowerCase() + '?page=' + e.target.className.replace(/[^0-9]/g, ''), null, function(data){
+			$.get('/specialists/filter/' + cat.toLowerCase() + '?page=' + e.target.className.replace(/[^0-9]/g, ''), null, function(data){
 				//load the getOverview function again with data
 				getView(data, cat);
 			});

@@ -49,6 +49,11 @@ Route::get('/comments/delete/{id}', 'CommentController@delete');
 //routes for Candidates
 Route::get('/candidates/apply/{id}', 'CandidateController@apply');
 
+//routes for specialists
+Route::get('/specialists', 'UserController@index');
+Route::get('/specialists/all', 'UserController@getAllUsers');
+Route::get('/specialists/filter/{id}', 'UserController@filter');
+
 //route for the about page
 Route::get('/about', function() {
 	return View::make('content/About');
