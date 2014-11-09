@@ -31,7 +31,7 @@
 								@endforeach
 								<section id="buttons">
 								@if($hasApplied)
-									<a onClick = "cancelClick({{$data->PK_jobId}})" class="buttoncancel">Cancel</a>
+									<a onClick = "cancelClick({{$data->PK_jobId}})" id="{{$data->PK_jobId}}"class="buttoncancel">Cancel</a>
 								@else
 									<a onClick = "applyClick({{$data->PK_jobId}})" id="{{$data->PK_jobId}}" class="buttonapply">Apply</a>
 								@endif
@@ -48,15 +48,16 @@
 					</section>
 
 					<section>
+						<section class="comment">
 						<h3>Comments</h3>
-						@foreach($data->comment as $comment) 
-							<section class="comment">
-								<h4>{{$comment->user->name}}</h4>
-								<p>{{$comment->comment}}</p>
-								<small>Posted at:{{$comment->created_at}}</small>
-							</section>
-							
-						@endforeach
+							@foreach($data->comment as $comment) 
+								<section class="commentitem">
+									<h4>{{$comment->user->name}}</h4>
+									<p>{{$comment->comment}}</p>
+									<small>Posted at:{{$comment->created_at}}</small>
+								</section>
+							@endforeach
+						</section>
 
 						@if($errors->count() > 0 )
 							@foreach($errors->all() as $error)

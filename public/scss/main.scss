@@ -10,10 +10,33 @@ body{
 	 background-image: image-url('img/background.jpg');
 	 background-size: cover;
 }
+::selection{
+		background-color: lighten($brand-primary, 30%);
+		color: $gray-dark;
+}
+::-moz-selection {
+       background-color: lighten($brand-primary, 30%);
+       color: $gray-dark;
+}
 
 h1, h2, h3, h4{
 	color: $brand-primary;
+	-webkit-font-smoothing: antialiased;
 }
+p{
+	margin: 20px;
+	display: block;
+	text-align: justify;
+	width: 90%;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	line-height: 1.7em;
+	-webkit-font-smoothing: antialiased;
+	font-weight: normal !important;
+}
+
 #homelink{
 	text-decoration: none;
 }
@@ -145,10 +168,6 @@ video {
 		background-color: darken($brand-danger, 10%);
 	}	
 
-}
-
-p{
-	margin: 20px;
 }
 
 p.jobtextinfo{
@@ -296,12 +315,17 @@ input{
 .registration{
 	text-align: center;
 }
-.comment{
+.commentitem{
 	margin: 25px; 
 	margin-left: 20px;
 	padding: 10px;
 	border-bottom: 1px solid $gray-light;
 }
+.comment{
+	margin-top: 100px;
+	border-top: 1px solid $gray-light;
+}
+
 #profile p{
 	background-color: $gray-lighter;
 	padding: 20px;
@@ -317,14 +341,17 @@ input{
 }
 
 .jobstyle{
-	border-left: solid 5px red; 
+	border-left: solid 5px $brand-primary; 
 	h1, p{
 		margin-left: 25px;
 	}
-	p b{
-		margin-left: -5px;
-	}
 }
+
+.profilestyle{
+	border-left: solid 5px $brand-primary; 
+	padding: 20px;
+}
+
 
 .it{
 color: $IT;
@@ -439,4 +466,9 @@ border-left: solid 5px $Programming;
 		text-align: right;
 		margin-top: -35px;
 	}
+}
+
+.aboutus{
+	text-indent: 110px;
+	margin-top: -40px;
 }

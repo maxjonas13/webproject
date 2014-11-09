@@ -4,6 +4,11 @@
 		<div class="firstrow"> 
 			<div class="column col-md-2 col-sm-3"> </div>
 			<div class="column col-md-8 col-sm-6" id="profile">  
+				@if(!empty($data->category[0]))
+					<section class="profilestyle {{strtolower($data->category[0]->categoryName)}}">
+				@else
+					<section class="profilestyle">
+				@endif
 				<h1>Profile</h1>
 				
 				<div class="hexagon" style="background-image: url({{$data->profile->profilePicture}});">
@@ -48,7 +53,7 @@
 				{{ HTML::link('profile/edit/'.$data->PK_userId, 'contact', array('class' => 'buttonapply'), false)}}
 				@endif
 			
-
+			</section>
 		</div>
 		<div class="column col-md-2 col-sm-3"> </div>
 	</div>
