@@ -11,7 +11,7 @@ class JobController extends BaseController {
 
 	//function to load an overview off all the jobs with pagination
 	public function jobOverviewWithPagination() {
-			$job = Job::where('fixed', '=', FALSE)->with('User', 'Category')->paginate(5);
+			$job = Job::where('fixed', '=', FALSE)->with('User', 'Category', 'Candidate')->paginate(5);
 	
 			return $job;
 	}
@@ -150,6 +150,30 @@ class JobController extends BaseController {
 		}
 
 		return Redirect::to('/jobs/details/' . $id);
+	}
+
+	//function to solicitate for a job
+	public function solicitate($id) {
+		//check if the user is authenticated
+		if(Auth::check()) {
+			$candidate = new Candidate;
+			$solicitated = $candidate->checkIfUserHasSolicitated($id);
+
+			if(!$solicitated) {
+				//the user has not solicitad yet
+
+				$candidate = new Candidate;
+				//call the function to store the solicitation
+				$candidate->store($id);
+
+				//return true if the solicitation is stored
+				return json_encode(TRUE);
+			}
+			else {
+				//return back if the solicitation is not stored
+				return json_encode(FALSE);
+			}
+		}
 	}
 	
 

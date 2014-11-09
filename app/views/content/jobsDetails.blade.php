@@ -8,8 +8,8 @@
 
 						<h1 class="{{strtolower($data->category[0]->categoryName)}}">{{$data->title}}</h1>
 						@if(Auth::check())
-							@if(Auth::user()->PK_userId == $data->user->pk_userId)
-							{{link_to('/candidates/apply/' . Auth::user()->PK_userId , 'Apply' , $attributes = array('class' => 'buttonapply'))}}
+							@if(Auth::user()->PK_userId != $data->user->FK_userId)
+								<a onClick = "applyClick({{$data->PK_jobId}})" class="buttonapply">Apply</a>
 							@endif
 							@if(Auth::user()->PK_userId == $data->FK_userId)
 								<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>

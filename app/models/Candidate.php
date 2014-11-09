@@ -29,9 +29,30 @@ class Candidate extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->belongsTo('User', 'FK_userId');
 	}
 
+	//function to check if the user has allready solicitated
+	public function checkIfUserHasSolicitated($id) {
+		$solicitated = Candidate::where(function($query) use($id) {
+			$query->where('FK_userId', '=', Auth::user()->PK_userId);
+				$query->where('FK_jobId', '=', $id);
+		})->get();
+			
+		if(count($solicitated) > 0) {
+			return TRUE;
+		}
+		else {
+			return FALSE;
+		}
+	}
+
 	//function to store a candidate
-	public function store() {
-		
+	public function store($id) {
+		$candidate = new Candidate;
+
+		$candidate->FK_jobId = $id;
+		$candidate->FK_userId = Auth::user()->PK_userId;
+		$candidate->canceled = FALSE;
+
+		$candidate->save();
 	}
 	
 }

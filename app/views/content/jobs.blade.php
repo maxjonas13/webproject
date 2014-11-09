@@ -27,4 +27,5 @@
 </div>
 
 {{ HTML::script('script/loadjobs.js'); }}
+{{ HTML::script('script/applyCall.js'); }}
 @stop
