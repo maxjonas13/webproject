@@ -54,5 +54,9 @@ class Candidate extends Eloquent implements UserInterface, RemindableInterface {
 
 		$candidate->save();
 	}
+
+	public function cancelSolicitation($id) {
+		//$canidate = Candidate::find();
+	}
 	
 }

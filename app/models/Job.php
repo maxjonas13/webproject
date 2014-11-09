@@ -63,11 +63,14 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 		//save the job
 		$job->save();
 		
+		$jobid = $job->PK_jobId;
+
 		//loop true the checkboxes
 		//checkbox = name of the checkbox, value = true / false
 		foreach($checkboxes as $checkbox => $value) {
+			var_dump($checkboxes);
 			//check if the checkbox is checked
-			if($value) {
+			if($value == "") {
 				//loop true the categories
 				foreach($categories as $category) {
 					//check if the checkbox name and categoryName maches
@@ -75,7 +78,8 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 						//if they match create a new reacord in the pivot table
 						$jobcategorie = new JobCategorie;
 						$jobcategorie->FK_categoryId = $category->PK_categoryId;
-						$jobcategorie->job()->associate($job);
+						
+						$jobcategorie->FK_jobId = $jobid;
 
 						//save the data in the pivot table
 						$jobcategorie->save();
@@ -85,7 +89,7 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 		}
 
 		//return the id off the job
-		return $job->PK_jobId;
+		return $jobid;
 	}
 
 	public function updateJob() {

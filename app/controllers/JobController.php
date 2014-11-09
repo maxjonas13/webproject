@@ -175,6 +175,14 @@ class JobController extends BaseController {
 			}
 		}
 	}
+
+	//function to cancel a solicitation
+	public function cancelSolicitation($id) {
+		if(Auth::check()) {
+			$candidate = new Candidate;
+			$canditate->cancelSolicitation($id);
+		}
+	}
 	
 
 }
