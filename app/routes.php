@@ -42,6 +42,7 @@ Route::get('/jobs/open/{id}', 'JobController@closeOrOpen');
 Route::get('/jobs/all', 'JobController@jobOverviewWithPagination');
 Route::get('/jobs/filter/{id}', 'JobController@filterCategorieWithPagination');
 Route::get('/jobs/solicitate/{id}', 'JobController@solicitate');
+Route::get('/jobs/solicitate/cancel/{id}', 'JobController@cancelSolicitation');
 
 //routes for comments
 Route::post('/comments/store', 'CommentController@store');

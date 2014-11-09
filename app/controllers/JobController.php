@@ -180,7 +180,9 @@ class JobController extends BaseController {
 	public function cancelSolicitation($id) {
 		if(Auth::check()) {
 			$candidate = new Candidate;
-			$canditate->cancelSolicitation($id);
+			$candidate->cancelSolicitation($id);
+
+			return "You have updated your solicitatin status";
 		}
 	}
 	

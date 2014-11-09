@@ -88,6 +88,12 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 			}
 		}
 
+		//retrieve credits from the user who created the job
+		$credits = Credit::where('FK_userId', '=', Auth::user()->PK_userId)->first();
+		$credits->credits--;
+
+		$credits->save();
+
 		//return the id off the job
 		return $jobid;
 	}
@@ -151,15 +157,14 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 		$job = Job::find($id);
 
 		//check if job is fixed
-		if($job->fixed) {
+		if(!$job->fixed) {
 			//job is fixed and this function is called so open job again
-			$job->fixed = FALSE;
-		}
-		else {
-			//set fixed column to TRUE
 			$job->fixed = TRUE;
 		}
+
 		//save the job
 		$job->save();
+
+		//GIVE THE SELECTED USER A CREDIT FOR HIS HELP
 	}
 }

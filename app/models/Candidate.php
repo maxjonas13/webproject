@@ -56,7 +56,19 @@ class Candidate extends Eloquent implements UserInterface, RemindableInterface {
 	}
 
 	public function cancelSolicitation($id) {
-		//$canidate = Candidate::find();
+		$candidate = Candidate::where(function($query) use($id){
+			$query->where('FK_jobId', '=', $id);
+			$query->where('FK_userId', '=', Auth::user()->PK_userId);
+		})->first();
+
+		if($candidate->canceled) {
+			$candidate->canceled = FALSE;
+		}
+		else {
+			$candidate->canceled = TRUE;
+		}
+
+		$candidate->save();
 	}
 	
 }
