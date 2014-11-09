@@ -69,8 +69,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		//store data into the users table
 		$user->save();
 
-		var_dump('hallo');
-
 		//create new profile
 		$profile = new Profile;
 		//link the profile to the registered user with the id
