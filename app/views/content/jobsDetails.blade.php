@@ -26,7 +26,7 @@
 							{{$hasApplied = false}}
 								@foreach ($data->candidate as $candidate)
 									@if($candidate->FK_userId == Auth::User()->PK_userId)
-									{{$hasApplied = true}}
+									<?php $hasApplied = true ?>
 									@endif
 								@endforeach
 								@if($hasApplied)

@@ -12,6 +12,7 @@
 			</div>
 			<video autoplay loop muted class="fillWidth">
 				<source src="{{asset('assets/beehive.mp4')}}" type="video/mp4">
+				<img src="/images/headervideo.jpg" title="Your browser does not support the <video> tag">
 				Your browser does not support the video tag. I suggest you upgrade your browser.
 			</video>
 		</div><!-- end video-container -->
