@@ -13,7 +13,11 @@
 	}
 
 	function cancelClick(id) {
+		var cancelurl = '/jobs/solicitate/cancel/' + id;
+
+		$.get(cancelurl, null, function(data) {
 			changeButtonStatecancel(id);
+		});
 	}
 
 	function changeButtonStatecancel(jobid) {
