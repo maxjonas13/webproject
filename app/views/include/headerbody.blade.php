@@ -1,9 +1,9 @@
 		<header id='header'>
 			<div class="row"> 
-				<div class="column col-md-7 col-sm-6">  
+				<div class="column col-md-1 col-sm-1">  
 					<a id="homelink" href="/"><h1>BeeHive</h1></a>
 				</div>
-				<div class="column col-md-5 col-sm-6">  
+				<div class="column col-md-11 col-sm-11">  
 					<nav class='headernav'>
 						@if (Auth::check())
 							 <a id="logout" href="/logout">Logout</a>

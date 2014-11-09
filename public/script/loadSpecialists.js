@@ -88,7 +88,7 @@ function getOverview(data){
 	for(i = 0; i < data['data'].length; i++) {
 		//put the content in the variable tag
 		//console.log(data['data'][i]['category']);
-		tag = '<section class="jobstyle '+ data['data'][i]['category'][0]['categoryName'].toLowerCase() +'" ><h1 class=' + data['data'][i]['category'][0]['categoryName'].toLowerCase() + '>'+ data['data'][i]["name"] + '</h1></section>';
+		tag = '<section class="jobstyle '+ data['data'][i]['category'][0]['categoryName'].toLowerCase() +'" ><h1 class=' + data['data'][i]['category'][0]['categoryName'].toLowerCase() + '>'+ data['data'][i]["name"] + '</h1><div class="hexagon" style="margin-bottom:20px; background-image: url('+data['data'][i]["profile"]["profilePicture"] + ');"><div class="hexTop"></div><div class="hexBottom"></div></div><p class="biospecialist">' + data['data'][i]["profile"]["bio"] +'</p><a class="button" href="/profile/' + data['data'][i]["PK_userId"] + '">Details</a></section>';
 		
 		//add the tag variable to the content off jobcontainer
 		document.getElementById('jobcontainer').innerHTML += tag;
@@ -109,7 +109,8 @@ function getOverview(data){
 		classes[i] = "page" + pagenumber;
 
 		//append the link to the jobcontainer
-		$('#jobcontainer').append ( '<a href="" class="'+classes[i]+'"> ' + pagenumber + ' </a>' );
+		$('#jobcontainer').append ('<section id="pagination"></section>');
+		$('#pagination').append ( '<a href="" class="'+classes[i]+'"> ' + pagenumber + ' </a>');
 	}
 
 	//loop true the classes
@@ -149,8 +150,7 @@ function getView(data , cat) {
 	for(i = 0; i < data['data'].length; i++) {
 		
 		//put the content in the variable tag
-		tag = '<section class="jobstyle '+ data['data'][i]['category'][0]['categoryName'].toLowerCase() +'" ><h1 class=' + data['data'][i]['category'][0]['categoryName'].toLowerCase() + '>'+ data['data'][i]["name"] + '</h1></section>';
-		
+		tag = '<section class="jobstyle '+ data['data'][i]['category'][0]['categoryName'].toLowerCase() +'" ><h1 class=' + data['data'][i]['category'][0]['categoryName'].toLowerCase() + '>'+ data['data'][i]["name"] + '</h1><div class="hexagon" style="margin-bottom:20px; background-image: url('+data['data'][i]["profile"]["profilePicture"] + ');"><div class="hexTop"></div><div class="hexBottom"></div></div><p class="biospecialist">' + data['data'][i]["profile"]["bio"] +'</p><a class="button" href="/profile/' + data['data'][i]["PK_userId"] + '">Details</a></section>';
 		//add the tag variable to the content off jobcontainer
 		document.getElementById('jobcontainer').innerHTML += tag;
 	}
@@ -170,7 +170,8 @@ function getView(data , cat) {
 		classes[i] = "page" + pagenumber;
 
 		//append the link to the jobcontainer
-		$('#jobcontainer').append ( '<a href="" class="'+classes[i]+'"> ' + pagenumber + ' </a>' );
+		$('#jobcontainer').append ('<section id="pagination"></section>');
+		$('#pagination').append ( '<a href="" class="'+classes[i]+'"> ' + pagenumber + ' </a>');
 	}
 
 	//loop true the classes

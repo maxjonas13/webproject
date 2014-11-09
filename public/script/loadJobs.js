@@ -107,7 +107,8 @@ function getOverview(data){
 		classes[i] = "page" + pagenumber;
 
 		//append the link to the jobcontainer
-		$('#jobcontainer').append ( '<a href="" class="'+classes[i]+'"> ' + pagenumber + ' </a>' );
+		$('#jobcontainer').append ('<section id="pagination"></section>');
+		$('#pagination').append ( '<a href="" class="'+classes[i]+'"> ' + pagenumber + ' </a>');
 	}
 
 	//loop true the classes
@@ -159,7 +160,8 @@ function getView(data , cat) {
 		classes[i] = "page" + pagenumber;
 
 		//append the link to the jobcontainer
-		$('#jobcontainer').append ( '<a href="" class="'+classes[i]+'"> ' + pagenumber + ' </a>' );
+		$('#jobcontainer').append ('<section id="pagination"></section>');
+		$('#pagination').append ( '<a href="" class="'+classes[i]+'"> ' + pagenumber + ' </a>');
 	}
 
 	//loop true the classes

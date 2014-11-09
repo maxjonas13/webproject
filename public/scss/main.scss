@@ -1,7 +1,8 @@
 @import "compass";
 @import "bootstrap";
-@import "hexagon";
 @import "ribbon";
+@import "hexagon";
+
 
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 
@@ -23,6 +24,7 @@ h1, h2, h3, h4{
 		text-decoration: none;
 		display: block;
 		margin: 20px;
+		transition: all 0.5s ease;
 		&:hover{
 			color: $brand-primary;
 			text-decoration: none;
@@ -71,7 +73,35 @@ video {
 		color: white;
 	}
 }
-.button, .buttonapply{
+#logincontainer, #registercontainer, #jobcreatecontainer{
+	z-index: 100;
+	position: fixed;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+
+}
+#login, #register, #jobcreate{
+	ul{
+		list-style: none;
+		color: $brand-danger;
+	}
+	z-index: 200;
+	background-image: image-url('img/background.jpg');
+	 background-size: cover;
+	text-align: center;
+	background-color: white; 
+	position: fixed;
+	margin: auto;
+	top: 0; bottom: 0; left: 0; right:0;
+	width: 50%;
+	height: 400px;
+}
+.button, .buttonapply, .buttoncancel{
 	text-align: center;
 	text-decoration: none;
 	background-color: #4a91d4;
@@ -99,10 +129,20 @@ video {
 
 .buttonapply{
 	float: right;
-	background-color: #18d162;
+	background-color: $brand-success;
 	&:hover{
 		text-align: center;
-		background-color: #24e772;
+		background-color: saturate(lighten($brand-success, 10%), 10%);
+	}	
+
+}
+
+.buttoncancel{
+	float: right;
+	background-color: $brand-danger;
+	&:hover{
+		text-align: center;
+		background-color: darken($brand-danger, 10%);
 	}	
 
 }
@@ -148,32 +188,6 @@ p.jobtextinfo{
 	margin-top:65px;
 	width:100%;
 	border-top:1px solid $gray-lighter;
-}
-
-
-#logincontainer, #registercontainer, #jobcreatecontainer{
-	z-index: 79;
-	position: fixed;
-	width: 100%;
-	height:100%;
-	background-color: rgba(0, 0, 0, 0.6);
-
-}
-#login, #register, #jobcreate{
-	ul{
-		list-style: none;
-		color: $brand-danger;
-	}
-	z-index: 80;
-	background-image: image-url('img/background.jpg');
-	 background-size: cover;
-	text-align: center;
-	background-color: white; 
-	position: fixed;
-	margin: auto;
-	top: 0; bottom: 0; left: 0; right:0;
-	width: 50%;
-	height: 400px;
 }
 
 #register{
@@ -356,7 +370,7 @@ border-left: solid 5px $Repairs;
 color:$MathFysics;
 }
 
-section.mathfysics{
+section.math{
 color: black;
 border-left: solid 5px $MathFysics; 
 }
@@ -400,5 +414,29 @@ border-left: solid 5px $Programming;
 		text-align: center;
 		padding: 25px;
 		font-size: 15px;
+	}
+}
+
+#pagination{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	a{
+		font-size: 18px;
+		padding: 5px;
+	}
+}
+
+.biospecialist{
+	padding-left: 80px;
+	margin-top: -80px;
+	margin-bottom: 80px;
+}
+
+#category{
+	max-width: 50%;
+	p:nth-child(2n){
+		text-align: right;
+		margin-top: -35px;
 	}
 }

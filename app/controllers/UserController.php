@@ -9,7 +9,7 @@ class UserController extends BaseController {
 	public function getAllUsers() {
 		$users = User::whereHas('Category' , function($query) {
 			$query->where(strtolower('categoryName'), '!=', '');
-		})->where('active', '=', TRUE)->with('Category')->paginate(5);
+		})->where('active', '=', TRUE)->with('Category', 'profile')->paginate(5);
 	
 		return $users;
 	}
@@ -17,7 +17,7 @@ class UserController extends BaseController {
 	public function filter($cat) {
 		$users = User::whereHas('Category' , function($query) use($cat) {
 			$query->where(strtolower('categoryName'), '=', strtolower($cat));
-		})->with('Category')->paginate(5);
+		})->with('Category', "profile")->paginate(5);
 		
 		return $users;
 	}

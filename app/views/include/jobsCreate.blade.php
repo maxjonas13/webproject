@@ -1,5 +1,3 @@
-<div id="jobcreatecontainer" onClick="containerclick()">
-</div>
 <div id="jobcreate">
 	<i class="icon-remove-sign" onClick='containerclick()'></i>
 	@if($errors->count() > 0) 
@@ -56,4 +54,6 @@
 											
 		<!-- close form tag -->
 		{{ Form::close() }}
+</div>
+<div id="jobcreatecontainer" onClick="containerclick()">
 </div>

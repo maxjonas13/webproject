@@ -1,5 +1,3 @@
-<div id="registercontainer" onClick="containerclick()">
-</div>
 <div id="register">
 	<i class="icon-remove-sign" onClick='containerclick()'></i>
 		<h1>Registration</h1>
@@ -37,4 +35,6 @@
 		{{ Form::close() }}
 	</div>
 		
+</div>
+<div id="registercontainer" onClick="containerclick()">
 </div>

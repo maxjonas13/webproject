@@ -1,5 +1,3 @@
-<div id="logincontainer" onClick="containerclick()">
-</div>
 <div id="login">
 	<i class="icon-remove-sign" onClick='containerclick()'></i>
 	<h1 id="videotitle">Login</h1>
@@ -29,4 +27,6 @@
 	@if(Auth::check()) 
 		{{"hellow you are logged in now."}}
 	@endif
+</div>
+<div id="logincontainer" onClick="containerclick()">
 </div>

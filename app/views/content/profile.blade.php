@@ -42,7 +42,11 @@
 
 				<h4>Bio</h4>
 				<p>{{nl2br($data->profile->bio)}}</p>
+				@if($data->PK_userId == Auth::User()->PK_userId)
 				{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'button'), false)}}
+				@else
+				{{ HTML::link('profile/edit/'.$data->PK_userId, 'contact', array('class' => 'buttonapply'), false)}}
+				@endif
 			
 
 		</div>

@@ -7,19 +7,6 @@
 					<section class="jobstyle {{strtolower($data->category[0]->categoryName)}}">
 
 						<h1 class="{{strtolower($data->category[0]->categoryName)}}">{{$data->title}}</h1>
-						@if(Auth::check())
-							@if(Auth::user()->PK_userId != $data->user->FK_userId)
-								<a onClick = "applyClick({{$data->PK_jobId}})" class="buttonapply">Apply</a>
-							@endif
-							@if(Auth::user()->PK_userId == $data->FK_userId)
-								<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>
-								@if($data->fixed)
-									<a class="button" href="/jobs/open/{{$data->PK_jobId}}" title="">Open job</a>
-								@else
-									<a class="button" href="/jobs/close/{{$data->PK_jobId}}" title="">Close job</a>
-								@endif
-							@endif
-						@endif
 						<p><b>Description:</b></p>
 						<p>{{$data->description}}</p>
 						<p><b>Owner:</b></p>
@@ -29,11 +16,35 @@
 						<p><b>created at:</b></p>
 						<p>{{$data->created_at}}</p> 
 						<p><b>Catergories</b><p>
+							<section id="category">
 						@foreach ($data->category as $categorieitem) 
 							<p class="{{strtolower($categorieitem->categoryName)}}">{{$categorieitem->categoryName}}</p>
 						@endforeach
-
+							</section>
+						@if(Auth::check())
+							@if(Auth::user()->PK_userId != $data->user->PK_userId)
+							{{$hasApplied = false}}
+								@foreach ($data->candidate as $candidate)
+									@if($candidate->FK_userId == Auth::User()->PK_userId)
+									{{$hasApplied = true}}
+									@endif
+								@endforeach
+								@if($hasApplied)
+									<a onClick = "cancelClick({{$data->PK_jobId}})" class="buttoncancel">Cancel</a>
+								@else
+									<a onClick = "applyClick({{$data->PK_jobId}})" class="buttonapply">Apply</a>
+								@endif
+							@else
+								<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>
+								@if($data->fixed)
+									<a class="button" href="/jobs/open/{{$data->PK_jobId}}" title="">Open job</a>
+								@else
+									<a class="button" href="/jobs/close/{{$data->PK_jobId}}" title="">Close job</a>
+								@endif
+							@endif
+						@endif
 					</section>
+
 					<section>
 						<h3>Comments</h3>
 						@foreach($data->comment as $comment) 
