@@ -8,6 +8,8 @@
 	}
 
 	function changeButtonState(data, jobid) {
+		console.log(jobid);
 		//change apply button to cancel button
-		$('#' + jobid).css("background-color", "red");
+		$('#' + jobid).hide();
+		$('#buttons').append('<a onClick = "cancelClick({{$data->PK_jobId}})" class="buttoncancel">Cancel</a>');
 	}

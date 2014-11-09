@@ -29,11 +29,13 @@
 									<?php $hasApplied = true ?>
 									@endif
 								@endforeach
+								<section id="buttons">
 								@if($hasApplied)
 									<a onClick = "cancelClick({{$data->PK_jobId}})" class="buttoncancel">Cancel</a>
 								@else
-									<a onClick = "applyClick({{$data->PK_jobId}})" class="buttonapply">Apply</a>
+									<a onClick = "applyClick({{$data->PK_jobId}})" id="{{$data->PK_jobId}}" class="buttonapply">Apply</a>
 								@endif
+								</section>
 							@else
 								<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>
 								@if($data->fixed)
