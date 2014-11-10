@@ -3,7 +3,7 @@
 class RatingController extends BaseController {
 
 	public function rate() {
-		$userid = Input::get('data')[0];
+		$userid = str_replace("user", "", Input::get('data')[0]);;
 		$rating = Input::get('data')[1];
 		if(Auth::check()) {
 			if(Auth::user()->PK_userId != $userid) {

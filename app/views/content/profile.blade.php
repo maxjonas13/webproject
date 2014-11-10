@@ -17,10 +17,55 @@
 				  <div class="hexBottom"></div>
 				</div>
 				<h4>Rating</h4>
-				<div class="rating" id="{{$data->PK_userId}}">
+
+				<div class="rating" id="user{{$data->PK_userId}}">
+
 					<!-- JONAS!!!!!!!! de variabele $rating bevat een int tussen 1 en 5 met de gemiddelde rating van de user deze kan je gebruiken om de sterren in de kleuren ;) ;) ;) ;) ;) ;) -->
-					<span class="stars" id="5">☆</span><span class="stars" id="4">☆</span><span class="stars" id="3">☆</span><span class="stars" id="2">☆</span><span class="stars" id="1">☆</span>
+					@if ($rating == 5) 
+						<span class="stars highlight" id="5">☆</span>
+						<span class="stars highlight" id="4">☆</span>
+						<span class="stars highlight" id="3">☆</span>
+						<span class="stars highlight" id="2">☆</span>
+						<span class="stars highlight" id="1">☆</span>
+
+					@elseif ($rating == 4) 
+						<span class="stars" id="5">☆</span>
+						<span class="stars highlight" id="4">☆</span>
+						<span class="stars highlight" id="3">☆</span>
+						<span class="stars highlight" id="2">☆</span>
+						<span class="stars highlight" id="1">☆</span>
+					
+					@elseif ($rating == 3) 
+						<span class="stars" id="5">☆</span>
+						<span class="stars" id="4">☆</span>
+						<span class="stars highlight" id="3">☆</span>
+						<span class="stars highlight" id="2">☆</span>
+						<span class="stars highlight" id="1">☆</span>
+					
+					@elseif ($rating == 2) 
+						<span class="stars" id="5">☆</span>
+						<span class="stars" id="4">☆</span>
+						<span class="stars" id="3">☆</span>
+						<span class="stars highlight" id="2">☆</span>
+						<span class="stars highlight" id="1">☆</span>
+					
+					@elseif ($rating == 1) 
+						<span class="stars" id="5">☆</span>
+						<span class="stars" id="4">☆</span>
+						<span class="stars" id="3">☆</span>
+						<span class="stars" id="2">☆</span>
+						<span class="stars highlight" id="1">☆</span>
+					@else
+						<span class="stars" id="5">☆</span>
+						<span class="stars" id="4">☆</span>
+						<span class="stars" id="3">☆</span>
+						<span class="stars" id="2">☆</span>
+						<span class="stars" id="1">☆</span>
+					
+					@endif
+
 				</div>
+
 				<h4>name:</h4>
 				 <p>{{$data->name}} </p>
 

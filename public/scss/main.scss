@@ -516,8 +516,14 @@ border-left: solid 5px $Programming;
   	width: 1.1em;
 }
 .rating > span:hover:before,
-.rating > span:hover ~ span:before {
+.rating > span:hover ~ span:before, .highlight {
 	color: gold;
+   	content: "\2605";
+   	position: absolute;
+}
+
+.highlightfull:before{
+	color: lighten(gold, 10%);
    	content: "\2605";
    	position: absolute;
 }
