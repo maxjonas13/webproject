@@ -15,6 +15,10 @@
 				  <div class="hexTop"></div>
 				  <div class="hexBottom"></div>
 				</div>
+				<h4>Rating</h4>
+				<div class="rating">
+					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+				</div>
 				<h4>name:</h4>
 				 <p>{{$data->name}} </p>
 

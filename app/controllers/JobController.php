@@ -75,8 +75,17 @@ class JobController extends BaseController {
 	public function details($id) {
 		//when comments are integrated add Comments to this one to
 		$job = Job::with('User', 'JobCategorie', 'Category', 'Comment', 'Candidate')->find($id);
+
+		$candidate = User::whereHas('Candidate' , function($query) use($id) {
+			$query->where('FK_jobId', '=' , $id);
+			$query->where('canceled' , '=', false);
+		})->with("profile")->get();
+
 		
-		return View::make('content/jobsDetails')->with('data', $job);
+
+		//return $candidate;
+		
+		return View::make('content/jobsDetails')->with('data', array('job'=>$job, 'candidate'=>$candidate));
 	}
 
 	//function to show the view with the form to edit a selected job

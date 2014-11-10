@@ -6,6 +6,13 @@
 
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+
 body{
 	 background-image: image-url('img/background.jpg');
 	 background-size: cover;
@@ -429,20 +436,6 @@ color: black;
 border-left: solid 5px $Programming; 
 }
 
-#footer{
-	margin-top: 20px;
-	background-color: $brand-primary;
-	h1, small{
-		color: white;
-		margin: 5px;
-		margin-top: 20px;
-	}
-	.copyright{
-		text-align: center;
-		padding: 25px;
-		font-size: 15px;
-	}
-}
 
 #pagination{
 	width: 100%;
@@ -471,4 +464,60 @@ border-left: solid 5px $Programming;
 .aboutus{
 	text-indent: 110px;
 	margin-top: -40px;
+}
+
+.candidatetext{
+	text-align: left;
+	padding: 20px;
+	display: block;
+	font-size: 16px;
+	background-color: $brand-success;
+	color: white;
+}
+
+#footer{
+	background-color: $brand-primary;
+	h1, small{
+		color: white;
+	}
+	.copyright{
+		text-align: center;
+		padding: 25px;
+		font-size: 15px;
+	}
+}
+.page-wrap:after{
+	height: 100px;
+}
+#footer {
+  height: 80px; 
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -80px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.rating {
+	font-size: 20px;
+  	unicode-bidi: bidi-override;
+  	text-align: left;
+  	direction: rtl;
+  	padding: 20px 0;
+}
+.rating > span {
+  	display: inline-block;
+  	position: relative;
+  	width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+	color: gold;
+   	content: "\2605";
+   	position: absolute;
 }

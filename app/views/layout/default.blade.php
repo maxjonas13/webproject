@@ -5,9 +5,11 @@
 	</head>
 
 	<body>
-		@include("include.searchbar")	
-		@include('include.headerbody')
-		@yield('content')
+		<div class="page-wrap">
+			@include("include.searchbar")	
+			@include('include.headerbody')
+			@yield('content')
+		</div>
 		@include('include.footer')
 		@if(Auth::check())
 			@include('include.jobsCreate')

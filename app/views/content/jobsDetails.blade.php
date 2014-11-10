@@ -4,44 +4,43 @@
 		<div class="firstrow"> 
 			<div class="column col-md-2 col-sm-3"> </div>
 			<div class="column col-md-8 col-sm-6">  
-					<section class="jobstyle {{strtolower($data->category[0]->categoryName)}}">
-
-						<h1 class="{{strtolower($data->category[0]->categoryName)}}">{{$data->title}}</h1>
+					<section class="jobstyle {{strtolower($data['job']->category[0]->categoryName)}}">
+						<h1 class="{{strtolower($data['job']->category[0]->categoryName)}}">{{$data['job']->title}}</h1>
 						<p><b>Description:</b></p>
-						<p>{{$data->description}}</p>
+						<p>{{$data['job']->description}}</p>
 						<p><b>Owner:</b></p>
-						<p>{{$data->user->name}}</p>
+						<p>{{$data['job']->user->name}}</p>
 						<p><b>Location:</b> </p>
-						<p>{{$data->location}}</p> 
+						<p>{{$data['job']->location}}</p> 
 						<p><b>created at:</b></p>
-						<p>{{$data->created_at}}</p> 
+						<p>{{$data['job']->created_at}}</p> 
 						<p><b>Catergories</b><p>
 							<section id="category">
-						@foreach ($data->category as $categorieitem) 
+						@foreach ($data['job']->category as $categorieitem) 
 							<p class="{{strtolower($categorieitem->categoryName)}}">{{$categorieitem->categoryName}}</p>
 						@endforeach
 							</section>
 						@if(Auth::check())
-							@if(Auth::user()->PK_userId != $data->user->PK_userId)
+							@if(Auth::user()->PK_userId != $data['job']->user->PK_userId)
 							{{$hasApplied = false}}
-								@foreach ($data->candidate as $candidate)
-									@if($candidate->FK_userId == Auth::User()->PK_userId)
+								@foreach ($data['job']->candidate as $candidate)
+									@if($candidate->FK_userId == Auth::User()->PK_userId && !$candidate->canceled )
 									<?php $hasApplied = true ?>
 									@endif
 								@endforeach
 								<section id="buttons">
 								@if($hasApplied)
-									<a onClick = "cancelClick({{$data->PK_jobId}})" id="{{$data->PK_jobId}}"class="buttoncancel">Cancel</a>
+									<a onClick = "cancelClick({{$data['job']->PK_jobId}}, {{Auth::user()->PK_userId}})" id="{{$data['job']->PK_jobId}}"class="buttoncancel">Cancel</a>
 								@else
-									<a onClick = "applyClick({{$data->PK_jobId}})" id="{{$data->PK_jobId}}" class="buttonapply">Apply</a>
+									<a onClick = "applyClick({{$data['job']->PK_jobId}}, {{Auth::user()->PK_userId}})" id="{{$data['job']->PK_jobId}}" class="buttonapply">Apply</a>
 								@endif
 								</section>
 							@else
-								<a class="button" href="/jobs/edit/{{$data->PK_jobId}}">Edit</a>
-								@if($data->fixed)
-									<a class="button" href="/jobs/open/{{$data->PK_jobId}}" title="">Open job</a>
+								<a class="button" href="/jobs/edit/{{$data['job']->PK_jobId}}">Edit</a>
+								@if($data['job']->fixed)
+									<a class="button" href="/jobs/open/{{$data['job']->PK_jobId}}" title="">Open job</a>
 								@else
-									<a class="button" href="/jobs/close/{{$data->PK_jobId}}" title="">Close job</a>
+									<a class="button" href="/jobs/close/{{$data['job']->PK_jobId}}" title="">Close job</a>
 								@endif
 							@endif
 						@endif
@@ -50,7 +49,7 @@
 					<section>
 						<section class="comment">
 						<h3>Comments</h3>
-							@foreach($data->comment as $comment) 
+							@foreach($data['job']->comment as $comment) 
 								<section class="commentitem">
 									<h4>{{$comment->user->name}}</h4>
 									<p>{{$comment->comment}}</p>
@@ -71,7 +70,7 @@
 						{{ Form::open( array('url' => '/comments/store') ) }}
 
 							{{ Form::textarea('comment' ,'', array('placeholder'=> "Comment")) }}
-							{{ Form::hidden('jobid', $data->PK_jobId)}}
+							{{ Form::hidden('jobid', $data['job']->PK_jobId)}}
 														
 							{{ Form::submit('Add comment') }}
 															
@@ -79,7 +78,20 @@
 						{{ Form::close() }}
 					</section>
 			</div>
-			<div class="column col-md-2 col-sm-3"> </div>
+			<div class="column col-md-2 col-sm-3"> 
+				<h3>Candidates</h3>
+				<section id="candidate">
+				@foreach ($data['candidate'] as $candidate) 		
+					<section id="candidate{{$candidate->PK_userId}}">
+						<div class="hexagon" style="background-image: url({{$candidate->profile->profilePicture}});">
+							<div class="hexTop"></div>
+							<div class="hexBottom"></div>
+						</div>
+						{{$candidate->name}}
+					</section>
+				@endforeach
+				</section>
+			</div>
 	
 	</div>
 </div>
