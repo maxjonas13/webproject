@@ -56,6 +56,9 @@ Route::get('/specialists', 'UserController@index');
 Route::get('/specialists/all', 'UserController@getAllUsers');
 Route::get('/specialists/filter/{id}', 'UserController@filter');
 
+//routes for ratings
+Route::get('/ratings', 'RatingController@index');
+
 //route for the about page
 Route::get('/about', function() {
 	return View::make('content/About');

@@ -48,6 +48,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->belongsToMany('Category', 'users_categories', 'FK_userId', 'FK_categoryId');
 	}
 
+	public function rating() {
+		return $this->hasMany('Rating', 'FK_userId');
+	}
+
 	public function storeRegistrationData() {
 		//create new Role
 		$role = new Role;
@@ -123,6 +127,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$user->save();
 		$user->profile->save();
 	}
+
+
 
 
 }
