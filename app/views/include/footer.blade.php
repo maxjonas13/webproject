@@ -13,3 +13,4 @@
 		</footer>
 	</div>
 </div>
+{{ HTML::script('script/search.js'); }}

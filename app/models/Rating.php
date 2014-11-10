@@ -43,10 +43,14 @@ class Rating extends Eloquent implements UserInterface, RemindableInterface {
 			$average += $value->rating;
 		}
 
-		$average = $average / $results;
-
+		if($results != 0) {
+			$average = $average / $results;
+		}
+		else {
+			$average = 0;
+		}
 		$average = round($average);
-		
+
 		return $average;
 	}
 
