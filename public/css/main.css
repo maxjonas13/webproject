@@ -3947,7 +3947,7 @@ p.jobtextinfo {
 #searchbar, #searchbarin {
   background-color: white;
   position: absolute;
-  padding: 0.55em 25px 0.55em 3em;
+  padding: 0.55em 50px 0.55em 3em;
 }
 /* line 191, ../scss/main.scss */
 #searchbar #search-input, #searchbarin #search-input {
@@ -4353,4 +4353,13 @@ section.programming {
   color: #ffdf33;
   content: "\2605";
   position: absolute;
+}
+
+/* line 530, ../scss/main.scss */
+#searchresult {
+  display: none;
+}
+/* line 532, ../scss/main.scss */
+#searchresult div a {
+  color: black;
 }

@@ -20,5 +20,13 @@
 			<i class="icon-search"></i>
 	        <input id="search-input" type="text" role="search" placeholder="Search for anything" autofocus="">
 		    <label for="search-input" class="ui_search"></label>
-		</div>
+		    <div id="searchresult">
+		    	<div id="userresult">
+		    		<h4>Users</h4>
+		    	</div>
+		    	
+		    	<div id="jobsresult">
+		    		<h4>jobs</h4>
+		    	</div>
+		    </div>
 	</div><!-- end .header-unit -->
