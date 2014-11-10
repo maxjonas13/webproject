@@ -52,6 +52,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('Rating', 'FK_userId');
 	}
 
+	public function usercategory() {
+		return $this->hasMany('UserCategory', 'FK_userId');
+	}
+
 	public function storeRegistrationData() {
 		//create new Role
 		$role = new Role;
@@ -94,6 +98,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	}
 
 	public function updateProfile() {
+		$checkboxes = Input::get('grouped');
+
+		//get all the categories and put it in a variable (array)
+		$categories = Category::all();
+
 		$user = User::find(Auth::user()->PK_userId)->load('Profile', 'Credit');
 
 		$user->name = Input::get('name');
@@ -126,6 +135,39 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		
 		$user->save();
 		$user->profile->save();
+
+		//get all the categories off the job
+		$userCategorie = UserCategory::where('FK_userId', '=', $user->PK_userId)->get();
+
+		//loop true alle the categories off the job
+		foreach($userCategorie as $row) {
+			//get the id out off the pivot table
+			$id = $row->PK_users_categoryId;
+			//delete the categorie out of the pivot table
+			UserCategory::where('PK_users_categoryId', '=', $id)->delete();
+		}
+
+		// loop true the checkboxes
+		// checkbox = name of the checkbox, value = true / false
+		foreach($checkboxes as $checkbox => $value) {
+			//check if the value of the checkbox is true or an empty string (true eighter).
+			if($value || $value == '') {
+				//loop true the categories
+				foreach($categories as $category) {
+					//check if the checkbox name and categoryName maches
+					if($checkbox == strtolower($category->categoryName)) {
+						//if they match create a new reacord in the pivot table
+						$usercategorie = new UserCategory;
+						$usercategorie->FK_categoryId = $category->PK_categoryId;
+						$usercategorie->user()->associate($user);
+
+						//save the data in the pivot table
+						$usercategorie->save();
+					}
+				}
+			}
+		}
+
 	}
 
 

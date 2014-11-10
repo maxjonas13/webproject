@@ -57,7 +57,9 @@ Route::get('/specialists/all', 'UserController@getAllUsers');
 Route::get('/specialists/filter/{id}', 'UserController@filter');
 
 //routes for ratings
-Route::get('/ratings', 'RatingController@index');
+// Route::get('/ratings/all', 'RatingController@index');
+Route::post('/rate', 'RatingController@rate');
+Route::get('/ratings/{id}', 'RatingController@getRates');
 
 //route for the about page
 Route::get('/about', function() {

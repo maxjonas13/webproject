@@ -1,3 +1,39 @@
+<?php
+	$it = FALSE;
+	$languages = FALSE;
+	$finances = FALSE;
+	$repairs = FALSE;
+	$math = FALSE;
+	$art = FALSE;
+	$cooking = FALSE;
+	$programming = FALSE;
+	?>
+	@foreach($data->category as $item)
+		@if($item->categoryName == 'IT')
+			<?php $it = TRUE; ?>
+		@endif
+		@if($item->categoryName == 'Language')
+			<?php $languages = TRUE; ?>
+		@endif
+		@if($item->categoryName == 'Finances')
+			<?php $finances = TRUE; ?>
+		@endif
+		@if($item->categoryName == 'Repairs')
+			<?php $repairs = TRUE; ?>
+		@endif
+		@if($item->categoryName == 'Math')
+			<?php $math = TRUE; ?>
+		@endif
+		@if($item->categoryName == 'Art')
+			<?php $art = TRUE; ?>
+		@endif
+		@if($item->categoryName == 'Cooking')
+			<?php $cooking = TRUE; ?>
+		@endif
+		@if($item->categoryName == 'Programming')
+			<?php $programming = TRUE; ?>
+		@endif
+	@endforeach
 @extends("layout.default")
 
 @section('content')
@@ -60,8 +96,47 @@
 			
 				<p>{{ Form::label('profilepicture', 'Profielfoto:') }}</p>
 				{{ Form::file('profilepicture' ,'') }}
+
+
+					{{ Form::checkbox('grouped[it]', $it ,$it, array('id'=> "it")) }}
+					{{ Form::label('it', 'IT')}}
+
+					
+					{{ Form::checkbox('grouped[language]', $languages, $languages, array('id'=> "languages")) }}
+					{{ Form::label('languages', 'Languages')}}
+
+					<br>
+					
+					
+					{{ Form::checkbox('grouped[finances]', $finances, $finances, array('id'=> "finances")) }}
+					{{ Form::label('finances')}}
+					
+					
+					{{ Form::checkbox('grouped[repairs]', $repairs, $repairs, array('id'=> "repairs")) }}
+					{{ Form::label('repairs')}}
+					
+					<br>
+					
+					{{ Form::checkbox('grouped[math]', $math,$math, array('id'=> "math")) }}
+					{{ Form::label('math', 'Math & Fysics')}}
+	
+
+					{{ Form::checkbox('grouped[art]', $art,$art, array('id'=> "art")) }}
+					{{ Form::label('art', 'Art')}}
+
+					<br>
+
+					{{ Form::checkbox('grouped[cooking]', $cooking, $cooking, array('id'=> "cooking")) }}
+					{{ Form::label('cooking', 'Cooking')}}
+
+					
+					{{ Form::checkbox('grouped[programming]', $programming,$programming, array('id'=> "programming")) }}
+					{{ Form::label('programming', 'Programming')}}
+
+
+
 			
-				<p>{{ Form::submit('Edit Job', array('class' => 'button'))}}</p>
+				<p>{{ Form::submit('Edit Profile', array('class' => 'button'))}}</p>
 
 												
 			<!-- close form tag -->

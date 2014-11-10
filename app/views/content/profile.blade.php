@@ -4,20 +4,22 @@
 		<div class="firstrow"> 
 			<div class="column col-md-2 col-sm-3"> </div>
 			<div class="column col-md-8 col-sm-6" id="profile">  
+
 				@if(!empty($data->category[0]))
 					<section class="profilestyle {{strtolower($data->category[0]->categoryName)}}">
 				@else
 					<section class="profilestyle">
 				@endif
 				<h1>Profile</h1>
-				
+
 				<div class="hexagon" style="background-image: url({{$data->profile->profilePicture}});">
 				  <div class="hexTop"></div>
 				  <div class="hexBottom"></div>
 				</div>
 				<h4>Rating</h4>
-				<div class="rating">
-					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+				<div class="rating" id="{{$data->PK_userId}}">
+					<!-- JONAS!!!!!!!! de variabele $rating bevat een int tussen 1 en 5 met de gemiddelde rating van de user deze kan je gebruiken om de sterren in de kleuren ;) ;) ;) ;) ;) ;) -->
+					<span class="stars" id="5">☆</span><span class="stars" id="4">☆</span><span class="stars" id="3">☆</span><span class="stars" id="2">☆</span><span class="stars" id="1">☆</span>
 				</div>
 				<h4>name:</h4>
 				 <p>{{$data->name}} </p>
@@ -62,5 +64,5 @@
 		<div class="column col-md-2 col-sm-3"> </div>
 	</div>
 </div>
-
+	{{ HTML::script('script/rate.js'); }}
 @stop

@@ -6,10 +6,12 @@ class ProfileController extends BaseController {
 	public function index($id) {
 		//get all the info off the user with the given id
 		//all the info = users table, profiles table, credits table
-		$user = User::find($id)->load('Profile', 'Credit');
-
+		$user = User::find($id)->load('Profile', 'Credit', 'Category');
+		$rating = new Rating;
+		$ratingValue = $rating->getRates($id);
+	
 		//return the view to show the users profile
-		return View::make('content/profile')->with('data', $user);
+		return View::make('content/profile')->with(array('data' => $user, 'rating' => $ratingValue));
 	}
 
 	//function to show the view with the form to edit a profile
@@ -21,7 +23,7 @@ class ProfileController extends BaseController {
 				//user is logged in and can edit is own profile
 
 				//get alle the info off the user with the given id
-				$user = User::find($id)->load('Profile', 'Credit');
+				$user = User::find($id)->load('Profile', 'Credit', 'Category');
 
 				//return the view to edit the profile
 				return View::make('content/profileEdit')->with('data', $user);
@@ -64,7 +66,8 @@ class ProfileController extends BaseController {
 				'myspace'			=>	Input::get('myspace'),
 				'website'			=>	Input::get('website'),
 				'bio'				=>	Input::get('bio'),
-				'profilepicture'	=>	Input::get('profilepicture')
+				'profilepicture'	=>	Input::get('profilepicture'),
+				'grouped'			=> Input::get('grouped')
 			);
 
 			//array with the validation rules for the determined fields
@@ -81,7 +84,8 @@ class ProfileController extends BaseController {
 				'myspace'			=>	'min:3',
 				'website'			=>	'active_url|min:3',
 				'bio'				=>	'min:3|max:2000',
-				'profilepicture'	=>	'image|max:5000'
+				'profilepicture'	=>	'image|max:5000',
+				'grouped'			=>	'required|min:1'
 			);
 
 			//messages array to override the default message for the passwordCheck rule
