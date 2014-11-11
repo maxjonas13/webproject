@@ -4350,14 +4350,14 @@ section.programming {
 /* line 526, ../scss/main.scss */
 .rating > span:hover:before,
 .rating > span:hover ~ span:before, .highlight {
-  color: gold;
+  color: #bd6100;
   content: "\2605";
   position: absolute;
 }
 
 /* line 532, ../scss/main.scss */
 .highlightfull:before {
-  color: #ffdf33;
+  color: #f07b00;
   content: "\2605";
   position: absolute;
 }
