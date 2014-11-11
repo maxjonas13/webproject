@@ -3763,14 +3763,8 @@ h1, h2, h3, h4 {
   color: #bd6100;
   -webkit-font-smoothing: antialiased;
 }
-@media screen and (max-width: 770px) {
-  /* line 30, ../scss/main.scss */
-  h1, h2, h3, h4 {
-    color: black;
-  }
-}
 
-/* line 37, ../scss/main.scss */
+/* line 34, ../scss/main.scss */
 p {
   margin: 20px;
   display: block;
@@ -3785,11 +3779,17 @@ p {
   font-weight: normal !important;
 }
 
-/* line 51, ../scss/main.scss */
+/* line 48, ../scss/main.scss */
 #homelink {
   text-decoration: none;
 }
 
+@media screen and (max-width: 770px) {
+  /* line 51, ../scss/main.scss */
+  .headernav {
+    display: none;
+  }
+}
 /* line 55, ../scss/main.scss */
 .headernav a {
   float: right;
@@ -3844,7 +3844,7 @@ video {
   bottom: 0;
   right: 0;
   text-align: center;
-  background-color: rgba(128, 72, 0, 0);
+  background-color: rgba(128, 72, 0, 0.3);
 }
 /* line 103, ../scss/main.scss */
 #videocontent h1 {
@@ -3864,7 +3864,7 @@ video {
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* line 122, ../scss/main.scss */
@@ -3957,12 +3957,11 @@ p.jobtextinfo {
 /* line 194, ../scss/main.scss */
 #searchbar, #searchbarin {
   z-index: 5;
-  box-shadow: 0px 5px 20px #888888;
   background-color: white;
   position: absolute;
   padding: 0.55em 50px 0.55em 3em;
 }
-/* line 200, ../scss/main.scss */
+/* line 199, ../scss/main.scss */
 #searchbar #search-input, #searchbarin #search-input {
   line-height: normal;
   padding: 0.55em 0 0.55em 3em;
@@ -3978,42 +3977,42 @@ p.jobtextinfo {
   -webkit-user-select: text;
   cursor: auto;
 }
-/* line 215, ../scss/main.scss */
+/* line 214, ../scss/main.scss */
 #searchbar i, #searchbarin i {
   position: inherit;
   padding: 0.55em 0 0.55em 1.5em;
   z-index: 5;
 }
 
-/* line 222, ../scss/main.scss */
+/* line 221, ../scss/main.scss */
 #searchbarin {
   margin-top: 65px;
   width: 100%;
   border-top: 1px solid #ededed;
 }
 
-/* line 228, ../scss/main.scss */
+/* line 227, ../scss/main.scss */
 #register {
   height: 700px;
 }
 
-/* line 232, ../scss/main.scss */
+/* line 231, ../scss/main.scss */
 #jobcreate {
   height: 800px;
 }
 
-/* line 236, ../scss/main.scss */
+/* line 235, ../scss/main.scss */
 #header {
   z-index: 80;
   background-color: white;
 }
-/* line 239, ../scss/main.scss */
+/* line 238, ../scss/main.scss */
 #header .row {
   margin-left: 50px;
   margin-right: 50px;
 }
 
-/* line 244, ../scss/main.scss */
+/* line 243, ../scss/main.scss */
 label {
   display: inline;
   width: 23%;
@@ -4021,36 +4020,36 @@ label {
   margin-left: 20px;
 }
 
-/* line 250, ../scss/main.scss */
+/* line 249, ../scss/main.scss */
 input[type=checkbox] {
   display: none;
 }
 
-/* line 255, ../scss/main.scss */
+/* line 254, ../scss/main.scss */
 input[type=checkbox] + label {
   background-color: #fafafa;
   border: 1px solid #cacece;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0), inset 0px -15px 10px -12px rgba(0, 0, 0, 0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
   padding: 9px;
   border-radius: 3px;
   display: inline-block;
   position: relative;
 }
 
-/* line 265, ../scss/main.scss */
+/* line 264, ../scss/main.scss */
 input[type=checkbox] + label:active, input[type=checkbox]:checked + label:active {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0), inset 0px 1px 3px rgba(0, 0, 0, 0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* line 269, ../scss/main.scss */
+/* line 268, ../scss/main.scss */
 input[type=checkbox]:checked + label {
   background-color: #e9ecee;
   border: 1px solid #adb8c0;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0), inset 0px -15px 10px -12px rgba(0, 0, 0, 0), inset 15px 10px -12px rgba(255, 255, 255, 0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
   color: #99a1a7;
 }
 
-/* line 276, ../scss/main.scss */
+/* line 275, ../scss/main.scss */
 input[type=checkbox]:checked + label:after {
   content: '\2714';
   font-size: 14px;
@@ -4060,7 +4059,7 @@ input[type=checkbox]:checked + label:after {
   color: #99a1a7;
 }
 
-/* line 287, ../scss/main.scss */
+/* line 286, ../scss/main.scss */
 input {
   width: 80%;
   margin: 20px;
@@ -4073,7 +4072,7 @@ input {
   position: relative;
 }
 
-/* line 298, ../scss/main.scss */
+/* line 297, ../scss/main.scss */
 input[type=submit] {
   background-color: #4a91d4;
   color: white;
@@ -4089,18 +4088,18 @@ input[type=submit] {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 312, ../scss/main.scss */
+/* line 311, ../scss/main.scss */
 input[type=submit]:hover {
   text-align: center;
   background-color: #437fb7;
   width: 51%;
 }
-/* line 317, ../scss/main.scss */
+/* line 316, ../scss/main.scss */
 input[type=submit] input[type=file] {
   width: 100%;
 }
 
-/* line 321, ../scss/main.scss */
+/* line 320, ../scss/main.scss */
 .icon-remove-sign {
   cursor: pointer;
   float: right;
@@ -4112,12 +4111,12 @@ input[type=submit] input[type=file] {
   overflow: hidden;
 }
 
-/* line 332, ../scss/main.scss */
+/* line 331, ../scss/main.scss */
 .registration {
   text-align: center;
 }
 
-/* line 335, ../scss/main.scss */
+/* line 334, ../scss/main.scss */
 .commentitem {
   margin: 25px;
   margin-left: 20px;
@@ -4125,20 +4124,20 @@ input[type=submit] input[type=file] {
   border-bottom: 1px solid #757575;
 }
 
-/* line 341, ../scss/main.scss */
+/* line 340, ../scss/main.scss */
 .comment {
   margin-top: 100px;
   border-top: 1px solid #757575;
 }
 
-/* line 346, ../scss/main.scss */
+/* line 345, ../scss/main.scss */
 #profile p {
   background-color: #ededed;
   padding: 20px;
   border: 1px solid #757575;
 }
 
-/* line 352, ../scss/main.scss */
+/* line 351, ../scss/main.scss */
 #profileedit input, input[type=submit], textarea {
   width: 50%;
   border: 1px solid #ededed;
@@ -4147,198 +4146,188 @@ input[type=submit] input[type=file] {
   max-width: 80%;
 }
 
-/* line 360, ../scss/main.scss */
+/* line 359, ../scss/main.scss */
 .jobstyle {
   border-left: solid 5px #bd6100;
 }
-/* line 362, ../scss/main.scss */
+/* line 361, ../scss/main.scss */
 .jobstyle h1, .jobstyle p {
   margin-left: 25px;
 }
 
-/* line 367, ../scss/main.scss */
+/* line 366, ../scss/main.scss */
 .profilestyle {
   border-left: solid 5px #bd6100;
   padding: 20px;
 }
 
-/* line 373, ../scss/main.scss */
+/* line 372, ../scss/main.scss */
 .it {
   color: #d44a4a;
 }
 
-/* line 377, ../scss/main.scss */
+/* line 376, ../scss/main.scss */
 .cat {
   cursor: pointer;
 }
 
-/* line 381, ../scss/main.scss */
+/* line 380, ../scss/main.scss */
 section.it {
   color: black;
   border-left: solid 5px #d44a4a;
 }
 
-/* line 386, ../scss/main.scss */
+/* line 385, ../scss/main.scss */
 .language {
   color: #d44a9e;
 }
 
-/* line 390, ../scss/main.scss */
+/* line 389, ../scss/main.scss */
 section.language {
   color: black;
   border-left: solid 5px #d44a9e;
 }
 
-/* line 395, ../scss/main.scss */
+/* line 394, ../scss/main.scss */
 .finances {
   color: #614ad4;
 }
 
-/* line 399, ../scss/main.scss */
+/* line 398, ../scss/main.scss */
 section.finances {
   color: black;
   border-left: solid 5px #614ad4;
 }
 
-/* line 404, ../scss/main.scss */
+/* line 403, ../scss/main.scss */
 .repairs {
   color: #4a91d4;
 }
 
-/* line 408, ../scss/main.scss */
+/* line 407, ../scss/main.scss */
 section.repairs {
   color: black;
   border-left: solid 5px #4a91d4;
 }
 
-/* line 413, ../scss/main.scss */
+/* line 412, ../scss/main.scss */
 .math {
   color: #66d8a4;
 }
 
-/* line 417, ../scss/main.scss */
+/* line 416, ../scss/main.scss */
 section.math {
   color: black;
   border-left: solid 5px #66d8a4;
 }
 
-/* line 422, ../scss/main.scss */
+/* line 421, ../scss/main.scss */
 .art {
   color: #a4d658;
 }
 
-/* line 426, ../scss/main.scss */
+/* line 425, ../scss/main.scss */
 section.art {
   color: black;
   border-left: solid 5px #a4d658;
 }
 
-/* line 431, ../scss/main.scss */
+/* line 430, ../scss/main.scss */
 .cooking {
   color: #d4a84a;
 }
 
-/* line 435, ../scss/main.scss */
+/* line 434, ../scss/main.scss */
 section.cooking {
   color: black;
   border-left: solid 5px #d4a84a;
 }
 
-/* line 440, ../scss/main.scss */
+/* line 439, ../scss/main.scss */
 .programming {
   color: #d4844a;
 }
 
-/* line 444, ../scss/main.scss */
+/* line 443, ../scss/main.scss */
 section.programming {
   color: black;
   border-left: solid 5px #d4844a;
 }
 
-/* line 450, ../scss/main.scss */
+/* line 449, ../scss/main.scss */
 #pagination {
   width: 100%;
   margin: 0 auto;
   text-align: center;
 }
-/* line 454, ../scss/main.scss */
+/* line 453, ../scss/main.scss */
 #pagination a {
   font-size: 18px;
   padding: 5px;
 }
 
-/* line 460, ../scss/main.scss */
+/* line 459, ../scss/main.scss */
 .biospecialist {
   padding-left: 80px;
   margin-top: -80px;
   margin-bottom: 80px;
 }
 
-/* line 466, ../scss/main.scss */
+/* line 465, ../scss/main.scss */
 #category {
   max-width: 50%;
 }
-/* line 468, ../scss/main.scss */
+/* line 467, ../scss/main.scss */
 #category p:nth-child(2n) {
   text-align: right;
   margin-top: -35px;
 }
 
-/* line 474, ../scss/main.scss */
+/* line 473, ../scss/main.scss */
 .aboutus {
   text-indent: 110px;
   margin-top: -40px;
 }
 
-/* line 479, ../scss/main.scss */
-.candidatetext {
-  text-align: left;
-  padding: 20px;
-  display: block;
-  font-size: 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-
-/* line 488, ../scss/main.scss */
+/* line 478, ../scss/main.scss */
 #footer {
   background-color: #bd6100;
 }
-/* line 490, ../scss/main.scss */
+/* line 480, ../scss/main.scss */
 #footer h1, #footer small {
   color: white;
 }
-/* line 493, ../scss/main.scss */
+/* line 483, ../scss/main.scss */
 #footer .copyright {
   text-align: center;
   padding: 25px;
   font-size: 15px;
 }
 
-/* line 499, ../scss/main.scss */
+/* line 489, ../scss/main.scss */
 .page-wrap:after {
   height: 100px;
 }
 
-/* line 502, ../scss/main.scss */
+/* line 492, ../scss/main.scss */
 #footer {
   height: 80px;
 }
 
-/* line 506, ../scss/main.scss */
+/* line 496, ../scss/main.scss */
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
   margin-bottom: -80px;
 }
 
-/* line 511, ../scss/main.scss */
+/* line 501, ../scss/main.scss */
 .page-wrap:after {
   content: "";
   display: block;
 }
 
-/* line 516, ../scss/main.scss */
+/* line 506, ../scss/main.scss */
 .rating {
   font-size: 20px;
   unicode-bidi: bidi-override;
@@ -4347,14 +4336,14 @@ section.programming {
   padding: 20px 0;
 }
 
-/* line 523, ../scss/main.scss */
+/* line 513, ../scss/main.scss */
 .rating > span {
   display: inline-block;
   position: relative;
   width: 1.1em;
 }
 
-/* line 529, ../scss/main.scss */
+/* line 519, ../scss/main.scss */
 .rating > span:hover:before,
 .rating > span:hover ~ span:before, .highlight {
   color: #bd6100;
@@ -4362,16 +4351,17 @@ section.programming {
   position: absolute;
 }
 
-/* line 535, ../scss/main.scss */
+/* line 525, ../scss/main.scss */
 #searchresult {
-  display: none;
+  display: hidden;
+  margin-left: 20px;
 }
-/* line 537, ../scss/main.scss */
+/* line 528, ../scss/main.scss */
 #searchresult div a {
   color: black;
 }
 
-/* line 542, ../scss/main.scss */
+/* line 533, ../scss/main.scss */
 .comment h3 {
   margin-top: 10px;
 }

@@ -22,11 +22,9 @@
 		    <label for="search-input" class="ui_search"></label>
 		    <div id="searchresult">
 		    	<div id="userresult">
-		    		<h4>Users</h4>
 		    	</div>
 		    	
 		    	<div id="jobsresult">
-		    		<h4>jobs</h4>
 		    	</div>
 		    </div>
 	</div><!-- end .header-unit -->

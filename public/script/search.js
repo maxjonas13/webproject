@@ -18,8 +18,10 @@ function setATimeout(searchstring) {
 			// console.log(data);
 			showInteligence(data);
 		}).fail(function() { 
-       		$('#jobsresult').slideUp("slow");
-			$('#userresult').slideUp("slow");
+       		$('#jobsresult').slideUp("fast");
+			$('#userresult').slideUp("fast");
+			$('#searchbarin').css("box-shadow",  "0px 0px 0px #CCC");
+			$('#searchbar').css("box-shadow",  "0px 0px 0px #CCC");
     	})
     },450);
 }
@@ -28,6 +30,8 @@ function showInteligence(data) {
 	$('#jobsresult').empty().append("<h4> Jobs </h4>");
 	$('#userresult').empty().append("<h4> Specialist </h4>");
 	$('#searchresult').slideUp("fast");
+	$('#searchbarin').css("box-shadow",  "0px 0px 0px #CCC");
+	$('#searchbar').css("box-shadow",  "0px 0px 0px #CCC");
 	
 	if(data[0].length == 0 || data[1].length == 0){
 		if(data[0].length == 0 ){
@@ -39,6 +43,8 @@ function showInteligence(data) {
 			$('#jobsresult').append("<p>There are no jobs found</p>");
 		}
 		$('#searchresult').slideDown("slow");
+		$('#searchbarin').css("box-shadow",  "0px 10px 10px #CCC");
+		$('#searchbar').css("box-shadow",  "0px 10px 10px #CCC");
 		
 	}
 	
@@ -62,6 +68,8 @@ function showInteligence(data) {
 		}
 	}
 
-	$('#searchresult').slideDown("slow");
+	$('#searchresult').slideDown("slow")
+	$('#searchbarin').css("box-shadow",  "0px 10px 10px #CCC");
+	$('#searchbar').css("box-shadow",  "0px 10px 10px #CCC");
 	
 }
