@@ -6,11 +6,6 @@
 
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 
-@media screen and (max-width: 770px) {
-    video {
-        display: hidden;
-    }
-}
 
 * {
   margin: 0;
@@ -35,6 +30,9 @@ body{
 h1, h2, h3, h4{
 	color: $brand-primary;
 	-webkit-font-smoothing: antialiased;
+	@media screen and (max-width: 770px){
+			color: darken($brand-primary, 100%);
+	}
 }
 p{
 	margin: 20px;
@@ -137,7 +135,7 @@ video {
 	width: 50%;
 	height: 400px;
 }
-.button, .buttonapply, .buttoncancel{
+.button, .buttonapply, .buttoncancel, .buttoncontact{
 	text-align: center;
 	text-decoration: none;
 	background-color: #4a91d4;
@@ -172,7 +170,9 @@ video {
 	}	
 
 }
-
+.buttoncontact{
+	float: right;
+}
 .buttoncancel{
 	float: right;
 	background-color: $brand-danger;
@@ -190,8 +190,10 @@ p.jobtextinfo{
 #loginlink{
 	cursor: pointer;
 }
+
 #searchbar, #searchbarin{
-		z-index: 10000;
+	z-index: 5;
+	box-shadow: 0px 5px 20px #888888;
 	background-color: white;
 	position: absolute;
 	padding: 0.55em 50px 0.55em 3em;
@@ -232,6 +234,7 @@ p.jobtextinfo{
 }
 
 #header{
+	z-index: 80;
 	background-color: white;
 	.row{
 		margin-left: 50px;
@@ -529,11 +532,6 @@ border-left: solid 5px $Programming;
    	position: absolute;
 }
 
-.highlightfull:before{
-	color: lighten($brand-primary, 10%);
-   	content: "\2605";
-   	position: absolute;
-}
 #searchresult{
 	display: none;
 	div a{
