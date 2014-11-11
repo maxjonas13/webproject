@@ -29,7 +29,9 @@
 	
 	</div>
 </div>
-
+		@if(Auth::check())
+			@include('include.jobsCreate')
+		@endif
 {{ HTML::script('script/loadjobs.js'); }}
 {{ HTML::script('script/applyCall.js'); }}
 @stop

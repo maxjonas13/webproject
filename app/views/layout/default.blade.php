@@ -11,9 +11,7 @@
 			@yield('content')
 		</div>
 		@include('include.footer')
-		@if(Auth::check())
-			@include('include.jobsCreate')
-		@else
+		@if(!Auth::check())
 			@include('include.login')
 			@include('include.register')
 		@endif
