@@ -25,6 +25,8 @@ Route::get('/login/confirmation', 'LoginController@confirmation');
 Route::get('/logout', 'LoginController@logout');
 Route::get('/wachtwoordvergeten', 'LoginController@wachtwoordVergeten');
 Route::post('/resetwachtwoord', 'LoginController@resetWachtwoord');
+Route::get('/login/fb', 'LoginController@facebookLogin');
+Route::get('/login/fb/callback', 'LoginController@facebookLoginCallback');
 
 //routes for profile
 Route::get('/profile/{id}', 'ProfileController@index');

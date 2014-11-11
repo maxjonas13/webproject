@@ -95,6 +95,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		//store data into the table credits
 		$credit->save();
 
+		Auth::login($user);
+
+		return $user->PK_userId;
 	}
 
 	public function updateProfile() {

@@ -44,7 +44,7 @@ class RegisterController extends BaseController {
 			//create new User
 			$user = new User;
 			//call to model function to store the register data
-			$user->storeRegistrationData();
+			$userid = $user->storeRegistrationData();
 
 			//set the data to use in the email ready
 			$data = array(
@@ -57,7 +57,7 @@ class RegisterController extends BaseController {
 			    $message->to(Input::get('email'), Input::get('firstname') . ' ' . Input::get('name'))->subject('Welcome to BeeHive'); 
 			});
 
-			return Redirect::to('/register/confirmation')->with('stored', TRUE);
+			return Redirect::to('/profile/'. $userid);
 		}
 	}
 

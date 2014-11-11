@@ -16,10 +16,12 @@
 				  <div class="hexTop"></div>
 				  <div class="hexBottom"></div>
 				</div>
-				@if($data->PK_userId == Auth::User()->PK_userId)
-				{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'buttoncontact'), false)}}
-				@else
-				{{ HTML::link('profile/edit/'.$data->PK_userId, 'contact', array('class' => 'buttonapply'), false)}}
+				@if(Auth::check())
+					@if($data->PK_userId == Auth::User()->PK_userId)
+					{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'buttoncontact'), false)}}
+					@else
+					{{ HTML::link('profile/edit/'.$data->PK_userId, 'contact', array('class' => 'buttonapply'), false)}}
+					@endif
 				@endif
 				<h4>Rating</h4>
 

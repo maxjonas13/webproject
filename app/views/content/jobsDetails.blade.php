@@ -45,6 +45,7 @@
 								@endif
 							@endif
 						@endif
+						<div class="fb-share-button" data-href="http://projectweb.app:8000/jobs/details/{{$data['job']->PK_jobId}}" data-layout="button_count"></div>
 					</section>
 
 					<section>
