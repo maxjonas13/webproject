@@ -80,6 +80,7 @@ $(document).ready(function() {
 
 //function to show the job overview
 function getOverview(data){
+	console.log(data);
 	//make sure the jobcontainer is empty
 	$('#jobcontainer').empty();
 	

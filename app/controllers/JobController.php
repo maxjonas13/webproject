@@ -11,7 +11,7 @@ class JobController extends BaseController {
 
 	//function to load an overview off all the jobs with pagination
 	public function jobOverviewWithPagination() {
-			$job = Job::where('fixed', '=', FALSE)->with('User', 'Category', 'Candidate')->paginate(5);
+			$job = Job::where('fixed', '=', FALSE)->with('User', 'Category', 'Candidate')->orderBy('created_at', 'DESC')->paginate(5);
 	
 			return $job;
 	}
@@ -21,7 +21,7 @@ class JobController extends BaseController {
 			
 		$job = Job::whereHas('Category' , function($query) use($cat) {
 			$query->where(strtolower('categoryName'), '=', strtolower($cat));
-		})->with('User', 'Category')->where('fixed', '=', FALSE)->paginate(5);
+		})->with('User', 'Category')->where('fixed', '=', FALSE)->orderBy('created_at', 'DESC')->paginate(5);
 		
 		return $job;
 	}
