@@ -11,7 +11,6 @@
 		//change apply button to cancel button
 		$('.buttonapply').remove();
 		$('#buttons').append('<a onClick = "cancelClick(' + jobid + ', ' + userid + ')" id="' + jobid + '"class="buttoncancel">Cancel</a>');
-		$('#candidate').append('<p class="candidatetext">You have applied for this job</p>');
 		
 	}
 

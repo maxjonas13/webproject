@@ -30,6 +30,8 @@ class CommentController extends BaseController {
 			//call the sotre function in the comment model to store the data
 			$comment->store();
 
+			$this->sendMail();
+
 			//redirect the user back.
 			return Redirect::back();
 		}
@@ -52,6 +54,34 @@ class CommentController extends BaseController {
 		else {
 			return Redirect::to('/');
 		}
+	}
+
+	public function sendMail() {
+		$jobid = Input::get('jobid');
+		$commentor = Auth::user()->PK_userId;
+		$job = Job::find($jobid);
+		$user = User::find($job->FK_userId);
+		
+		$name = $user->name;
+		$email = $user->email;
+
+		$commentorName = Auth::user()->name;
+
+		$comment = Input::get('comment');
+
+		//set the data to use in the email ready
+		$data = array(
+			'name' 				=> $name,
+			'email'				=> $email,
+			'commentorName'		=> $commentorName,
+			'comment' 			=> $comment,
+			'jobid'				=> $jobid
+		);
+			
+		//send the user an email with some more information
+		Mail::send('emails.comment', $data , function($message) use($email, $name) {
+			$message->to($email, $name)->subject('You got a new comment on youre job'); 
+		});
 	}
 
 }
