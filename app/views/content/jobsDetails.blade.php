@@ -46,6 +46,8 @@
 							@endif
 						@endif
 						<div class="fb-share-button" data-href="http://projectweb.app:8000/jobs/details/{{$data['job']->PK_jobId}}" data-layout="button_count"></div>
+
+						<a class="twitter-share-button" href="https://twitter.com/share" data-text="{{$data['job']->title}}" data-via="BeeHiveOfficial">Tweet</a>
 					</section>
 
 					<section>
