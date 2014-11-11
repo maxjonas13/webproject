@@ -2,7 +2,9 @@
 		<div id="video-container">
 			<div id='videocontent'>
 				@if (Auth::check())
-					 <h1 id="videotitle">Hi, {{Auth::user()->name;}}</h1>
+
+					 <h1>Hi {{Auth::user()->name;}},</h1>
+					 <h3 class="videotitle">You have <strong>{{Auth::user()->credit->credits}}</strong> credits</h3>
 					 <a class="button" href="/profile/{{ Auth::user()->PK_userId;}}">Profile</a>
 					 <a class="button" href="/logout">Logout</a>
 				@else

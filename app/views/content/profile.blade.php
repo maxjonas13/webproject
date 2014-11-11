@@ -23,9 +23,14 @@
 					{{ HTML::link('profile/edit/'.$data->PK_userId, 'contact', array('class' => 'buttonapply'), false)}}
 					@endif
 				@endif
+				@if (Auth::check())
+					@if($data->PK_userId == Auth::User()->PK_userId)
+						<h5>you have {{Auth::user()->credit->credits}} credits</h5><br>
+					@endif
+				@endif
 				<h4>Rating</h4>
 
-				<div class="rating" id="user{{$data->PK_userId}}">
+				<div class="rating" id="user{{$data->PK_userId}}">					
 
 					<!-- JONAS!!!!!!!! de variabele $rating bevat een int tussen 1 en 5 met de gemiddelde rating van de user deze kan je gebruiken om de sterren in de kleuren ;) ;) ;) ;) ;) ;) -->
 					@if ($rating == 5) 
@@ -72,7 +77,6 @@
 					@endif
 
 				</div>
-
 				<h4>name:</h4>
 				 <p>{{$data->name}} </p>
 
