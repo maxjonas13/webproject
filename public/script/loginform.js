@@ -9,6 +9,9 @@ $( document ).ready(function(){
 	$('#jobcreatecontainer').hide();
 	$('#jobcreate').hide();
 
+	$('#closejobCandidateContainer').hide();
+	$('#closejobCandidate').hide();
+
 });
 
 function containerclick(){
@@ -19,6 +22,9 @@ function containerclick(){
 	$('#login').fadeOut( 200 );
 	$('#jobcreatecontainer').fadeOut( 200 );
 	$('#jobcreate').fadeOut( 200 );
+
+	$('#closejobCandidateContainer').fadeOut( 200 );
+	$('#closejobCandidate').fadeOut( 200 );
 
 }
 
@@ -42,4 +48,9 @@ function jobclick(){
 	$('#jobcreatecontainer').fadeIn( 200 );
 	$('#jobcreate').fadeIn( 200 );
 
+}
+
+function closeJobCandidateClick() {
+	$('#closejobCandidateContainer').fadeIn( 200 );
+	$('#closejobCandidate').fadeIn( 200 );
 }

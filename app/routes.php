@@ -37,7 +37,7 @@ Route::post('/jobs/update', 'JobController@update');
 Route::post('/jobs/delete', 'JobController@delete');
 Route::get('/jobs/create', 'JobController@create');
 Route::post('/jobs/store', 'JobController@store');
-Route::get('/jobs/close/{id}', 'JobController@closeOrOpen');
+Route::get('/jobs/close/{id}/{candidate}', 'JobController@closeOrOpen');
 Route::get('/jobs/open/{id}', 'JobController@closeOrOpen');
 Route::get('/jobs/all', 'JobController@jobOverviewWithPagination');
 Route::get('/jobs/filter/{id}', 'JobController@filterCategorieWithPagination');

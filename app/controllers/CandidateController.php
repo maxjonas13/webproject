@@ -7,6 +7,7 @@ class CandidateController extends BaseController {
 		$check = $candidate->checkIfUserHasSolicitated($id);
 		if(!$check) {
 			$candidate->store($id);
+			$this->sendMail($id);
 		}
 		else {
 			$candidate->cancelSolicitation($id);
@@ -38,5 +39,31 @@ class CandidateController extends BaseController {
 		return $users;
 	}
 	
+	public function sendMail($id) {
+		$nameSolicitant = Auth::user()->name;
+		$emailSolicitant = Auth::user()->email;
+
+		$job = Job::find($id);
+		$jobTitle = $job->title;
+		$userid = $job->FK_userId;
+
+		$user = User::find($userid);
+		$name = $user->name;
+		$email = $user->email;
+
+		//set the data to use in the email ready
+		$data = array(
+			'name' 				=> $name,
+			'email' 			=> $email,
+			'nameSolicitant' 	=> $nameSolicitant,
+			'emailSolicitant' 	=> $emailSolicitant,
+			'jobTitle'			=> $jobTitle
+		);
+			
+		//send the user an email with some more information
+		Mail::send('emails.apply', $data , function($message) use($email, $name){
+		    $message->to($email, $name)->subject('You got a new solicitant for youre job'); 
+		});
+	}
 
 }

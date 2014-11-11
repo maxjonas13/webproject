@@ -146,7 +146,7 @@ class JobController extends BaseController {
 	}
 
 	//function to set a job to the fixed state
-	public function closeOrOpen($id) {
+	public function closeOrOpen($id, $candidate) {
 		//check if the user is loggedin
 		if(Auth::check()) {
 			//get the job
@@ -154,7 +154,7 @@ class JobController extends BaseController {
 			//check if the user off the job matches the authenticated user
 			if(Auth::user()->PK_userId == $job->FK_userId) {
 				//call the fixed function in the model
-				$job->closeOrOpen($id);
+				$job->closeOrOpen($id, $candidate);
 			}
 		}
 

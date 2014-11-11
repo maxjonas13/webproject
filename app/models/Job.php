@@ -152,7 +152,7 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 		return $job->PK_jobId;
 	}
 
-	public function closeOrOpen($id) {
+	public function closeOrOpen($id, $candidate) {
 		//find the job
 		$job = Job::find($id);
 
@@ -165,6 +165,9 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 		//save the job
 		$job->save();
 
-		//GIVE THE SELECTED USER A CREDIT FOR HIS HELP
+		$credit = Credit::where('FK_userId', '=', $candidate)->first();
+		$credit->credits += 1;
+
+		$credit->save();
 	}
 }

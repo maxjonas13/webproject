@@ -36,11 +36,12 @@
 								@endif
 								</section>
 							@else
-								<a class="button" href="/jobs/edit/{{$data['job']->PK_jobId}}">Edit</a>
+								
 								@if($data['job']->fixed)
-									<a class="button" href="/jobs/open/{{$data['job']->PK_jobId}}" title="">Open job</a>
+									<p class="alert alert-danger">This job is closed.</p>
 								@else
-									<a class="button" href="/jobs/close/{{$data['job']->PK_jobId}}" title="">Close job</a>
+									<a class="button" href="/jobs/edit/{{$data['job']->PK_jobId}}">Edit</a>
+									<a class="button" onClick="closeJobCandidateClick()" title="">Close job</a>
 								@endif
 							@endif
 						@endif
@@ -49,6 +50,9 @@
 					<section>
 						<section class="comment">
 						<h3>Comments</h3>
+							@if(count($data['job']->comment) == 0)
+								<p class="alert alert-info">There are currently no comments on this job.</p>
+							@endif
 							@foreach($data['job']->comment as $comment) 
 								<section class="commentitem">
 									<a href="/profile/{{$comment->user->PK_userId}}"><h4>{{$comment->user->name}}</h4></a>
@@ -65,17 +69,21 @@
 								</ul>
 							@endforeach
 						@endif
-						<!-- ENKEL TONEN INDIEN EEN USER IS INGELOGD! -->
-						<!-- open form tag -->
-						{{ Form::open( array('url' => '/comments/store') ) }}
+						
+						@if(Auth::check())
+							<!-- open form tag -->
+							{{ Form::open( array('url' => '/comments/store') ) }}
 
-							{{ Form::textarea('comment' ,'', array('placeholder'=> "Comment")) }}
-							{{ Form::hidden('jobid', $data['job']->PK_jobId)}}
-														
-							{{ Form::submit('Add comment') }}
+								{{ Form::textarea('comment' ,'', array('placeholder'=> "Comment")) }}
+								{{ Form::hidden('jobid', $data['job']->PK_jobId)}}
 															
-						<!-- close form tag -->
-						{{ Form::close() }}
+								{{ Form::submit('Add comment') }}
+																
+							<!-- close form tag -->
+							{{ Form::close() }}
+						@else 
+							<p class="alert alert-danger">You have to be logged in to place a comment.</p>
+						@endif
 					</section>
 			</div>
 			<div class="column col-md-2 col-sm-3"> 
@@ -97,6 +105,8 @@
 	
 	</div>
 </div>
+
+@include('include.candidates')
 
 {{ HTML::script('script/applyCall.js'); }}
 @stop

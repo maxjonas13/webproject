@@ -107,7 +107,7 @@ video {
 		color: white;
 	}
 }
-#logincontainer, #registercontainer, #jobcreatecontainer{
+#logincontainer, #registercontainer, #closejobCandidateContainer, #jobcreatecontainer{
 	z-index: 100;
 	position: fixed;
 	bottom: 0;
@@ -119,14 +119,14 @@ video {
 	background-color: rgba(0, 0, 0, 0.6);
 
 }
-#login, #register, #jobcreate{
+#login, #register, #closejobCandidate, #jobcreate{
 	ul{
 		list-style: none;
 		color: $brand-danger;
 	}
 	z-index: 200;
 	background-image: image-url('img/background.jpg');
-	 background-size: cover;
+	background-size: cover;
 	text-align: center;
 	background-color: white; 
 	position: fixed;
@@ -230,6 +230,21 @@ p.jobtextinfo{
 
 #jobcreate{
 	height: 800px;
+}
+
+#closejobCandidate {
+	height:800px;
+	text-align:left;
+	padding-left:20px;
+	.hexagon {
+		padding-top:20px;
+	}
+	float:left;
+	h1 {
+		text-align:center;
+		clear:both;
+	}
+
 }
 
 #header{
