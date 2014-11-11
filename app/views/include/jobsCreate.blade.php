@@ -1,17 +1,24 @@
 <div id="jobcreate">
 	<i class="icon-remove-sign" onClick='containerclick()'></i>
+	<h1>Create Job</h1>
 	@if($errors->count() > 0) 
-	@foreach($errors->all() as $error)
-	<ul>
-		<li>{{$error}}</li>
-	</ul>
-	@endforeach
-@endif
+		@foreach ($errors->all() as $error) 
+			<ul>
+				<li>{{$error}}</li>
+			</ul>
+		@endforeach
+			<script>
+				$( document ).ready(function(){
+					$('#jobcreatecontainer').show();
+					$('#jobcreate').show();
+
+				});
+			</script>
+	@endif
 @if(!Auth::user()->credit->credits > 0) 
 	<p id="createJobError" class="alert alert-danger">You have no credits anymore. Help somebody else to get credits again.</p>
 @else
 <!-- open form tag -->
-<h1>Create Job</h1>
 		{{ Form::open( array('url' => '/jobs/store') ) }}
 
 			{{ Form::text('title' ,'', array('placeholder'=> "Title")) }}
