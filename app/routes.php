@@ -41,15 +41,16 @@ Route::get('/jobs/close/{id}', 'JobController@closeOrOpen');
 Route::get('/jobs/open/{id}', 'JobController@closeOrOpen');
 Route::get('/jobs/all', 'JobController@jobOverviewWithPagination');
 Route::get('/jobs/filter/{id}', 'JobController@filterCategorieWithPagination');
-Route::get('/jobs/solicitate/{id}', 'JobController@solicitate');
-Route::get('/jobs/solicitate/cancel/{id}', 'JobController@cancelSolicitation');
+
 
 //routes for comments
 Route::post('/comments/store', 'CommentController@store');
 Route::get('/comments/delete/{id}', 'CommentController@delete');
 
 //routes for Candidates
-Route::get('/candidates/apply/{id}', 'CandidateController@apply');
+Route::get('/jobs/solicitate/{id}', 'CandidateController@apply');
+Route::get('/jobs/solicitate/cancel/{id}', 'CandidateController@cancelSolicitation');
+Route::get('/jobs/solicitants/{id}', 'CandidateController@getSolicitants');
 
 //routes for specialists
 Route::get('/specialists', 'UserController@index');

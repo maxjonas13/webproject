@@ -162,36 +162,36 @@ class JobController extends BaseController {
 	}
 
 	//function to solicitate for a job
-	public function solicitate($id) {
-		//check if the user is authenticated
-		if(Auth::check()) {
-			$candidate = new Candidate;
-			$solicitated = $candidate->checkIfUserHasSolicitated($id);
+	// public function solicitate($id) {
+	// 	//check if the user is authenticated
+	// 	if(Auth::check()) {
+	// 		$candidate = new Candidate;
+	// 		$solicitated = $candidate->checkIfUserHasSolicitated($id);
 
-			if(!$solicitated) {
-				//the user has not solicitad yet
+	// 		if(!$solicitated) {
+	// 			//the user has not solicitad yet
 
-				$candidate = new Candidate;
-				//call the function to store the solicitation
-				$candidate->store($id);
+	// 			$candidate = new Candidate;
+	// 			//call the function to store the solicitation
+	// 			$candidate->store($id);
 
-				//return true if the solicitation is stored
-				return json_encode(TRUE);
-			}
-			else {
-				//return back if the solicitation is not stored
-				return json_encode(FALSE);
-			}
-		}
-	}
+	// 			//return true if the solicitation is stored
+	// 			return json_encode(TRUE);
+	// 		}
+	// 		else {
+	// 			//return back if the solicitation is not stored
+	// 			return json_encode(FALSE);
+	// 		}
+	// 	}
+	// }
 
-	//function to cancel a solicitation
-	public function cancelSolicitation($id) {
-		if(Auth::check()) {
-			$candidate = new Candidate;
-			$candidate->cancelSolicitation($id);
-		}
-	}
+	// //function to cancel a solicitation
+	// public function cancelSolicitation($id) {
+	// 	if(Auth::check()) {
+	// 		$candidate = new Candidate;
+	// 		$candidate->cancelSolicitation($id);
+	// 	}
+	// }
 	
 
 }

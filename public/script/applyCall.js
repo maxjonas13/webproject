@@ -3,6 +3,7 @@
 
 		$.get(applyurl, null, function(data) {
 			changeButtonState(id, userid);
+			getSolicitants(id);
 		});
 	}
 
@@ -28,4 +29,11 @@
 		$('#buttons').append('<a onClick = "applyClick(' + jobid + ', ' + userid + ')" id="' + jobid + '" class="buttonapply">Apply</a>');
 		$('#candidate'+userid).remove();
 		$('.candidatetext').remove();
+	}
+
+	function getSolicitants(id) {
+		console.log('get function');
+		$.get('/jobs/solicitants/' + id, null, function(data) {
+			console.log(data);
+		});
 	}
