@@ -34,4 +34,39 @@ class LoginController extends BaseController {
 		return Redirect::to('/');
 	}
 
+	public function wachtwoordVergeten() {
+		return View::make('include.wachtwoordvergeten');
+	}
+
+	public function resetWachtwoord() {
+		$validator = Validator::make(
+			array(
+				'email'	=> Input::get('email')
+			),
+			array(
+				'email'	=> 'required|email|exists:users,email'
+			)
+		);
+
+		$messages = $validator->messages();
+
+		if($validator->fails()) {
+			return Redirect::back()->withErrors($messages)->withInput();
+		}
+		else {
+			$user = new User;
+			$temporarypassword = $user->createTempPassword();
+
+			//set the data to use in the email ready
+			$data = array(
+				'temppass' 	=> $temporarypassword,
+			);
+			
+			//send the user an email with some more information
+			Mail::send('emails.wachtwoordvergeten', $data , function($message) {
+			    $message->to(Input::get('email'))->subject('Temporary password'); 
+			});
+		}
+	}
+
 }

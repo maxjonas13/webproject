@@ -18,11 +18,13 @@ Route::get('/register', 'RegisterController@index');
 Route::post('/register/save', 'RegisterController@save');
 Route::get('/register/confirmation', 'RegisterController@confirmation');
 
-//routes for login & logout
+//routes for login & logout & wachtwoord vergeten
 Route::get('/login', 'LoginController@index');
 Route::post('/login/check', 'LoginController@check');
 Route::get('/login/confirmation', 'LoginController@confirmation');
 Route::get('/logout', 'LoginController@logout');
+Route::get('/wachtwoordvergeten', 'LoginController@wachtwoordVergeten');
+Route::post('/resetwachtwoord', 'LoginController@resetWachtwoord');
 
 //routes for profile
 Route::get('/profile/{id}', 'ProfileController@index');

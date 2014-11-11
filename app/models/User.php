@@ -170,6 +170,32 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	}
 
+	public function createTempPassword() {
+		//generate password
+		$alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+	    $pass = array(); 
+	    $alphaLength = strlen($alphabet) - 1;
+
+	    for ($i = 0; $i < 10; $i++) {
+	        $n = rand(0, $alphaLength);
+	        $pass[] = $alphabet[$n];
+	    }
+
+	    //convert array to string
+	    $temppass = implode($pass);
+
+	    //select the user with the wright email adres
+	    $user = User::where('email', '=', Input::get('email'))->first();
+	    
+	    $user->password = Hash::make($temppass);
+
+	    //store the new password
+	    $user->save();
+
+	    //return the generate password
+	    return $temppass;
+	}
+
 
 
 
