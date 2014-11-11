@@ -51,7 +51,7 @@
 						<h3>Comments</h3>
 							@foreach($data['job']->comment as $comment) 
 								<section class="commentitem">
-									<h4>{{$comment->user->name}}</h4>
+									<a href="/profile/{{$comment->user->PK_userId}}"><h4>{{$comment->user->name}}</h4></a>
 									<p>{{$comment->comment}}</p>
 									<small>Posted at:{{$comment->created_at}}</small>
 								</section>
@@ -83,11 +83,13 @@
 				<section id="candidate">
 				@foreach ($data['candidate'] as $candidate) 		
 					<section id="candidate{{$candidate->PK_userId}}">
-						<div class="hexagon" style="background-image: url({{$candidate->profile->profilePicture}});">
-							<div class="hexTop"></div>
-							<div class="hexBottom"></div>
-						</div>
+						<a href="/profile/{{$candidate->PK_userId}}">
+							<div class="hexagon" style="background-image: url({{$candidate->profile->profilePicture}});">
+								<div class="hexTop"></div>
+								<div class="hexBottom"></div>
+							</div>
 						{{$candidate->name}}
+						</a>
 					</section>
 				@endforeach
 				</section>

@@ -6,6 +6,12 @@
 
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 
+@media screen and (max-width: 770px) {
+    video {
+        display: hidden;
+    }
+}
+
 * {
   margin: 0;
 }
@@ -185,6 +191,7 @@ p.jobtextinfo{
 	cursor: pointer;
 }
 #searchbar, #searchbarin{
+		z-index: 10000;
 	background-color: white;
 	position: absolute;
 	padding: 0.55em 50px 0.55em 3em;
@@ -532,4 +539,8 @@ border-left: solid 5px $Programming;
 	div a{
 		color: black;
 	}
+}
+
+.comment h3{
+		margin-top: 10px;
 }
