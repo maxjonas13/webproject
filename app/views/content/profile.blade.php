@@ -4,7 +4,7 @@
 		<div class="firstrow"> 
 			<div class="column col-md-2 col-sm-3"> </div>
 			<div class="column col-md-8 col-sm-6" id="profile"> 
-
+				
 				@if(!empty($data->category[0]))
 					<section class="profilestyle {{strtolower($data->category[0]->categoryName)}}">
 				@else

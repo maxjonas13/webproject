@@ -6,7 +6,7 @@ class ProfileController extends BaseController {
 	public function index($id) {
 		//get all the info off the user with the given id
 		//all the info = users table, profiles table, credits table
-		$user = User::find($id)->load('Profile', 'Credit', 'Category');
+		$user = User::find($id)->load('Profile', 'Credit', 'Category', 'Job');
 		$rating = new Rating;
 		$ratingValue = $rating->getRates($id);
 	

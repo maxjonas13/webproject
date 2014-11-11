@@ -15,15 +15,17 @@
 			<div class="column col-md-8 col-sm-6" id="jobcontainer"> 
 				
 			</div>
-			<div class="column col-md-2 col-sm-3"> 
-				@if(!Auth::user()->credit->credits > 0) 
-					<p id="createJobError" class="alert alert-danger">You have no credits anymore.<br> You should help somebody else to get credits and to make your new job.</p>
-				@else
-				<a onClick='jobclick()'>
-					<h1 class="ribbon">
-				   		<strong class="ribbon-content">Create Job</strong>
-					</h1>
-				</a>
+			<div class="column col-md-2 col-sm-3">
+				@if(Auth::check()) 
+					@if(!Auth::user()->credit->credits > 0) 
+						<p id="createJobError" class="alert alert-danger">You have no credits anymore.<br> You should help somebody else to get credits and to make your new job.</p>
+					@else
+					<a onClick='jobclick()'>
+						<h1 class="ribbon">
+					   		<strong class="ribbon-content">Create Job</strong>
+						</h1>
+					</a>
+					@endif
 				@endif
 			</div>
 	
