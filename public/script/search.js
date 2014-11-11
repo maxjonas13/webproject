@@ -21,7 +21,7 @@ function setATimeout(searchstring) {
        		$('#jobsresult').slideUp("slow");
 			$('#userresult').slideUp("slow");
     	})
-    },200);
+    },450);
 }
 
 function showInteligence(data) {
