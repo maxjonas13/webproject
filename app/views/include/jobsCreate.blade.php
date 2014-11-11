@@ -7,6 +7,9 @@
 	</ul>
 	@endforeach
 @endif
+@if(!Auth::user()->credit->credits > 0) 
+	<p id="createJobError" class="alert alert-danger">You have no credits anymore. Help somebody else to get credits again.</p>
+@else
 <!-- open form tag -->
 <h1>Create Job</h1>
 		{{ Form::open( array('url' => '/jobs/store') ) }}
@@ -54,6 +57,7 @@
 											
 		<!-- close form tag -->
 		{{ Form::close() }}
+@endif
 </div>
 <div id="jobcreatecontainer" onClick="containerclick()">
 </div>

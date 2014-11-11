@@ -27,9 +27,17 @@ class JobController extends BaseController {
 	}
 
 	//function to show the view with the form to create a new job
-	public function create() {
-		return View::make('content/jobsCreate');
-	}
+	// public function create() {
+	// 	if(Auth::check()) {
+	// 		$user = User::find(Auth::user()->PK_userId)->with('Credit')->first();
+	// 		if($user->credit->credits > 0) {
+	// 			return View::make('content/jobsCreate');
+	// 		}
+	// 		else {
+	// 			return Redirect::to('/');
+	// 		}
+	// 	}
+	// }
 
 	//function to store the data of the new job
 	public function store() {
