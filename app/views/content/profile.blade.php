@@ -3,7 +3,7 @@
 @section('content')
 		<div class="firstrow"> 
 			<div class="column col-md-2 col-sm-3"> </div>
-			<div class="column col-md-8 col-sm-6" id="profile">  
+			<div class="column col-md-8 col-sm-6" id="profile"> 
 
 				@if(!empty($data->category[0]))
 					<section class="profilestyle {{strtolower($data->category[0]->categoryName)}}">
@@ -16,6 +16,11 @@
 				  <div class="hexTop"></div>
 				  <div class="hexBottom"></div>
 				</div>
+				@if($data->PK_userId == Auth::User()->PK_userId)
+				{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'buttoncontact'), false)}}
+				@else
+				{{ HTML::link('profile/edit/'.$data->PK_userId, 'contact', array('class' => 'buttonapply'), false)}}
+				@endif
 				<h4>Rating</h4>
 
 				<div class="rating" id="user{{$data->PK_userId}}">
@@ -75,9 +80,6 @@
 				 <h4>website:</h4>
 				 <p>{{$data->profile->website}}</p>
 
-				<h4>username:</h4>
-				 <p>{{$data->profile->username}}</p>
-
 				<h4>twitter:</h4>
 				 <p>twitter.com/{{$data->profile->twitter}}</p>
 
@@ -98,11 +100,12 @@
 
 				<h4>Bio</h4>
 				<p>{{nl2br($data->profile->bio)}}</p>
-				@if($data->PK_userId == Auth::User()->PK_userId)
-				{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'button'), false)}}
-				@else
-				{{ HTML::link('profile/edit/'.$data->PK_userId, 'contact', array('class' => 'buttonapply'), false)}}
-				@endif
+				<h4>Catergories</H4>
+								<p>
+						@foreach ($data->category as $categorieitem) 
+							<span class="{{strtolower($categorieitem->categoryName)}}">{{$categorieitem->categoryName}}</span><br>
+						@endforeach
+					</p>
 			
 			</section>
 		</div>
