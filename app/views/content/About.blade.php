@@ -12,6 +12,7 @@
 			and help each other to fix things for someone else and get help in return.<br><br>
 
 			Beehive is not liable for any unforseen damage that could be done by one of our members.</p>
+			<a style="float:right;" href="http://twitter.com/@BeeHiveOfficial">@BeeHiveOfficial</a>
 	</div>
 	<div class="row"> 
 		<div class="column col-md-6 col-sm-6"  style="display: block;"> 
@@ -24,9 +25,9 @@
 				Hi, I'm Jonas. One of the creators of BeeHive. I'm a student MT at the Karel de Grote College in Antwerp.
 				I have a passion for art, graphic design, music, webdesign, imagination, technology and everything around those things.
 				So MT is the perfect place to follow my dreams. 
-				Also I'm always looking for stuff that will blow my mind away. So I can use it as inspiration for one of my own projects.
+				
 			</p>
-			<p></p>
+			<p><a href="http://jvds.be">jvds.be</a> <a style="float:right;" href="http://twitter.com/@MAXjonas13">@MAXjonas13</a></p>
 		</div>
 		<div class="column col-md-6 col-sm-6"> 
 			<h2>Joren Van Hocht</h2>
@@ -40,6 +41,7 @@
 				I wanted to that all my life.
 				So to summeraise all this "I have a passion for the web!".
 			</p>
+			<p><a href="http://jorenvanhocht.be">jorenvanhocht.be</a> <a style="float:right;" href="http://twitter.com/@jorenvanhocht">@jorenvanhocht</a></p>
 		</div>
 	</div>
 </div>

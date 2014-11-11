@@ -146,7 +146,7 @@ video {
 	width: 50%;
 	height: 400px;
 }
-.button, .buttonapply, .buttoncancel, .buttoncontact{
+.button, .buttonapply, .buttoncancel, .buttoncontact, .facebookbutton{
 	text-align: center;
 	text-decoration: none;
 	background-color: #4a91d4;
@@ -190,6 +190,25 @@ video {
 	&:hover{
 		text-align: center;
 		background-color: darken($brand-danger, 10%);
+	}	
+
+}
+
+#wwvergeten{
+	display: none;
+}
+
+.wachtwoordvergeten{
+	margin-left: -25%;
+}
+
+.facebookbutton{
+	background-color: #3b5998;
+	width: 40%;
+	&:hover{
+		width: 50%;
+		text-align: center;
+		background-color: #6d84b4;
 	}	
 
 }
