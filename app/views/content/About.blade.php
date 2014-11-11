@@ -26,6 +26,7 @@
 				So MT is the perfect place to follow my dreams. 
 				Also I'm always looking for stuff that will blow my mind away. So I can use it as inspiration for one of my own projects.
 			</p>
+			<p></p>
 		</div>
 		<div class="column col-md-6 col-sm-6"> 
 			<h2>Joren Van Hocht</h2>

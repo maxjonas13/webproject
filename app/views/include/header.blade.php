@@ -7,3 +7,4 @@
 	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	{{ HTML::script('script/covervideo.js'); }}
 	{{ HTML::script('script/loginform.js'); }}
+	<link rel="shortcut icon" href="{{ asset('assets/favicon.ico') }}">

@@ -28,6 +28,9 @@ body{
 }
 
 h1, h2, h3, h4{
+	@media screen and (max-width: 500px){
+		font-size: 15px;
+	}
 	color: $brand-primary;
 	-webkit-font-smoothing: antialiased;
 }
@@ -49,8 +52,13 @@ p{
 	text-decoration: none;
 }
 .headernav{
-	@media screen and (max-width: 770px){
-			display: none;
+	@media screen and (max-width: 500px){
+		font-size: 8px;
+		line-height: 0.2em;
+
+	}
+	@media screen and (max-width: 550px){
+		font-size: 11px;
 	}
 	a{	
 		float: right;
@@ -76,6 +84,9 @@ p{
 	width:100%;
 }
 #video-container {
+	@media screen and (max-width: 770px){
+		display: none;
+	}
 	position: absolute;
 	top:0%;
 	left:0%;
@@ -190,7 +201,12 @@ p.jobtextinfo{
 #loginlink{
 	cursor: pointer;
 }
-
+#searchbar{
+	@media screen and (max-width: 770px){
+		margin-top: 40px !important;
+		width: 100%;
+	}
+}
 #searchbar, #searchbarin{
 	z-index: 5;
 	background-color: white;
@@ -219,6 +235,9 @@ p.jobtextinfo{
 }
 
 #searchbarin{
+	@media screen and (max-width: 770px){
+		margin-top: 110px;
+	}
 	margin-top:65px;
 	width:100%;
 	border-top:1px solid $gray-lighter;
@@ -505,6 +524,15 @@ border-left: solid 5px $Programming;
 	height: 100px;
 }
 #footer {
+	@media screen and (max-width: 728px){
+			height: 300px;
+	}
+	@media screen and (max-width: 770px){
+			height: 200px;
+	}
+	@media screen and (max-width: 991px){
+			height: 130px;
+	}
   height: 80px; 
 }
 
