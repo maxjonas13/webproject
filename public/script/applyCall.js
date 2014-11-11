@@ -32,8 +32,10 @@
 	}
 
 	function getSolicitants(id) {
-		console.log('get function');
 		$.get('/jobs/solicitants/' + id, null, function(data) {
-			console.log(data);
+			$('#candidate').empty();
+			for(i = 0; i < data.length; i++) {
+				$('#candidate').append("<section id='candidate " + data[i][0]["PK_userId"] + "'><a href='/profile/'" + data[i][0]["PK_userId"] + "> <div class='hexagon' style='background-image: url("+ data[i][0]["profile"]["profilePicture"] +")'> <div class='hexTop'></div><div class='hexBottom'></div></div>" + data[i][0]["name"] + "</a></section>  ");
+			}
 		});
 	}
