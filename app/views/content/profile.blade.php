@@ -20,7 +20,7 @@
 					@if($data->PK_userId == Auth::User()->PK_userId)
 					{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'buttoncontact'), false)}}
 					@else
-					{{ HTML::link('profile/edit/'.$data->PK_userId, 'contact', array('class' => 'buttonapply'), false)}}
+					{{ HTML::link('mailto:' . $data->email, 'contact', array('class' => 'buttonapply'), false)}}
 					@endif
 				@endif
 				@if (Auth::check())
@@ -81,38 +81,91 @@
 				 <p>{{$data->name}} </p>
 
 				<h4>email:</h4>
-				 <p>{{$data->email}}</p>
+				 <p><a href="mailto:{{$data->email}}" title="Email {{$data->name}}">{{$data->email}}</a></p>
 
 				 <h4>website:</h4>
-				 <p>{{$data->profile->website}}</p>
+				 @if($data->profile->website != NULL)
+				 	<p><a href="{{$data->profile->website}}" title="Personal website of {{$data->name}}" target="_blank">{{$data->profile->website}}</a></p>
+				 @else
+				 	<p>Not available</p>
+				 @endif
 
 				<h4>twitter:</h4>
-				 <p>twitter.com/{{$data->profile->twitter}}</p>
+				@if($data->profile->twitter != NULL)
+					<p><a href="http://www.twitter.com/{{$data->profile->twitter}}" title="Twitter account of {{$data->name}}" target="_blank">twitter.com/{{$data->profile->twitter}}</a></p>
+				@else
+					<p>Not available</p>
+				@endif
 
 				<h4>github:</h4>
-				 <p>github.com/{{$data->profile->github}}</p>
+				@if($data->profile->github != NULL)
+				 	<p><a href="http://www.github.com/{{$data->profile->github}}" title="Github account of {{$data->name}}" target="_blank">github.com/{{$data->profile->github}}</a></p>
+				 @else
+				 	<p>Not available</p>
+				 @endif
 
 				<h4>linkedin:</h4>
-				 <p>linkedin.com/in/{{$data->profile->linkedin}}</p>
+				@if($data->profile->linkedin != NULL)
+				 	<p><a href="http://be.linkedin.com/in/{{$data->profile->linkedin}}" title="Linkedin account of {{$data->name}}" target="_blank">linkedin.com/in/{{$data->profile->linkedin}}</a></p>
+				 @else
+				 	<p>Not available</p>
+				 @endif
 
 				<h4>googleplus:</h4>
-				 <p>googleplus.com/{{$data->profile->googleplus}}</p>
+				@if($data->profile->googleplus != NULL)
+				 	<p><a href="http://www.googleplus.com/{{$data->profile->googleplus}}" title="Personal website of {{$data->name}}" target="_blank">googleplus.com/{{$data->profile->googleplus}}</a></p>
+				 @else
+				 	<p>Not available</p>
+				 @endif
 
 				<h4>instagram:</h4>
-				 <p>instagram.com/{{$data->profile->instagram}}</p>
+				@if($data->profile->github != NULL)
+				 	<p><a href="http://www.instagram.com/{{$data->profile->instagram}}" title="Instagram account of {{$data->name}}" target="_blank">instagram.com/{{$data->profile->instagram}}</a></p>
+				 @else
+				 	<p>Not available</p>
+				 @endif
+
+				<h4>Pintrest:</h4>
+				@if($data->profile->pintrest != NULL)
+				 	<p><a href="http://www.pintrest.com/{{$data->profile->instagram}}" title="Pintrest account of {{$data->name}}" target="_blank">pintrest.com/{{$data->profile->pintrest}}</a></p>
+				 @else
+				 	<p>Not available</p>
+				 @endif
 
 				<h4>myspace:</h4>
-				 <p>myspace.com/{{$data->profile->myspace}}</p>
+				@if($data->profile->myspace != NULL)
+				 	<p><a href="http://www.myspace.com/{{$data->profile->googleplus}}" title="Myspace account of {{$data->name}}" target="_blank">myspace.com/{{$data->profile->myspace}}</a></p>
+				 @else
+				 	<p>Not available</p>
+				 @endif
 
 				<h4>Bio</h4>
-				<p>{{nl2br($data->profile->bio)}}</p>
+				@if($data->profile->bio != NULL)
+					<p>{{nl2br($data->profile->bio)}}</p>
+				@else 
+					<p>Not available</p>
+				@endif
+
 				<h4>Catergories</H4>
+				@if(count($data->category) > 0)
 								<p>
 						@foreach ($data->category as $categorieitem) 
 							<span class="{{strtolower($categorieitem->categoryName)}}">{{$categorieitem->categoryName}}</span><br>
 						@endforeach
 					</p>
-			
+				@else
+					<p>This user has no categories selected</p>
+				@endif
+				
+				<h4>Jobs</h4>
+				<p>
+				@if(count($data->job) > 0)
+					@foreach($data->job as $job)
+						<a href="/jobs/details/{{$job->PK_jobId}}">{{$job->title}}</a><br>
+					@endforeach
+				@else
+					This user has no jobs
+				@endif</p>
 			</section>
 		</div>
 		<div class="column col-md-2 col-sm-3"> </div>
