@@ -3,7 +3,7 @@
 	<div id="loginwindow">
 	<h1 id="videotitle">Login</h1>
 	@if(Session::get('error_message') != null)
-	<ul><li class="alert alert-danger">{{ Session::get('error_message') }}</li></ul>
+	<ul><li class="alert alert-danger popup">{{ Session::get('error_message') }}</li></ul>
 	<script>
 	$( document ).ready(function(){
 
@@ -40,7 +40,7 @@
 		@if($errors->count() > 0) 
 		@foreach ($errors->all() as $error) 
 			<ul>
-				<li class="alert alert-danger" >{{$error}}</li>
+				<li class="alert alert-danger popup" >{{$error}}</li>
 			</ul>
 		@endforeach
 	@endif

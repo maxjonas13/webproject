@@ -28,6 +28,7 @@ body{
 }
 
 h1, h2, h3, h4{
+	clear:both;
 	@media screen and (max-width: 500px){
 		font-size: 15px;
 	}
@@ -48,9 +49,12 @@ p{
 	font-weight: normal !important;
 }
 
-li{
-	max-width: 53% !important;
+ul{
+	max-width: 100% !important;
 	list-style: none !important;
+	.popup {
+		max-width: 53% !important;
+	}
 }
 
 #homelink{
@@ -619,6 +623,12 @@ border-left: solid 5px $Programming;
   	text-align: left;
   	direction: rtl;
   	padding: 20px 0;
+  	.rateMessage {
+  		margin-top:20px;
+  		width:90%;
+  		float:left;
+   		margin-bottom:20px;
+  	}
 }
 .rating > span {
   	display: inline-block;
@@ -626,7 +636,7 @@ border-left: solid 5px $Programming;
   	width: 1.1em;
 }
 .rating > span:hover:before,
-.rating > span:hover ~ span:before, .highlight {
+.rating > span:hover ~ span:before, .highlight, .highlightfull:before {
 	color: $brand-primary;
    	content: "\2605";
    	position: absolute;

@@ -4,7 +4,7 @@
 	@if($errors->count() > 0) 
 		@foreach ($errors->all() as $error) 
 			<ul>
-				<li class="alert alert-danger">{{$error}}</li>
+				<li class="alert alert-danger popup">{{$error}}</li>
 			</ul>
 		@endforeach
 			<script>

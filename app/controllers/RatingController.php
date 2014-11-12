@@ -21,6 +21,7 @@ class RatingController extends BaseController {
 
 	public function getRates($userid) {
 		$rate = new Rating;
+		
 		return $rate->getRates($userid);
 	}
 

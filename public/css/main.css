@@ -3860,6 +3860,7 @@ body {
 
 /* line 30, ../scss/main.scss */
 h1, h2, h3, h4 {
+  clear: both;
   color: #bd6100;
   -webkit-font-smoothing: antialiased;
 }
@@ -3870,7 +3871,7 @@ h1, h2, h3, h4 {
   }
 }
 
-/* line 37, ../scss/main.scss */
+/* line 38, ../scss/main.scss */
 p {
   margin: 20px;
   display: block;
@@ -3885,31 +3886,35 @@ p {
   font-weight: normal !important;
 }
 
-/* line 51, ../scss/main.scss */
-li {
-  max-width: 53% !important;
+/* line 52, ../scss/main.scss */
+ul {
+  max-width: 100% !important;
   list-style: none !important;
 }
+/* line 55, ../scss/main.scss */
+ul .popup {
+  max-width: 53% !important;
+}
 
-/* line 56, ../scss/main.scss */
+/* line 60, ../scss/main.scss */
 #homelink {
   text-decoration: none;
 }
 
 @media screen and (max-width: 500px) {
-  /* line 59, ../scss/main.scss */
+  /* line 63, ../scss/main.scss */
   .headernav {
     font-size: 8px;
     line-height: 0.2em;
   }
 }
 @media screen and (max-width: 550px) {
-  /* line 59, ../scss/main.scss */
+  /* line 63, ../scss/main.scss */
   .headernav {
     font-size: 11px;
   }
 }
-/* line 68, ../scss/main.scss */
+/* line 72, ../scss/main.scss */
 .headernav a {
   float: right;
   color: #757575;
@@ -3918,13 +3923,13 @@ li {
   margin: 20px;
   transition: all 0.5s ease;
 }
-/* line 75, ../scss/main.scss */
+/* line 79, ../scss/main.scss */
 .headernav a:hover {
   color: #bd6100;
   text-decoration: none;
 }
 
-/* line 82, ../scss/main.scss */
+/* line 86, ../scss/main.scss */
 .header-unit {
   height: 70%;
   border-right: none;
@@ -3935,7 +3940,7 @@ li {
   width: 100%;
 }
 
-/* line 91, ../scss/main.scss */
+/* line 95, ../scss/main.scss */
 #video-container {
   position: absolute;
   top: 0%;
@@ -3946,26 +3951,26 @@ li {
   overflow: hidden;
 }
 @media screen and (max-width: 770px) {
-  /* line 91, ../scss/main.scss */
+  /* line 95, ../scss/main.scss */
   #video-container {
     display: none;
   }
 }
 
-/* line 104, ../scss/main.scss */
+/* line 108, ../scss/main.scss */
 video {
   position: absolute;
   z-index: 0;
   min-width: 100%;
 }
 
-/* line 110, ../scss/main.scss */
+/* line 114, ../scss/main.scss */
 .videotitle {
   margin-top: 5px;
   color: white;
 }
 
-/* line 114, ../scss/main.scss */
+/* line 118, ../scss/main.scss */
 #videocontent {
   z-index: 40;
   margin: auto;
@@ -3975,9 +3980,9 @@ video {
   bottom: 0;
   right: 0;
   text-align: center;
-  background-color: rgba(128, 72, 0, 0);
+  background-color: rgba(128, 72, 0, 0.3);
 }
-/* line 122, ../scss/main.scss */
+/* line 126, ../scss/main.scss */
 #videocontent h1 {
   margin: auto;
   margin-top: 20%;
@@ -3985,7 +3990,7 @@ video {
   color: white;
 }
 
-/* line 129, ../scss/main.scss */
+/* line 133, ../scss/main.scss */
 #logincontainer, #registercontainer, #closejobCandidateContainer, #jobcreatecontainer {
   z-index: 100;
   position: fixed;
@@ -3995,10 +4000,10 @@ video {
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 141, ../scss/main.scss */
+/* line 145, ../scss/main.scss */
 #login, #register, #closejobCandidate, #jobcreate {
   z-index: 200;
   background-image: url('/img/background.jpg?1414345112');
@@ -4014,17 +4019,17 @@ video {
   width: 50%;
   height: 400px;
 }
-/* line 142, ../scss/main.scss */
+/* line 146, ../scss/main.scss */
 #login ul, #register ul, #closejobCandidate ul, #jobcreate ul {
   list-style: none;
   color: #d9534f;
 }
-/* line 156, ../scss/main.scss */
+/* line 160, ../scss/main.scss */
 #login li, #register li, #closejobCandidate li, #jobcreate li {
   margin-left: 20% !important;
 }
 
-/* line 161, ../scss/main.scss */
+/* line 164, ../scss/main.scss */
 .button, .buttonapply, .buttoncancel, .buttoncontact, .facebookbutton {
   text-align: center;
   text-decoration: none;
@@ -4042,7 +4047,7 @@ video {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 177, ../scss/main.scss */
+/* line 180, ../scss/main.scss */
 .button:hover, .buttonapply:hover, .buttoncancel:hover, .buttoncontact:hover, .facebookbutton:hover {
   text-align: center;
   text-decoration: none;
@@ -4052,81 +4057,81 @@ video {
   margin: 20px;
 }
 
-/* line 187, ../scss/main.scss */
+/* line 190, ../scss/main.scss */
 .buttonapply {
   float: right;
   background-color: #5cb85c;
 }
-/* line 190, ../scss/main.scss */
+/* line 193, ../scss/main.scss */
 .buttonapply:hover {
   text-align: center;
   background-color: #76d176;
 }
 
-/* line 196, ../scss/main.scss */
+/* line 199, ../scss/main.scss */
 .buttoncontact {
   float: right;
 }
 
-/* line 199, ../scss/main.scss */
+/* line 202, ../scss/main.scss */
 .buttoncancel {
   float: right;
   background-color: #d9534f;
 }
-/* line 202, ../scss/main.scss */
+/* line 205, ../scss/main.scss */
 .buttoncancel:hover {
   text-align: center;
   background-color: #c9302c;
 }
 
-/* line 209, ../scss/main.scss */
+/* line 212, ../scss/main.scss */
 #wwvergeten {
   display: none;
 }
 
-/* line 213, ../scss/main.scss */
+/* line 216, ../scss/main.scss */
 .wachtwoordvergeten {
   margin-left: -25%;
 }
 
-/* line 217, ../scss/main.scss */
+/* line 220, ../scss/main.scss */
 .facebookbutton {
   background-color: #3b5998;
   width: 40%;
 }
-/* line 220, ../scss/main.scss */
+/* line 223, ../scss/main.scss */
 .facebookbutton:hover {
   width: 50%;
   text-align: center;
   background-color: #6d84b4;
 }
 
-/* line 228, ../scss/main.scss */
+/* line 231, ../scss/main.scss */
 p.jobtextinfo {
   font-size: 11px;
 }
 
-/* line 232, ../scss/main.scss */
+/* line 235, ../scss/main.scss */
 #loginlink {
   cursor: pointer;
 }
 
 @media screen and (max-width: 770px) {
-  /* line 235, ../scss/main.scss */
+  /* line 238, ../scss/main.scss */
   #searchbar {
     margin-top: 40px !important;
     width: 100%;
   }
 }
 
-/* line 241, ../scss/main.scss */
+/* line 244, ../scss/main.scss */
 #searchbar, #searchbarin {
   z-index: 5;
   background-color: white;
   position: absolute;
   padding: 0.55em 50px 0.55em 3em;
 }
-/* line 246, ../scss/main.scss */
+/* line 249, ../scss/main.scss */
 #searchbar #search-input, #searchbarin #search-input {
   line-height: normal;
   padding: 0.55em 0 0.55em 3em;
@@ -4142,70 +4147,70 @@ p.jobtextinfo {
   -webkit-user-select: text;
   cursor: auto;
 }
-/* line 261, ../scss/main.scss */
+/* line 264, ../scss/main.scss */
 #searchbar i, #searchbarin i {
   position: inherit;
   padding: 0.55em 0 0.55em 1.5em;
   z-index: 5;
 }
 
-/* line 268, ../scss/main.scss */
+/* line 271, ../scss/main.scss */
 #searchbarin {
   margin-top: 65px;
   width: 100%;
   border-top: 1px solid #ededed;
 }
 @media screen and (max-width: 770px) {
-  /* line 268, ../scss/main.scss */
+  /* line 271, ../scss/main.scss */
   #searchbarin {
     margin-top: 110px;
   }
 }
 
-/* line 277, ../scss/main.scss */
+/* line 280, ../scss/main.scss */
 #login {
   height: 500px;
 }
 
-/* line 280, ../scss/main.scss */
+/* line 283, ../scss/main.scss */
 #register {
   height: 700px;
 }
 
-/* line 284, ../scss/main.scss */
+/* line 287, ../scss/main.scss */
 #jobcreate {
   height: 900px;
 }
 
-/* line 288, ../scss/main.scss */
+/* line 291, ../scss/main.scss */
 #closejobCandidate {
   height: 800px;
   text-align: left;
   padding-left: 20px;
   float: left;
 }
-/* line 292, ../scss/main.scss */
+/* line 295, ../scss/main.scss */
 #closejobCandidate .hexagon {
   padding-top: 20px;
 }
-/* line 296, ../scss/main.scss */
+/* line 299, ../scss/main.scss */
 #closejobCandidate h1 {
   text-align: center;
   clear: both;
 }
 
-/* line 303, ../scss/main.scss */
+/* line 306, ../scss/main.scss */
 #header {
   z-index: 80;
   background-color: white;
 }
-/* line 306, ../scss/main.scss */
+/* line 309, ../scss/main.scss */
 #header .row {
   margin-left: 50px;
   margin-right: 50px;
 }
 
-/* line 311, ../scss/main.scss */
+/* line 314, ../scss/main.scss */
 label {
   display: inline;
   width: 23%;
@@ -4213,68 +4218,68 @@ label {
   margin-left: 20px;
 }
 
-/* line 317, ../scss/main.scss */
+/* line 320, ../scss/main.scss */
 input[type=checkbox] {
   display: none;
 }
 
-/* line 321, ../scss/main.scss */
+/* line 324, ../scss/main.scss */
 .has-error {
   /* firefox 19+ */
   /* ie */
 }
-/* line 322, ../scss/main.scss */
+/* line 325, ../scss/main.scss */
 .has-error input, .has-error textarea, .has-error label {
   border: 1px solid #d9534f !important;
   background-color: #fdf7f7 !important;
 }
-/* line 327, ../scss/main.scss */
+/* line 330, ../scss/main.scss */
 .has-error label {
   border: 0px !important;
   color: #d9534f !important;
 }
-/* line 331, ../scss/main.scss */
+/* line 334, ../scss/main.scss */
 .has-error ::-webkit-input-placeholder {
   color: #eba5a3 !important;
 }
-/* line 334, ../scss/main.scss */
+/* line 337, ../scss/main.scss */
 .has-error ::-moz-placeholder {
   color: #eba5a3 !important;
 }
-/* line 337, ../scss/main.scss */
+/* line 340, ../scss/main.scss */
 .has-error :-ms-input-placeholder {
   color: #eba5a3 !important;
 }
-/* line 340, ../scss/main.scss */
+/* line 343, ../scss/main.scss */
 .has-error input:-moz-placeholder {
   color: #eba5a3 !important;
 }
 
-/* line 345, ../scss/main.scss */
+/* line 348, ../scss/main.scss */
 input[type=checkbox] + label {
   background-color: #fafafa;
   border: 1px solid #cacece;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0), inset 0px -15px 10px -12px rgba(0, 0, 0, 0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
   padding: 9px;
   border-radius: 3px;
   display: inline-block;
   position: relative;
 }
 
-/* line 355, ../scss/main.scss */
+/* line 358, ../scss/main.scss */
 input[type=checkbox] + label:active, input[type=checkbox]:checked + label:active {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0), inset 0px 1px 3px rgba(0, 0, 0, 0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* line 359, ../scss/main.scss */
+/* line 362, ../scss/main.scss */
 input[type=checkbox]:checked + label {
   background-color: #e9ecee;
   border: 1px solid #adb8c0;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0), inset 0px -15px 10px -12px rgba(0, 0, 0, 0), inset 15px 10px -12px rgba(255, 255, 255, 0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
   color: #99a1a7;
 }
 
-/* line 366, ../scss/main.scss */
+/* line 369, ../scss/main.scss */
 input[type=checkbox]:checked + label:after {
   content: '\2714';
   font-size: 14px;
@@ -4284,7 +4289,7 @@ input[type=checkbox]:checked + label:after {
   color: #99a1a7;
 }
 
-/* line 377, ../scss/main.scss */
+/* line 380, ../scss/main.scss */
 input {
   width: 80%;
   margin: 20px;
@@ -4297,7 +4302,7 @@ input {
   position: relative;
 }
 
-/* line 388, ../scss/main.scss */
+/* line 391, ../scss/main.scss */
 input[type=submit] {
   background-color: #4a91d4;
   color: white;
@@ -4313,18 +4318,18 @@ input[type=submit] {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 402, ../scss/main.scss */
+/* line 405, ../scss/main.scss */
 input[type=submit]:hover {
   text-align: center;
   background-color: #437fb7;
   width: 51%;
 }
-/* line 407, ../scss/main.scss */
+/* line 410, ../scss/main.scss */
 input[type=submit] input[type=file] {
   width: 100%;
 }
 
-/* line 411, ../scss/main.scss */
+/* line 414, ../scss/main.scss */
 .icon-remove-sign {
   cursor: pointer;
   float: right;
@@ -4336,12 +4341,12 @@ input[type=submit] input[type=file] {
   overflow: hidden;
 }
 
-/* line 422, ../scss/main.scss */
+/* line 425, ../scss/main.scss */
 .registration {
   text-align: center;
 }
 
-/* line 425, ../scss/main.scss */
+/* line 428, ../scss/main.scss */
 .commentitem {
   margin: 25px;
   margin-left: 20px;
@@ -4349,20 +4354,20 @@ input[type=submit] input[type=file] {
   border-bottom: 1px solid #757575;
 }
 
-/* line 431, ../scss/main.scss */
+/* line 434, ../scss/main.scss */
 .comment {
   margin-top: 100px;
   border-top: 1px solid #757575;
 }
 
-/* line 436, ../scss/main.scss */
+/* line 439, ../scss/main.scss */
 #profile p {
   background-color: #ededed;
   padding: 20px;
   border: 1px solid #757575;
 }
 
-/* line 442, ../scss/main.scss */
+/* line 445, ../scss/main.scss */
 #profileedit input, input[type=submit], textarea {
   width: 50%;
   border: 1px solid #ededed;
@@ -4371,122 +4376,122 @@ input[type=submit] input[type=file] {
   max-width: 80%;
 }
 
-/* line 450, ../scss/main.scss */
+/* line 453, ../scss/main.scss */
 .jobstyle {
   border-left: solid 5px #bd6100;
 }
-/* line 452, ../scss/main.scss */
+/* line 455, ../scss/main.scss */
 .jobstyle h1, .jobstyle p {
   margin-left: 25px;
 }
 
-/* line 457, ../scss/main.scss */
+/* line 460, ../scss/main.scss */
 .profilestyle {
   border-left: solid 5px #bd6100;
   padding: 20px;
 }
 
-/* line 463, ../scss/main.scss */
+/* line 466, ../scss/main.scss */
 .it {
   color: #d44a4a;
 }
 
-/* line 467, ../scss/main.scss */
+/* line 470, ../scss/main.scss */
 .cat {
   cursor: pointer;
 }
 
-/* line 471, ../scss/main.scss */
+/* line 474, ../scss/main.scss */
 section.it {
   color: black;
   border-left: solid 5px #d44a4a;
 }
 
-/* line 476, ../scss/main.scss */
+/* line 479, ../scss/main.scss */
 .language {
   color: #d44a9e;
 }
 
-/* line 480, ../scss/main.scss */
+/* line 483, ../scss/main.scss */
 section.language {
   color: black;
   border-left: solid 5px #d44a9e;
 }
 
-/* line 485, ../scss/main.scss */
+/* line 488, ../scss/main.scss */
 .finances {
   color: #614ad4;
 }
 
-/* line 489, ../scss/main.scss */
+/* line 492, ../scss/main.scss */
 section.finances {
   color: black;
   border-left: solid 5px #614ad4;
 }
 
-/* line 494, ../scss/main.scss */
+/* line 497, ../scss/main.scss */
 .repairs {
   color: #4a91d4;
 }
 
-/* line 498, ../scss/main.scss */
+/* line 501, ../scss/main.scss */
 section.repairs {
   color: black;
   border-left: solid 5px #4a91d4;
 }
 
-/* line 503, ../scss/main.scss */
+/* line 506, ../scss/main.scss */
 .math {
   color: #66d8a4;
 }
 
-/* line 507, ../scss/main.scss */
+/* line 510, ../scss/main.scss */
 section.math {
   color: black;
   border-left: solid 5px #66d8a4;
 }
 
-/* line 512, ../scss/main.scss */
+/* line 515, ../scss/main.scss */
 .art {
   color: #a4d658;
 }
 
-/* line 516, ../scss/main.scss */
+/* line 519, ../scss/main.scss */
 section.art {
   color: black;
   border-left: solid 5px #a4d658;
 }
 
-/* line 521, ../scss/main.scss */
+/* line 524, ../scss/main.scss */
 .cooking {
   color: #d4a84a;
 }
 
-/* line 525, ../scss/main.scss */
+/* line 528, ../scss/main.scss */
 section.cooking {
   color: black;
   border-left: solid 5px #d4a84a;
 }
 
-/* line 530, ../scss/main.scss */
+/* line 533, ../scss/main.scss */
 .programming {
   color: #d4844a;
 }
 
-/* line 534, ../scss/main.scss */
+/* line 537, ../scss/main.scss */
 section.programming {
   color: black;
   border-left: solid 5px #d4844a;
 }
 
-/* line 540, ../scss/main.scss */
+/* line 543, ../scss/main.scss */
 #pagination {
   width: 100%;
   margin: 0 auto;
   margin-bottom: 20px;
   text-align: center;
 }
-/* line 545, ../scss/main.scss */
+/* line 548, ../scss/main.scss */
 #pagination a {
   text-align: center;
   font-size: 18px;
@@ -4497,92 +4502,92 @@ section.programming {
   background-color: #fff8f0;
   border-radius: 2px;
 }
-/* line 554, ../scss/main.scss */
+/* line 557, ../scss/main.scss */
 #pagination a:hover {
   border: #8a4700 1px solid;
   background-color: white;
 }
 
-/* line 561, ../scss/main.scss */
+/* line 564, ../scss/main.scss */
 .biospecialist {
   padding-left: 80px;
   margin-top: -80px;
   margin-bottom: 80px;
 }
 
-/* line 567, ../scss/main.scss */
+/* line 570, ../scss/main.scss */
 #category {
   max-width: 50%;
 }
-/* line 569, ../scss/main.scss */
+/* line 572, ../scss/main.scss */
 #category p:nth-child(2n) {
   text-align: right;
   margin-top: -35px;
 }
 
-/* line 575, ../scss/main.scss */
+/* line 578, ../scss/main.scss */
 .aboutus {
   text-indent: 110px;
   margin-top: -40px;
 }
 
-/* line 580, ../scss/main.scss */
+/* line 583, ../scss/main.scss */
 #footer {
   background-color: #bd6100;
 }
-/* line 582, ../scss/main.scss */
+/* line 585, ../scss/main.scss */
 #footer h1, #footer small {
   color: white;
 }
-/* line 585, ../scss/main.scss */
+/* line 588, ../scss/main.scss */
 #footer .copyright {
   text-align: center;
   padding: 25px;
   font-size: 15px;
 }
 
-/* line 591, ../scss/main.scss */
+/* line 594, ../scss/main.scss */
 .page-wrap:after {
   height: 100px;
 }
 
-/* line 594, ../scss/main.scss */
+/* line 597, ../scss/main.scss */
 #footer {
   height: 80px;
 }
 @media screen and (max-width: 728px) {
-  /* line 594, ../scss/main.scss */
+  /* line 597, ../scss/main.scss */
   #footer {
     height: 300px;
   }
 }
 @media screen and (max-width: 770px) {
-  /* line 594, ../scss/main.scss */
+  /* line 597, ../scss/main.scss */
   #footer {
     height: 200px;
   }
 }
 @media screen and (max-width: 991px) {
-  /* line 594, ../scss/main.scss */
+  /* line 597, ../scss/main.scss */
   #footer {
     height: 130px;
   }
 }
 
-/* line 607, ../scss/main.scss */
+/* line 610, ../scss/main.scss */
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
   margin-bottom: -80px;
 }
 
-/* line 612, ../scss/main.scss */
+/* line 615, ../scss/main.scss */
 .page-wrap:after {
   content: "";
   display: block;
 }
 
-/* line 617, ../scss/main.scss */
+/* line 620, ../scss/main.scss */
 .rating {
   font-size: 20px;
   unicode-bidi: bidi-override;
@@ -4590,33 +4595,40 @@ section.programming {
   direction: rtl;
   padding: 20px 0;
 }
+/* line 626, ../scss/main.scss */
+.rating .rateMessage {
+  margin-top: 20px;
+  width: 90%;
+  float: left;
+  margin-bottom: 20px;
+}
 
-/* line 624, ../scss/main.scss */
+/* line 633, ../scss/main.scss */
 .rating > span {
   display: inline-block;
   position: relative;
   width: 1.1em;
 }
 
-/* line 630, ../scss/main.scss */
+/* line 639, ../scss/main.scss */
 .rating > span:hover:before,
-.rating > span:hover ~ span:before, .highlight {
+.rating > span:hover ~ span:before, .highlight, .highlightfull:before {
   color: #bd6100;
   content: "\2605";
   position: absolute;
 }
 
-/* line 636, ../scss/main.scss */
+/* line 645, ../scss/main.scss */
 #searchresult {
   display: hidden;
   margin-left: 20px;
 }
-/* line 639, ../scss/main.scss */
+/* line 648, ../scss/main.scss */
 #searchresult div a {
   color: black;
 }
 
-/* line 644, ../scss/main.scss */
+/* line 653, ../scss/main.scss */
 .comment h3 {
   margin-top: 10px;
 }

@@ -3,6 +3,7 @@ $('.stars').click(function(e) {
 
 	rating = $(this).attr('id');
 	user = $('.rating').attr('id');
+	user = user.replace('user', '')
 
 	$.post( "/rate", { 'data[]': [ user, rating ] }).done(function() {
 		$.get('/ratings/' + user, null, function(data) {
@@ -16,6 +17,7 @@ $('.stars').click(function(e) {
 				console.log(i);
 				$("#"+i).addClass( "highlightfull" );
 			};
+			$(".rating").append('<section class="alert alert-info rateMessage"><small>Thanks for your rating</small></section>');
 		});
 	}).fail(function() {
 		console.log('something went wrong so you can show the user an error JONAS');
