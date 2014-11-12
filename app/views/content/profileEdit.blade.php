@@ -163,7 +163,7 @@
 
 				</div>
 			
-				<p>{{ Form::submit('Edit Profile', array('class' => 'button'))}}</p>
+				<p>{{ Form::submit('Save Profile', array('class' => 'button'))}}</p>
 
 												
 			<!-- close form tag -->
