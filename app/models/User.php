@@ -81,6 +81,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$profile = new Profile;
 		//link the profile to the registered user with the id
 		$profile->FK_userId = $user->PK_userId;
+		$profile->profilePicture = '/img/defaultprofile.jpg';
 
 		//store data into the profiles table
 		$profile->save();
