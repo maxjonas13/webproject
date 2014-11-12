@@ -48,6 +48,11 @@ p{
 	font-weight: normal !important;
 }
 
+li{
+	max-width: 53% !important;
+	list-style: none !important;
+}
+
 #homelink{
 	text-decoration: none;
 }
@@ -148,6 +153,9 @@ video {
 	top: 0; bottom: 0; left: 0; right:0;
 	width: 50%;
 	height: 400px;
+	li{
+		margin-left: 20% !important;
+	}
 }
 .button, .buttonapply, .buttoncancel, .buttoncontact, .facebookbutton{
 	text-align: center;
@@ -265,12 +273,15 @@ p.jobtextinfo{
 	border-top:1px solid $gray-lighter;
 }
 
+#login{
+ height: 500px;
+}
 #register{
 	height: 700px;
 }
 
 #jobcreate{
-	height: 800px;
+	height: 900px;
 }
 
 #closejobCandidate {
