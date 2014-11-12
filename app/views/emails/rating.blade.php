@@ -1,6 +1,7 @@
 <doctype html>
 <html>
 	<head>
+		<!-- inline script to style email -->
 		<style>
 			h1, h2, h3, h4{
 				color: #bd6100;
@@ -38,6 +39,7 @@
 			Have a nice day!<br>
 			BeeHive
 		</p>
+		<!-- yield footer -->
 		@include('include.footer')
 	</body>
 </html>

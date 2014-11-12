@@ -1,8 +1,11 @@
 <div id="closejobCandidate">
+	<!-- icon X to close window -->
 	<i class="icon-remove-sign" onClick='containerclick()'></i>
 	@if($errors->count() > 0) 
+	<!-- check for errors -->
 	@foreach($errors->all() as $error)
 	<ul>
+		<!-- class alert danger for attention -->
 		<li class="alert alert-danger">{{$error}}</li>
 	</ul>
 	@endforeach

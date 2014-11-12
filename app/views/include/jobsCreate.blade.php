@@ -1,12 +1,15 @@
 <div id="jobcreate">
+	<!-- icon X to close window -->
 	<i class="icon-remove-sign" onClick='containerclick()'></i>
 	<h1>Create Job</h1>
 	@if($errors->count() > 0) 
+		<!-- check for errors -->
 		@foreach ($errors->all() as $error) 
 			<ul>
 				<li class="alert alert-danger popup">{{$error}}</li>
 			</ul>
 		@endforeach
+			<!-- script to show screen again if error detected -->
 			<script>
 				$( document ).ready(function(){
 					$('#jobcreatecontainer').show();

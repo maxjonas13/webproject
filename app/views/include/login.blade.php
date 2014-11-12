@@ -1,9 +1,11 @@
 <div id="login">
+	<!-- icon X to close window -->
 	<i class="icon-remove-sign" onClick='containerclick()'></i>
 	<div id="loginwindow">
 	<h1 id="videotitle">Login</h1>
 	@if(Session::get('error_message') != null)
 	<ul><li class="alert alert-danger popup">{{ Session::get('error_message') }}</li></ul>
+	<!-- script to show screen again if error detected -->
 	<script>
 	$( document ).ready(function(){
 

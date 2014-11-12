@@ -1,4 +1,5 @@
 <div id="register">
+	<!-- icon X to close window -->
 	<i class="icon-remove-sign" onClick='containerclick()'></i>
 		<h1>Registration</h1>
 		@if($errors->count() > 0) 
@@ -8,6 +9,7 @@
 				</ul>
 			@endforeach
 				@if(Session::get('register'))
+					<!-- script to show screen again if error detected -->
 					<script>
 					$( document ).ready(function(){
 

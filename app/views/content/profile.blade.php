@@ -1,26 +1,30 @@
 @extends("layout.default")
 
 @section('content')
+		<!-- use of firstrow, it wil have a margin as high as the video player. -->
 		<div class="firstrow"> 
 			<div class="column col-md-2 col-sm-3"> </div>
 			<div class="column col-md-8 col-sm-6" id="profile"> 
-				
+				<!-- check if categroy is selected, if yes have it styled -->
 				@if(!empty($data->category[0]))
 					<section class="profilestyle {{strtolower($data->category[0]->categoryName)}}">
 				@else
 					<section class="profilestyle">
 				@endif
 				<h1>Profile</h1>
-
+				<!-- profile picture -->
 				<div class="hexagon" style="background-image: url({{$data->profile->profilePicture}});">
 				  <div class="hexTop"></div>
 				  <div class="hexBottom"></div>
 				</div>
+				<!-- check if logged in -->
 				@if(Auth::check())
 					@if($data->PK_userId == Auth::User()->PK_userId)
-					{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'buttoncontact'), false)}}
+						<!-- edit button -->
+						{{ HTML::link('profile/edit/'.$data->PK_userId, 'edit', array('class' => 'buttoncontact'), false)}}
 					@else
-					{{ HTML::link('mailto:' . $data->email, 'contact', array('class' => 'buttonapply'), false)}}
+						<!-- contact button -->
+						{{ HTML::link('mailto:' . $data->email, 'contact', array('class' => 'buttonapply'), false)}}
 					@endif
 				@endif
 				@if (Auth::check())
@@ -29,10 +33,9 @@
 					@endif
 				@endif
 				<h4>Rating</h4>
-
+				<!-- rating section -->
 				<div class="rating" id="user{{$data->PK_userId}}">					
-
-					<!-- JONAS!!!!!!!! de variabele $rating bevat een int tussen 1 en 5 met de gemiddelde rating van de user deze kan je gebruiken om de sterren in de kleuren ;) ;) ;) ;) ;) ;) -->
+					<!-- check what rating is selcted to display other view -->
 					@if ($rating == 5) 
 						<span class="stars highlight" id="5">☆</span>
 						<span class="stars highlight" id="4">☆</span>
@@ -81,6 +84,7 @@
 				 <p>{{$data->name}} </p>
 
 				<h4>email:</h4>
+				<!-- link to mail:to -->
 				 <p><a href="mailto:{{$data->email}}" title="Email {{$data->name}}">{{$data->email}}</a></p>
 
 				 <h4>website:</h4>
@@ -148,6 +152,7 @@
 
 				<h4>Catergories</H4>
 				@if(count($data->category) > 0)
+				<!-- check if user has category -->
 								<p>
 						@foreach ($data->category as $categorieitem) 
 							<span class="{{strtolower($categorieitem->categoryName)}}">{{$categorieitem->categoryName}}</span><br>
@@ -159,17 +164,19 @@
 				
 				<h4>Jobs</h4>
 				<p>
+					<!-- check if user has jobs -->
 				@if(count($data->job) > 0)
 					@foreach($data->job as $job)
 						<a href="/jobs/details/{{$job->PK_jobId}}">{{$job->title}}</a><br>
 					@endforeach
 				@else
-					This user has no jobs
+					<p>This user has no jobs</p>
 				@endif</p>
 			</section>
 		</div>
 		<div class="column col-md-2 col-sm-3"> </div>
 	</div>
 </div>
+	<!-- script for rating -->
 	{{ HTML::script('script/rate.js'); }}
 @stop
