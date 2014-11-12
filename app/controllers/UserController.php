@@ -19,6 +19,8 @@ class UserController extends BaseController {
 	public function filter($cat) {
 		$users = User::whereHas('Category' , function($query) use($cat) {
 			$query->where(strtolower('categoryName'), '=', strtolower($cat));
+		})->whereHas('Rating', function($query) {
+			$query->orderBy('rating', 'DESC');
 		})->with('Category', "profile")->paginate(5);
 		
 		return $users;
