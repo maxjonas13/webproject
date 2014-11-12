@@ -52,16 +52,21 @@
 	@endif
 	<!-- open form tag -->
 			{{ Form::open( array('url' => '/jobs/update') ) }}
-
-				{{ Form::text('title' , $data->title , array('placeholder'=> "Title")) }}
+				<div class="{{ $errors->get('title') ? 'has-error' : FALSE }}">
+					{{ Form::text('title' , $data->title , array('placeholder'=> "Title")) }}
+				</div>
 				<br>
-				{{ Form::text('location' , $data->location , array('placeholder'=> "Location")) }}
-				<br>						
-				{{ Form::textarea('description' , $data->description , array('placeholder'=> "Description")) }}
+				<div class="{{ $errors->get('location') ? 'has-error' : FALSE }}">
+					{{ Form::text('location' , $data->location , array('placeholder'=> "Location")) }}
+				</div>
+				<br>
+				<div class="{{ $errors->get('description') ? 'has-error' : FALSE }}">						
+					{{ Form::textarea('description' , $data->description , array('placeholder'=> "Description")) }}
+				</div>
 				{{ Form::hidden('id', $data->PK_jobId)}}
 				<br>
 		
-					
+				<div class="{{ $errors->get('grouped') ? 'has-error' : FALSE }}">
 					{{ Form::checkbox('grouped[it]', $it ,$it, array('id'=> "it")) }}
 					{{ Form::label('it', 'IT')}}
 
@@ -96,6 +101,7 @@
 					
 					{{ Form::checkbox('grouped[programming]', $programming,$programming, array('id'=> "programming")) }}
 					{{ Form::label('programming', 'Programming')}}
+				</div>
 			
 				<br>
 				{{ Form::submit('Voeg job toe') }}

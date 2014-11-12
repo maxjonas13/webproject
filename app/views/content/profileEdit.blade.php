@@ -54,49 +54,76 @@
 				</div>
 			<!-- open form tag -->
 			{{ Form::open( array('url' => '/profile/update', 'files' => TRUE) ) }}
+				<div class="{{ $errors->get('name') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('name', 'Naam :') }}</p>
+					{{ Form::text('name', $data->name) }}
+				</div>
 
-				<p>{{ Form::label('name', 'Naam :') }}</p>
-				{{ Form::text('name', $data->name) }}
+				<div class="{{ $errors->get('email') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('email', 'E-mail:') }}</p>
+					{{ Form::text('email' ,$data->email) }}		
+				</div>
 
-				<p>{{ Form::label('email', 'E-mail:') }}</p>
-				{{ Form::text('email' ,$data->email) }}		
+				<div class="{{ $errors->get('password') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('password', 'Wachtwoord:') }}</p>
+					{{ Form::password('password') }}
+				</div>
 
-				<p>{{ Form::label('password', 'Wachtwoord:') }}</p>
-				{{ Form::password('password') }}
-		
-				<p>{{ Form::label('newpassword', 'Nieuw wachtwoord:') }}</p>
-				{{ Form::password('newpassword') }}
-			
-				<p>{{ Form::label('website', 'Personal website:') }}</p>
-				{{ Form::text('website' , $data->profile->website) }}
-			
-				<p>{{ Form::label('twitter', 'Twitter:') }}</p>
-				{{ Form::text('twitter' ,$data->profile->twitter) }}
-			
-				<p>{{ Form::label('github', 'Github:') }}</p>
-				{{ Form::text('github' ,$data->profile->github) }}
-			
-				<p>{{ Form::label('linkedin', 'Linkedin:') }}</p>
-				{{ Form::text('linkedin' ,$data->profile->linkedin) }}
-			
-				<p>{{ Form::label('pintrest', 'Pintrest:') }}</p>
-				{{ Form::text('pintrest' ,$data->profile->pintrest) }}
-			
-				<p>{{ Form::label('googleplus', 'Google+:') }}</p>
-				{{ Form::text('googleplus' ,$data->profile->googleplus) }}
-			
-				<p>{{ Form::label('instagram', 'Instagram:') }}</p>
-				{{ Form::text('instagram' ,$data->profile->instagram) }}
-			
-				<p>{{ Form::label('myspace', 'MySpace:') }}</p>
-				{{ Form::text('myspace' ,$data->profile->myspace) }}
-			
-				<p>{{ Form::label('bio', 'Bio:') }}</p>
-				{{ Form::textarea('bio' ,$data->profile->bio) }}
-			
-				<p>{{ Form::label('profilepicture', 'Profielfoto:') }}</p>
-				{{ Form::file('profilepicture' ,'') }}
+				<div class="{{ $errors->get('newpassword') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('newpassword', 'Nieuw wachtwoord:') }}</p>
+					{{ Form::password('newpassword') }}
+				</div>
+				
+				<div class="{{ $errors->get('website') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('website', 'Personal website:') }}</p>
+					{{ Form::text('website' , $data->profile->website) }}
+				</div>
+				
+				<div class="{{ $errors->get('twitter') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('twitter', 'Twitter:') }}</p>
+					{{ Form::text('twitter' ,$data->profile->twitter) }}
+				</div>
 
+				<div class="{{ $errors->get('github') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('github', 'Github:') }}</p>
+					{{ Form::text('github' ,$data->profile->github) }}
+				</div>
+				
+				<div class="{{ $errors->get('linkedin') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('linkedin', 'Linkedin:') }}</p>
+					{{ Form::text('linkedin' ,$data->profile->linkedin) }}
+				</div>
+			
+				<div class="{{ $errors->get('pintrest') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('pintrest', 'Pintrest:') }}</p>
+					{{ Form::text('pintrest' ,$data->profile->pintrest) }}
+				</div>
+			
+				<div class="{{ $errors->get('googleplus') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('googleplus', 'Google+:') }}</p>
+					{{ Form::text('googleplus' ,$data->profile->googleplus) }}
+				</div>
+				<div class="{{ $errors->get('instagram') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('instagram', 'Instagram:') }}</p>
+					{{ Form::text('instagram' ,$data->profile->instagram) }}
+				</div>
+				
+				<div class="{{ $errors->get('myspace') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('myspace', 'MySpace:') }}</p>
+					{{ Form::text('myspace' ,$data->profile->myspace) }}
+				</div>
+				
+				<div class="{{ $errors->get('bio') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('bio', 'Bio:') }}</p>
+					{{ Form::textarea('bio' ,$data->profile->bio) }}
+				</div>
+				
+				<div class="{{ $errors->get('profilepicture') ? 'has-error' : FALSE }}">
+					<p>{{ Form::label('profilepicture', 'Profielfoto:') }}</p>
+					{{ Form::file('profilepicture' ,'') }}
+				</div>
+
+				<div class="{{ $errors->get('grouped') ? 'has-error' : FALSE }}">
 
 					{{ Form::checkbox('grouped[it]', $it ,$it, array('id'=> "it")) }}
 					{{ Form::label('it', 'IT')}}
@@ -134,7 +161,7 @@
 					{{ Form::label('programming', 'Programming')}}
 
 
-
+				</div>
 			
 				<p>{{ Form::submit('Edit Profile', array('class' => 'button'))}}</p>
 

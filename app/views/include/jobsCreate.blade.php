@@ -20,14 +20,19 @@
 @else
 <!-- open form tag -->
 		{{ Form::open( array('url' => '/jobs/store') ) }}
-
-			{{ Form::text('title' ,'', array('placeholder'=> "Title")) }}
+			<div class="{{ $errors->get('title') ? 'has-error' : FALSE }}">
+				{{ Form::text('title' ,'', array('placeholder'=> "Title")) }}
+			</div>
 			<br>
-			{{ Form::text('location' ,'', array('placeholder'=> "Location")) }}
-			<br>						
+			<div class="{{ $errors->get('location') ? 'has-error' : FALSE }}">
+				{{ Form::text('location' ,'', array('placeholder'=> "Location")) }}
+			</div>
+			<br>
+			<div class="{{ $errors->get('description') ? 'has-error' : FALSE }}">						
 			{{ Form::textarea('description' ,'', array('placeholder'=> "Description")) }}
+		</div>
 			<br>
-			
+			<div class="{{ $errors->get('grouped') ? 'has-error' : FALSE }}">	
 			{{ Form::checkbox('grouped[it]','','', array('id'=> "it")) }}
 			{{ Form::label('it"', 'IT')}}
 
@@ -58,7 +63,7 @@
 			{{ Form::checkbox('grouped[programming]','','', array('id'=> "programming")) }}
 			{{ Form::label('programming', 'Programming')}}
 			<br>
-
+			</div>
 			<br>
 			{{ Form::submit('Voeg job toe') }}
 											

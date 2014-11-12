@@ -298,7 +298,7 @@ p.jobtextinfo{
 }
 label {
 	display: inline;
-	width:23%;
+	width:23%; 
 	margin: 1%;
 	margin-left: 20px;
 }
@@ -306,6 +306,25 @@ input[type=checkbox]{
 	display: none;
 }
 
+.has-error{
+	input, textarea, label{
+		border: 1px solid $brand-danger;
+		background-color: lighten($brand-danger, 40%) !important;
+		
+	}
+    ::-webkit-input-placeholder { 
+    	color: lighten($brand-danger, 20%) !important; 
+    }
+	::-moz-placeholder { 
+		color: lighten($brand-danger, 20%) !important; 
+	} /* firefox 19+ */
+	:-ms-input-placeholder { 
+	color: lighten($brand-danger, 20%) !important; 
+	} /* ie */
+	input:-moz-placeholder { 
+		color: lighten($brand-danger, 20%) !important; 
+	}
+}
 
 input[type=checkbox] + label {
 	background-color: #fafafa;

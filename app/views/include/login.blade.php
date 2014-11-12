@@ -3,7 +3,7 @@
 	<div id="loginwindow">
 	<h1 id="videotitle">Login</h1>
 	@if(Session::get('error_message') != null)
-	{{ Session::get('error_message') }}
+	<ul><li>{{ Session::get('error_message') }}</li></ul>
 	<script>
 	$( document ).ready(function(){
 
@@ -16,10 +16,12 @@
 	<!-- open form tag -->
 
 		{{ Form::open( array('url' => '/login/check') ) }}
-
-		{{ Form::text('email' ,'', array('placeholder'=> "email")) }}
-									
-		{{ Form::password('password', array('placeholder'=> "wachtwoord")) }}<br>
+		<div class="{{ Session::get('error_message') != null ? 'has-error' : FALSE }}">
+			{{ Form::text('email' ,'', array('placeholder'=> "email")) }}
+		</div>
+		<div class="{{ Session::get('error_message') != null ? 'has-error' : FALSE }}">							
+			{{ Form::password('password', array('placeholder'=> "wachtwoord")) }}<br>
+		</div>
 		<a onclick='forgotten()' class="wachtwoordvergeten">wachtwoord vergeten?</a>
 		<br>
 
@@ -44,9 +46,9 @@
 	@endif
 	<!-- open form tag -->
 			{{ Form::open( array('url' => '/resetwachtwoord') ) }}
-
-			{{ Form::text('email' ,'', array('placeholder'=> "email")) }}
-
+			<div class="{{ $errors->get('email') ? 'has-error' : FALSE }}">
+				{{ Form::text('email' ,'', array('placeholder'=> "email")) }}
+			</div>
 			{{ Form::submit('Send new password') }}
 											
 		<!-- close form tag -->

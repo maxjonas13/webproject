@@ -20,15 +20,20 @@
 		@endif
 		<!-- open form tag -->
 		{{ Form::open( array('url' => '/register/save') ) }}
+			<div class="{{ $errors->get('name') ? 'has-error' : FALSE }}">
+				{{ Form::text('name' ,'', array('placeholder'=> "name")) }}
+			</div>
 
-			{{ Form::text('name' ,'', array('placeholder'=> "name")) }}
-										
-			{{ Form::text('firstname' ,'', array('placeholder'=> "firstname")) }}
-										
-			{{ Form::text('email' ,'', array('placeholder'=> "email")) }}
-										
-			{{ Form::password('password', array('placeholder'=> "password")) }}
+			<div class="{{ $errors->get('firstname') ? 'has-error' : FALSE }}">							
+				{{ Form::text('firstname' ,'', array('placeholder'=> "firstname")) }}
+			</div>
 
+			<div class="{{ $errors->get('email') ? 'has-error' : FALSE }}">							
+				{{ Form::text('email' ,'', array('placeholder'=> "email")) }}
+			</div>
+			<div class="{{ $errors->get('password') ? 'has-error' : FALSE }}">						
+				{{ Form::password('password', array('placeholder'=> "password")) }}
+			</div>
 			{{ Form::submit('Registreer') }}
 											
 		<!-- close form tag -->

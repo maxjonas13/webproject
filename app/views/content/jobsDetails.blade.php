@@ -76,8 +76,9 @@
 						@if(Auth::check())
 							<!-- open form tag -->
 							{{ Form::open( array('url' => '/comments/store') ) }}
-
-								{{ Form::textarea('comment' ,'', array('placeholder'=> "Comment")) }}
+								<div class="{{ $errors->get('comment') ? 'has-error' : FALSE }}">
+									{{ Form::textarea('comment' ,'', array('placeholder'=> "Comment")) }}`
+								</div>
 								{{ Form::hidden('jobid', $data['job']->PK_jobId)}}
 															
 								{{ Form::submit('Add comment') }}
