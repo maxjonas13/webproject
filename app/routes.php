@@ -67,7 +67,8 @@ Route::post('/rate', 'RatingController@rate');
 Route::get('/ratings/{id}', 'RatingController@getRates');
 
 //routes for search
-Route::get('search/inteligence/{searchstring}', 'SearchController@inteligence');
+Route::get('/search/inteligence/{searchstring}', 'SearchController@inteligence');
+Route::post('/search', 'SearchController@search');
 
 //route for the about page
 Route::get('/about', function() {

@@ -18,9 +18,11 @@
 				Your browser does not support the video tag. I suggest you upgrade your browser.
 			</video>
 		</div><!-- end video-container -->
-		<div id='searchbar' class="column col-md-12 col-sm-12">  
+		<div id='searchbar' class="column col-md-12 col-sm-12">
+		 
 			<i class="icon-search"></i>
-	        <input id="search-input" type="text" role="search" placeholder="Search for anything" autofocus="">
+			{{ Form::open( array('url' => '/search') ) }} 
+	        <input id="search-input" name="search-input" type="text" role="search" placeholder="Search for anything" autofocus="">
 		    <label for="search-input" class="ui_search"></label>
 		    <div id="searchresult">
 		    	<div id="userresult">
@@ -29,4 +31,5 @@
 		    	<div id="jobsresult">
 		    	</div>
 		    </div>
+		{{ Form::close() }}
 	</div><!-- end .header-unit -->
