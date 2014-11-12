@@ -3842,7 +3842,7 @@ html, body {
 
 /* line 17, ../scss/main.scss */
 body {
-  background-image: url('/img/background.jpg?1414345112');
+  background-image: url('/img/background.jpg?1414437371');
   background-size: cover;
 }
 
@@ -4006,7 +4006,7 @@ video {
 /* line 145, ../scss/main.scss */
 #login, #register, #closejobCandidate, #jobcreate {
   z-index: 200;
-  background-image: url('/img/background.jpg?1414345112');
+  background-image: url('/img/background.jpg?1414437371');
   background-size: cover;
   text-align: center;
   background-color: white;
