@@ -9,6 +9,8 @@ class UserController extends BaseController {
 	public function getAllUsers() {
 		$users = User::whereHas('Category' , function($query) {
 			$query->where(strtolower('categoryName'), '!=', '');
+		})->whereHas('Rating', function($query) {
+			$query->orderBy('rating', 'DESC');
 		})->where('active', '=', TRUE)->with('Category', 'profile')->paginate(5);
 	
 		return $users;
