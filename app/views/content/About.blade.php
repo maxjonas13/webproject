@@ -15,7 +15,10 @@
 
 			Beehive is not liable for any unforseen damage that could be done by one of our members.
 		</p>
-		<a style="float:right;" href="http://twitter.com/@BeeHiveOfficial">@BeeHiveOfficial</a>
+		<p>
+			<a href="http://twitter.com/@BeeHiveOfficial">@BeeHiveOfficial</a>
+		</p>
+		
 	</div>
 	<div class="row"> 
 		<div class="column col-md-6 col-sm-6"  style="display: block;"> 
