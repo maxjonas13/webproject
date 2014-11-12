@@ -16,7 +16,7 @@ class Comment extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $table = 'comments';
 	
-	//de naam van de primary key aangeven aangezien deze niet de standaard "id" is in dit geval
+	//the name of the primarykey column
 	protected $primaryKey = 'PK_commentId';
 
 	//function for the relation with the Job model

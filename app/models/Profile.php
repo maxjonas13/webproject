@@ -15,9 +15,10 @@ class Profile extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'profiles';
-	//de naam van de primary key aangeven aangezien deze niet de standaard "id" is in dit geval
+	//the name of the primary key column
 	protected $primaryKey = 'PK_profileId';
 
+	//function for the relation with the user model
 	public function user() {
 		return $this->belongsTo('User', 'FK_userId');
 	}

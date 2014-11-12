@@ -14,16 +14,12 @@
 Route::get('/', 'HomeController@index');
 
 //routes for registration
-Route::get('/register', 'RegisterController@index');
 Route::post('/register/save', 'RegisterController@save');
-Route::get('/register/confirmation', 'RegisterController@confirmation');
 
 //routes for login & logout & wachtwoord vergeten
-Route::get('/login', 'LoginController@index');
 Route::post('/login/check', 'LoginController@check');
 Route::get('/login/confirmation', 'LoginController@confirmation');
 Route::get('/logout', 'LoginController@logout');
-Route::get('/wachtwoordvergeten', 'LoginController@wachtwoordVergeten');
 Route::post('/resetwachtwoord', 'LoginController@resetWachtwoord');
 Route::get('/login/fb', 'LoginController@facebookLogin');
 Route::get('/login/fb/callback', 'LoginController@facebookLoginCallback');
@@ -39,7 +35,6 @@ Route::get('/jobs/details/{id}', 'JobController@details');
 Route::get('/jobs/edit/{id}', 'JobController@edit');
 Route::post('/jobs/update', 'JobController@update');
 Route::post('/jobs/delete', 'JobController@delete');
-Route::get('/jobs/create', 'JobController@create');
 Route::post('/jobs/store', 'JobController@store');
 Route::get('/jobs/close/{id}/{candidate}', 'JobController@closeOrOpen');
 Route::get('/jobs/open/{id}', 'JobController@closeOrOpen');
@@ -62,7 +57,6 @@ Route::get('/specialists/all', 'UserController@getAllUsers');
 Route::get('/specialists/filter/{id}', 'UserController@filter');
 
 //routes for ratings
-// Route::get('/ratings/all', 'RatingController@index');
 Route::post('/rate', 'RatingController@rate');
 Route::get('/ratings/{id}', 'RatingController@getRates');
 
@@ -75,4 +69,5 @@ Route::get('/about', function() {
 	return View::make('content/About');
 });
 
+//custom validation rule for the validator
 Validator::extend('passwordCheck', 'CustomValidation@passwordCheck');

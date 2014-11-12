@@ -30,6 +30,7 @@ class CreateProfilesTable extends Migration {
 			$table->string('access_token');
 			$table->string('access_token_secret');
 			$table->timestamps();
+			$table->bigInteger('uid')->unsigned()->nullable()();
 		});
 	}
 

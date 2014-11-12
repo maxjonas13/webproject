@@ -2,11 +2,6 @@
 
 class RegisterController extends BaseController {
 
-	//function to load the view with the register form
-	public function index() {
-		return View::make('content/register');
-	}
-
 	//function to validate form data and speak to the Register model
 	public function save() {
 		//create new validator
@@ -59,12 +54,6 @@ class RegisterController extends BaseController {
 
 			return Redirect::to('/profile/'. $userid);
 		}
-	}
-
-	//function to load the confirmation view.
-	//NEEDS TO BE CREATED, ONLY DISPLAYS MESSAGES FOR THE MOMENT
-	public function confirmation() {
-		return "You're account has been created. Good luck with it normaly you could use the variable stored in the view.";
 	}
 
 }

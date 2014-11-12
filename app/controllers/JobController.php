@@ -2,46 +2,26 @@
 use Carbon\Carbon;
 class JobController extends BaseController {
 
-	//function to show the view with all the jobs
+	//function to load the job view
 	public function index() {
-		//$job = Job::where('fixed', '=', FALSE)->with('User', 'JobCategorie', 'Category')->paginate(2);
-		
-		return View::make('content/jobs');//->with('data', $job);
+		return View::make('content/jobs');
 	}
 
 	//function to load an overview off all the jobs with pagination
 	public function jobOverviewWithPagination() {
-			$job = Job::where('fixed', '=', FALSE)->with('User', 'Category', 'Candidate')->orderBy('created_at', 'DESC')->paginate(5);
-			// foreach($job as $row) {
-			// 	//$date = $row->created_at->longDateHuman();
-			// 	$date =  \Carbon\Carbon::parse($row->created_at)->diffForHumans();
-			// 	$row->description = $date;
-			// }
-			return $job;
+		$job = Job::where('fixed', '=', FALSE)->with('User', 'Category', 'Candidate')->orderBy('created_at', 'DESC')->paginate(5);
+			
+		return $job;
 	}
 
 	//function to filter the jobs on category with pagination
 	public function filterCategorieWithPagination($cat) {
-			
 		$job = Job::whereHas('Category' , function($query) use($cat) {
 			$query->where(strtolower('categoryName'), '=', strtolower($cat));
 		})->with('User', 'Category')->where('fixed', '=', FALSE)->orderBy('created_at', 'DESC')->paginate(5);
 		
 		return $job;
 	}
-
-	//function to show the view with the form to create a new job
-	// public function create() {
-	// 	if(Auth::check()) {
-	// 		$user = User::find(Auth::user()->PK_userId)->with('Credit')->first();
-	// 		if($user->credit->credits > 0) {
-	// 			return View::make('content/jobsCreate');
-	// 		}
-	// 		else {
-	// 			return Redirect::to('/');
-	// 		}
-	// 	}
-	// }
 
 	//function to store the data of the new job
 	public function store() {
@@ -85,17 +65,12 @@ class JobController extends BaseController {
 
 	//function to show the details view off a job by job id
 	public function details($id) {
-		//when comments are integrated add Comments to this one to
 		$job = Job::with('User', 'JobCategorie', 'Category', 'Comment', 'Candidate')->find($id);
 
 		$candidate = User::whereHas('Candidate' , function($query) use($id) {
 			$query->where('FK_jobId', '=' , $id);
 			$query->where('canceled' , '=', false);
 		})->with("profile")->get();
-
-		
-
-		//return $candidate;
 		
 		return View::make('content/jobsDetails')->with('data', array('job'=>$job, 'candidate'=>$candidate));
 	}
@@ -103,16 +78,20 @@ class JobController extends BaseController {
 	//function to show the view with the form to edit a selected job
 	public function edit($id) {
 		if(Auth::check()) {
+			//find the wright job
 			$job = Job::with('User', 'Category')->find($id);
 
+			//check if the authenticated user is the owner off the job
 			if(Auth::user()->PK_userId == $job->user->PK_userId) {
 				return View::make('content/jobsEdit')->with('data', $job);
 			}
 			else {
+				//the authenticated user is not the owner off the job, redirect him back to the homepage
 				return Redirect::to('/');
 			}
 		}
 		else {
+			//the user is not authenticated, redirect him back to the homepage
 			return Redirect::to('/');
 		}
 	}
@@ -170,40 +149,8 @@ class JobController extends BaseController {
 			}
 		}
 
+		//redirect the user back to the detail page of the job
 		return Redirect::to('/jobs/details/' . $id);
 	}
-
-	//function to solicitate for a job
-	// public function solicitate($id) {
-	// 	//check if the user is authenticated
-	// 	if(Auth::check()) {
-	// 		$candidate = new Candidate;
-	// 		$solicitated = $candidate->checkIfUserHasSolicitated($id);
-
-	// 		if(!$solicitated) {
-	// 			//the user has not solicitad yet
-
-	// 			$candidate = new Candidate;
-	// 			//call the function to store the solicitation
-	// 			$candidate->store($id);
-
-	// 			//return true if the solicitation is stored
-	// 			return json_encode(TRUE);
-	// 		}
-	// 		else {
-	// 			//return back if the solicitation is not stored
-	// 			return json_encode(FALSE);
-	// 		}
-	// 	}
-	// }
-
-	// //function to cancel a solicitation
-	// public function cancelSolicitation($id) {
-	// 	if(Auth::check()) {
-	// 		$candidate = new Candidate;
-	// 		$candidate->cancelSolicitation($id);
-	// 	}
-	// }
-	
 
 }

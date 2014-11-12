@@ -15,7 +15,7 @@ class Category extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'categories';
-	//de naam van de primary key aangeven aangezien deze niet de standaard "id" is in dit geval
+	//the name off the primarykey column
 	protected $primaryKey = 'PK_categoryId';
 
 	//There are no timestamps in the category table, so put it on false

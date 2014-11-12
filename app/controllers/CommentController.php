@@ -29,7 +29,7 @@ class CommentController extends BaseController {
 			$comment = new Comment;
 			//call the sotre function in the comment model to store the data
 			$comment->store();
-
+			//call the sendMail function to notify the owner of the job
 			$this->sendMail();
 
 			//redirect the user back.
@@ -37,6 +37,7 @@ class CommentController extends BaseController {
 		}
 	}
 
+	//NOT IN USE FOR THE MOMENT, ADMIN PANEL NOT READY YET
 	//function to delete a given comment
 	public function delete($id) {
 		//check if the user is authenticated
@@ -56,17 +57,24 @@ class CommentController extends BaseController {
 		}
 	}
 
+	//function to send a email to the owner of the job to notify him that there is a new comment
 	public function sendMail() {
+		//get the job id
 		$jobid = Input::get('jobid');
+
+		//get the data off the commentor
 		$commentor = Auth::user()->PK_userId;
+		$commentorName = Auth::user()->name;
+
+		//get the job and his owner
 		$job = Job::find($jobid);
 		$user = User::find($job->FK_userId);
 		
+		//store the user info in varibales
 		$name = $user->name;
 		$email = $user->email;
 
-		$commentorName = Auth::user()->name;
-
+		//get the comment
 		$comment = Input::get('comment');
 
 		//set the data to use in the email ready
@@ -78,7 +86,7 @@ class CommentController extends BaseController {
 			'jobid'				=> $jobid
 		);
 			
-		//send the user an email with some more information
+		//send the owner off the job to notify him there is a new comment on his job
 		Mail::send('emails.comment', $data , function($message) use($email, $name) {
 			$message->to($email, $name)->subject('You got a new comment on youre job'); 
 		});

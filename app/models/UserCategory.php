@@ -16,11 +16,11 @@ class UserCategory extends Eloquent implements UserInterface, RemindableInterfac
 	 */
 	protected $table = 'users_categories';
 	
-	//de naam van de primary key aangeven aangezien deze niet de standaard "id" is in dit geval
+	//the name of the primarykey column
 	protected $primaryKey = 'PK_users_categoryId';
 
 	//There are no timestamps in the category table, so put it on false
-	public $timestamps = false;
+	public $timestamps = FALSE;
 
 	//function for the relation with the Job model
 	public function user() {

@@ -16,7 +16,7 @@ class Candidate extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $table = 'candidates';
 	
-	//de naam van de primary key aangeven aangezien deze niet de standaard "id" is in dit geval
+	//the name of the primary key
 	protected $primaryKey = 'PK_candidateId';
 
 	//function for the relation with the Job model
@@ -31,11 +31,13 @@ class Candidate extends Eloquent implements UserInterface, RemindableInterface {
 
 	//function to check if the user has allready solicitated
 	public function checkIfUserHasSolicitated($id) {
+		//search for a candidate with the same userid as the authenticated user
 		$solicitated = Candidate::where(function($query) use($id) {
 			$query->where('FK_userId', '=', Auth::user()->PK_userId);
 				$query->where('FK_jobId', '=', $id);
 		})->get();
-			
+		
+		//if count results is greather then 0 the user has solicitated allready
 		if(count($solicitated) > 0) {
 			return TRUE;
 		}

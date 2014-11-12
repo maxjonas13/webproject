@@ -16,7 +16,7 @@ class JobCategorie extends Eloquent implements UserInterface, RemindableInterfac
 	 */
 	protected $table = 'jobs_categories';
 	
-	//de naam van de primary key aangeven aangezien deze niet de standaard "id" is in dit geval
+	//the name of the primary key column
 	protected $primaryKey = 'PK_jobcategoryId';
 
 	//There are no timestamps in the category table, so put it on false

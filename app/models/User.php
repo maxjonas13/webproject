@@ -15,6 +15,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'users';
+
+	//the name of the primarykey column
 	protected $primaryKey = 'PK_userId';
 
 	/**
@@ -24,38 +26,47 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+	//function for the relation witht the profile model
 	public function profile() {
 		return $this->hasOne('Profile', 'FK_userId');
 	}
 
+	//function for the relation witht the credit model
 	public function credit() {
 		return $this->hasOne('Credit', 'FK_userId');
 	}
 
+	//function for the relation witht the job model
 	public function job() {
 		return $this->hasMany('Job', 'FK_userId');
 	}
 
+	//function for the relation witht the comment model
 	public function comment() {
 		return $this->hasMany('Comment', 'FK_userId');
 	}
 
+	//function for the relation witht the candidate model
 	public function candidate() {
 		return $this->hasMany('Candidate', 'FK_userId');
 	}
 
+	//function for the relation witht the category model
 	public function category() {
 		return $this->belongsToMany('Category', 'users_categories', 'FK_userId', 'FK_categoryId');
 	}
 
+	//function for the relation witht the rating model
 	public function rating() {
 		return $this->hasMany('Rating', 'FK_userId');
 	}
 
+	//function for the relation witht the usercategory model
 	public function usercategory() {
 		return $this->hasMany('UserCategory', 'FK_userId');
 	}
 
+	//function to store a new user into the db
 	public function storeRegistrationData() {
 		//create new Role
 		$role = new Role;
@@ -101,6 +112,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $user->PK_userId;
 	}
 
+	//function to update the users profile information
 	public function updateProfile() {
 		$checkboxes = Input::get('grouped');
 
@@ -174,6 +186,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	}
 
+	//function to create a temporary password
 	public function createTempPassword() {
 		//generate password
 		$alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
@@ -199,8 +212,5 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	    //return the generate password
 	    return $temppass;
 	}
-
-
-
 
 }

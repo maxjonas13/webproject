@@ -2,11 +2,6 @@
 
 class LoginController extends BaseController {
 
-	//function to load the view with the login form
-	public function index() {
-		return View::make('include/login');
-	}
-
 	//function to check if the login data is correct.
 	//when the data is correct the user will be logged in.
 	public function check() {
@@ -34,11 +29,9 @@ class LoginController extends BaseController {
 		return Redirect::to('/');
 	}
 
-	public function wachtwoordVergeten() {
-		return View::make('include.wachtwoordvergeten');
-	}
-
+	//function to reset the password
 	public function resetWachtwoord() {
+		//check if the give email exists in the database
 		$validator = Validator::make(
 			array(
 				'email'	=> Input::get('email')
@@ -48,12 +41,15 @@ class LoginController extends BaseController {
 			)
 		);
 
+		//store the validator messages in the variable messages
 		$messages = $validator->messages();
 
+		//check if the validator fails
 		if($validator->fails()) {
 			return Redirect::back()->withErrors($messages)->withInput();
 		}
 		else {
+			//call the creteTempPassword function from the model and store the temp pass in a variable
 			$user = new User;
 			$temporarypassword = $user->createTempPassword();
 
@@ -62,7 +58,7 @@ class LoginController extends BaseController {
 				'temppass' 	=> $temporarypassword,
 			);
 			
-			//send the user an email with some more information
+			//send the user an email with his temporary password
 			Mail::send('emails.wachtwoordvergeten', $data , function($message) {
 			    $message->to(Input::get('email'))->subject('Temporary password'); 
 			});
@@ -71,8 +67,11 @@ class LoginController extends BaseController {
 		}
 	}
 
+	//function for the facebook login
 	public function facebookLogin() {
+		//make a new instance off the Facebook class and configure it with the config file
 		$facebook = new Facebook(Config::get('facebook'));
+		//put some parameters ready
 	    $params = array(
 	        'redirect_uri' => url('/login/fb/callback'),
 	        'scope' => 'email',
@@ -80,6 +79,7 @@ class LoginController extends BaseController {
 	    return Redirect::to($facebook->getLoginUrl($params));
 	}
 
+	//callback function for the facebook login
 	public function facebookLoginCallback() {
 		$code = Input::get('code');
 	    if (strlen($code) == 0) return Redirect::to('/')->with('message', 'There was an error communicating with Facebook');
@@ -93,7 +93,9 @@ class LoginController extends BaseController {
 
 		    $profile = Profile::whereUid($uid)->first();
 		    if (empty($profile)) {
+		    	//its the first time a user logs in with this account
 
+		    	//create a new user
 		        $user = new User;
 		        $user->name = $me['first_name'].' '.$me['last_name'];
 		        $user->email = $me['email'];
@@ -102,12 +104,14 @@ class LoginController extends BaseController {
 
 		        $user->save();
 
+		        //create a new profile
 		        $profile = new Profile();
 		        $profile->uid = $uid;
 		        $profile->username = $me['first_name'] . ' ' . $me['last_name'];
 		        $profile->profilePicture = 'https://graph.facebook.com/'.$uid.'/picture?type=large';
 		        $profile = $user->profile()->save($profile);
 
+		        //create a new credit row with the credits for the new user
 		        $credit = new Credit;
 		        $credit->credits = 3;
 		        $credit->FK_userId = $user->PK_userId;
@@ -119,9 +123,10 @@ class LoginController extends BaseController {
 
 		    $user = $profile->user;
 
+		    //log the user in
 		    Auth::login($user);
 
-		    return Redirect::to('/')->with('message', 'Logged in with Facebook');
+		    return Redirect::to('/');
 		}
 
 }

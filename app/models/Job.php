@@ -16,7 +16,7 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'jobs';
-	//de naam van de primary key aangeven aangezien deze niet de standaard "id" is in dit geval
+	//the name of the primarykeycolumn
 	protected $primaryKey = 'PK_jobId';
 
 	//function for the relation with the User model

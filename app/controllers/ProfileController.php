@@ -5,8 +5,10 @@ class ProfileController extends BaseController {
 	//function to show the view with the details off the user
 	public function index($id) {
 		//get all the info off the user with the given id
-		//all the info = users table, profiles table, credits table
+		//all the info = users table, profiles table, credits table, category table and job table
 		$user = User::find($id)->load('Profile', 'Credit', 'Category', 'Job');
+
+		//get the average rating off the user
 		$rating = new Rating;
 		$ratingValue = $rating->getRates($id);
 	
@@ -67,7 +69,7 @@ class ProfileController extends BaseController {
 				'website'			=>	Input::get('website'),
 				'bio'				=>	Input::get('bio'),
 				'profilepicture'	=>	Input::get('profilepicture'),
-				'grouped'			=> Input::get('grouped')
+				'grouped'			=>  Input::get('grouped')
 			);
 
 			//array with the validation rules for the determined fields
@@ -117,6 +119,7 @@ class ProfileController extends BaseController {
 				return Redirect::back()->withErrors($messages)->withInput();
 			}
 			else {
+				//update the user his profile
 				$user = User::find(Auth::user()->PK_userId);
 				$user->updateProfile();
 				//validator passed, continue with updating profile data
