@@ -49,6 +49,6 @@
 <!-- scripts for time mod, loading jobs and apply on jobs. -->
 {{ HTML::script('script/timeago.js'); }}
 <!-- script with ajax call -->
-{{ HTML::script('script/loadjobs.js'); }}
+{{ HTML::script('script/loadJobs.js'); }}
 {{ HTML::script('script/applyCall.js'); }}
 @stop

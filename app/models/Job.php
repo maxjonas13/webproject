@@ -69,7 +69,7 @@ class Job extends Eloquent implements UserInterface, RemindableInterface {
 		//loop true the checkboxes
 		//checkbox = name of the checkbox, value = true / false
 		foreach($checkboxes as $checkbox => $value) {
-			var_dump($checkboxes);
+			//var_dump($checkboxes);
 			//check if the checkbox is checked
 			if($value == "") {
 				//loop true the categories

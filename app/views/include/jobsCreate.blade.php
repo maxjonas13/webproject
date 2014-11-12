@@ -68,7 +68,7 @@
 			<br>
 			</div>
 			<br>
-			{{ Form::submit('Voeg job toe') }}
+			{{ Form::submit('Save job') }}
 											
 		<!-- close form tag -->
 		{{ Form::close() }}

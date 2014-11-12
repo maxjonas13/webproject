@@ -80,9 +80,9 @@
 
 					<p>
 						<!-- social media like and share -->
-						<div class="fb-share-button" data-href="http://projectweb.app:8000/jobs/details/{{$data['job']->PK_jobId}}" data-layout="button_count"></div>
+						<div class="fb-share-button" data-href="http://www.jorenvanhocht.be/jobs/details/{{$data['job']->PK_jobId}}" data-layout="button_count"></div>
 
-						<a class="twitter-share-button" href="https://twitter.com/share" data-text="{{$data['job']->title}}" data-via="BeeHiveOfficial">Tweet</a>
+						<a class="twitter-share-button" href="https://www.jorenvanhocht.be/share" data-text="{{$data['job']->title}}" data-via="BeeHiveOfficial">Tweet</a>
 					</p>
 
 					<section class="comment">

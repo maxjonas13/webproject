@@ -84,7 +84,7 @@ class ProfileController extends BaseController {
 				'googleplus'		=>	'min:3',
 				'instagram'			=>	'min:3',
 				'myspace'			=>	'min:3',
-				'website'			=>	'active_url|min:3',
+				'website'			=>	'min:7',
 				'bio'				=>	'min:3|max:2000',
 				'profilepicture'	=>	'image|max:5000',
 				'grouped'			=>	'required|min:1'

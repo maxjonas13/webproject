@@ -170,7 +170,7 @@
 						<a href="/jobs/details/{{$job->PK_jobId}}">{{$job->title}}</a><br>
 					@endforeach
 				@else
-					<p>This user has no jobs</p>
+					This user has no jobs
 				@endif</p>
 			</section>
 		</div>
