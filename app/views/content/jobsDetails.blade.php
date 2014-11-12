@@ -13,7 +13,7 @@
 						<p><b>Location:</b> </p>
 						<p>{{$data['job']->location}}</p> 
 						<p><b>created at:</b></p>
-						<p>{{$data['job']->created_at}}</p> 
+						<p>{{$data['job']->created_at->diffForHumans()}}</p> 
 						<p><b>Catergories</b><p>
 							<section id="category">
 						@foreach ($data['job']->category as $categorieitem) 
@@ -45,12 +45,15 @@
 								@endif
 							@endif
 						@endif
-						<div class="fb-share-button" data-href="http://projectweb.app:8000/jobs/details/{{$data['job']->PK_jobId}}" data-layout="button_count"></div>
 
-						<a class="twitter-share-button" href="https://twitter.com/share" data-text="{{$data['job']->title}}" data-via="BeeHiveOfficial">Tweet</a>
 					</section>
 
 					<section>
+						<p>
+						<div class="fb-share-button" data-href="http://projectweb.app:8000/jobs/details/{{$data['job']->PK_jobId}}" data-layout="button_count"></div>
+
+						<a class="twitter-share-button" href="https://twitter.com/share" data-text="{{$data['job']->title}}" data-via="BeeHiveOfficial">Tweet</a>
+						</p>
 						<section class="comment">
 						<h3>Comments</h3>
 							@if(count($data['job']->comment) == 0)
@@ -60,7 +63,7 @@
 								<section class="commentitem">
 									<a href="/profile/{{$comment->user->PK_userId}}"><h4>{{$comment->user->name}}</h4></a>
 									<p>{{$comment->comment}}</p>
-									<small>Posted at:{{$comment->created_at}}</small>
+									<small>Posted {{$comment->created_at->diffForHumans()}}</small>
 								</section>
 							@endforeach
 						</section>

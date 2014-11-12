@@ -1,5 +1,5 @@
 <?php
-
+use Carbon\Carbon;
 class JobController extends BaseController {
 
 	//function to show the view with all the jobs
@@ -12,7 +12,11 @@ class JobController extends BaseController {
 	//function to load an overview off all the jobs with pagination
 	public function jobOverviewWithPagination() {
 			$job = Job::where('fixed', '=', FALSE)->with('User', 'Category', 'Candidate')->orderBy('created_at', 'DESC')->paginate(5);
-	
+			// foreach($job as $row) {
+			// 	//$date = $row->created_at->longDateHuman();
+			// 	$date =  \Carbon\Carbon::parse($row->created_at)->diffForHumans();
+			// 	$row->description = $date;
+			// }
 			return $job;
 	}
 

@@ -34,6 +34,7 @@
 		@if(Auth::check())
 			@include('include.jobsCreate')
 		@endif
+{{ HTML::script('script/timeago.js'); }}
 {{ HTML::script('script/loadjobs.js'); }}
 {{ HTML::script('script/applyCall.js'); }}
 @stop

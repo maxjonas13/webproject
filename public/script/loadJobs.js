@@ -87,7 +87,7 @@ function getOverview(data){
 	//loop true the jobs, data['data'] => beceause off pagination data is in another data array
 	for(i = 0; i < data['data'].length; i++) {
 		//put the content in the variable tag
-		tag = '<section class="jobstyle '+ data['data'][i]['category'][0]['categoryName'].toLowerCase() +'" ><h1 class=' + data['data'][i]['category'][0]["categoryName"].toLowerCase() + '>'+ data['data'][i]["title"] +'</h1><p class="jobtextinfo"><small><strong>Location: </strong>' + data['data'][i]["location"]+'<strong> Created at: </strong>' + data['data'][i]["created_at"] +'<strong> By: </strong> ' + data['data'][i]['user']['name'] + '</small></p><p>' + data['data'][i]["description"] + '</p><a class="button" href="/jobs/details/' + data['data'][i]["PK_jobId"] + '">Details</a></section>';
+		tag = '<section class="jobstyle '+ data['data'][i]['category'][0]['categoryName'].toLowerCase() +'" ><h1 class=' + data['data'][i]['category'][0]["categoryName"].toLowerCase() + '>'+ data['data'][i]["title"] +'</h1><p class="jobtextinfo"><small><strong>Location: </strong>' + data['data'][i]["location"]+'<strong> Created </strong>' + moment(data['data'][i]["created_at"],'YYYY-MM-DD hh:mm:ss').fromNow() +'<strong> By: </strong> ' + data['data'][i]['user']['name'] + '</small></p><p>' + data['data'][i]["description"] + '</p><a class="button" href="/jobs/details/' + data['data'][i]["PK_jobId"] + '">Details</a></section>';
 		
 		//add the tag variable to the content off jobcontainer
 		document.getElementById('jobcontainer').innerHTML += tag;
@@ -140,7 +140,7 @@ function getView(data , cat) {
 	//loop true the jobs, data['data'] => beceause off pagination data is in another data array
 	for(i = 0; i < data['data'].length; i++) {
 		//put the content in the variable tag
-		tag = '<section class="jobstyle '+ data['data'][i]['category'][0]['categoryName'].toLowerCase() +'" ><h1 class=' + data['data'][i]['category'][0]["categoryName"].toLowerCase() + '>'+ data['data'][i]["title"] +'</h1><p class="jobtextinfo"><small><strong>Location: </strong>' + data['data'][i]["location"]+'<strong> Created at: </strong>' + data['data'][i]["created_at"] +'<strong> By: </strong> ' + data['data'][i]['user']['name'] + '</small></p><p>' + data['data'][i]["description"] + '</p><a class="button" href="/jobs/details/' + data['data'][i]["PK_jobId"] + '">Details</a></section>';
+		tag = '<section class="jobstyle '+ data['data'][i]['category'][0]['categoryName'].toLowerCase() +'" ><h1 class=' + data['data'][i]['category'][0]["categoryName"].toLowerCase() + '>'+ data['data'][i]["title"] +'</h1><p class="jobtextinfo"><small><strong>Location: </strong>' + data['data'][i]["location"]+'<strong> Created </strong>' + moment(data['data'][i]["created_at"],'YYYY-MM-DD hh:mm:ss').fromNow() +'<strong> By: </strong> ' + data['data'][i]['user']['name'] + '</small></p><p>' + data['data'][i]["description"] + '</p><a class="button" href="/jobs/details/' + data['data'][i]["PK_jobId"] + '">Details</a></section>';
 		
 		//add the tag variable to the content off jobcontainer
 		document.getElementById('jobcontainer').innerHTML += tag;
