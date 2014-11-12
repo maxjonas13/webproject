@@ -107,6 +107,11 @@ class LoginController extends BaseController {
 		        $profile->username = $me['first_name'] . ' ' . $me['last_name'];
 		        $profile->profilePicture = 'https://graph.facebook.com/'.$uid.'/picture?type=large';
 		        $profile = $user->profile()->save($profile);
+
+		        $credit = new Credit;
+		        $credit->credits = 3;
+		        $credit->FK_userId = $user->PK_userId;
+		        $credit->save();
 		    }
 
 		    $profile->access_token = $facebook->getAccessToken();
