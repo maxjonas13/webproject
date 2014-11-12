@@ -66,6 +66,8 @@ class LoginController extends BaseController {
 			Mail::send('emails.wachtwoordvergeten', $data , function($message) {
 			    $message->to(Input::get('email'))->subject('Temporary password'); 
 			});
+
+			return Redirect::to('/');
 		}
 	}
 
