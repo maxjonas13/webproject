@@ -101,7 +101,7 @@
 							</a>
 									
 							<!-- comment text -->
-							<p>{{$comment->comment}}</p>
+							<p>{{nl2br($comment->comment)}}</p>
 									
 							<small>Posted {{$comment->created_at->diffForHumans()}}</small>
 						</section>

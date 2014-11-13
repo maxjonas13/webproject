@@ -37,7 +37,7 @@
 		</p>
 		<p>
 			<!-- once online change this path -->
-			<a href="jobs/details/{{$jobid}}">Reply on {{$commentorName}}</a>
+			<a href="http://www.jorenvanhocht.be/jobs/details/{{$jobid}}">Reply on {{$commentorName}}</a>
 		</p>
 		<p>
 			Have a nice day!<br>
